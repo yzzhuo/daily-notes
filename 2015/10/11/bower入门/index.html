@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,next" />
+  <meta name="keywords" content="前端工具," />
 
 
 
@@ -39,15 +39,31 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="be a dreamer">
-<meta property="og:type" content="website">
-<meta property="og:title" content="珠君的博客">
-<meta property="og:url" content="http://blog.yzzhuo.com/index.html">
+<meta name="description" content="随着网页功能变得越来越复杂，同一张网页加载多个JavaScript函数库早已是家常便饭。开发者越来越需要一个工具，对浏览器端的各种库进行管理，比如搜索、自动安装\卸载、检查更新、确保依赖关系等等。Bower就是为了解决这个问题而诞生的针对浏览器端的库管理工具。
+
+###bower的常用操作###
+
+包的安装：   
+123456$ bower install（包名）```  若包安装失败，执行&quot;b">
+<meta property="og:type" content="article">
+<meta property="og:title" content="bower入门">
+<meta property="og:url" content="http://blog.yzzhuo.com/2015/10/11/bower入门/index.html">
 <meta property="og:site_name" content="珠君的博客">
-<meta property="og:description" content="be a dreamer">
+<meta property="og:description" content="随着网页功能变得越来越复杂，同一张网页加载多个JavaScript函数库早已是家常便饭。开发者越来越需要一个工具，对浏览器端的各种库进行管理，比如搜索、自动安装\卸载、检查更新、确保依赖关系等等。Bower就是为了解决这个问题而诞生的针对浏览器端的库管理工具。
+
+###bower的常用操作###
+
+包的安装：   
+123456$ bower install（包名）```  若包安装失败，执行&quot;b">
+<meta property="og:updated_time" content="2015-10-12T06:29:25.045Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="珠君的博客">
-<meta name="twitter:description" content="be a dreamer">
+<meta name="twitter:title" content="bower入门">
+<meta name="twitter:description" content="随着网页功能变得越来越复杂，同一张网页加载多个JavaScript函数库早已是家常便饭。开发者越来越需要一个工具，对浏览器端的各种库进行管理，比如搜索、自动安装\卸载、检查更新、确保依赖关系等等。Bower就是为了解决这个问题而诞生的针对浏览器端的库管理工具。
+
+###bower的常用操作###
+
+包的安装：   
+123456$ bower install（包名）```  若包安装失败，执行&quot;b">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -57,7 +73,7 @@
   };
 </script>
 
-  <title> 珠君的博客 </title>
+  <title> bower入门 | 珠君的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -85,9 +101,7 @@
 
 
 
-  <div class="container one-column 
-   page-home 
-">
+  <div class="container one-column page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -184,9 +198,9 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div id="content" class="content"> 
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
@@ -197,9 +211,7 @@
           
           
             
-              <a class="post-title-link" href="/2015/10/11/bower入门/" itemprop="url">
-                bower入门
-              </a>
+              bower入门
             
           
         </h1>
@@ -234,8 +246,7 @@
       
 
       
-        
-          <span itemprop="articleBody"><blockquote>
+        <span itemprop="articleBody"><blockquote>
 <p>随着网页功能变得越来越复杂，同一张网页加载多个JavaScript函数库早已是家常便饭。开发者越来越需要一个工具，对浏览器端的各种库进行管理，比如搜索、自动安装\卸载、检查更新、确保依赖关系等等。Bower就是为了解决这个问题而诞生的针对浏览器端的库管理工具。</p>
 </blockquote>
 <p>###bower的常用操作###</p>
@@ -293,185 +304,75 @@
 <p>###bower与npm###</p>
 <p><strong>npm和bower都是包管理器。npm是node端的包管理工具包，而bower是基于node的，用于管理前端依赖资源的管理工具。</strong><br>  通常，在实际项目中，npm和bower都会用到，并且bower的安装和升级依赖于npm。<br>NPM主要运用于Node.js项目的内部依赖包管理，安装的模块位于项目根目录下的node_modules文件夹内。而Bower大部分情况下用于前端开发，对于CSS/JS/模板等内容进行依赖管理，依赖的下载目录结构可以自定义。<br>npm采用嵌套的依赖关系树，而bower采用变片的依赖关系管理方式，而一个普通前端的依赖树非常荣昌，同时和其它安装包不能共享依赖代码，采用npm管理会导致文件非常多，不依赖前端代码部署。<br>实际项目中，后端可以采用npm进行包管理，而前端可以采用bower进行包管理，让各自的工作效率大大提升。</p>
 </span>
-        
       
     </div>
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/前端工具/" rel="tag">#前端工具</a>
+          
+        </div>
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/10/07/js中3个循环调用的方法/" rel="next">js中3个循环调用的方法</a>
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </article>
 
 
-    
+
+    <div class="post-spread">
       
+        <div class="ds-share flat" data-thread-key="2015/10/11/bower入门/"
+     data-title="bower入门"
+     data-content=""
+     data-url="http://blog.yzzhuo.com/2015/10/11/bower入门/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
 
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/10/07/js中3个循环调用的方法/" itemprop="url">
-                js中3个循环调用的方法
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-10-07T22:18:44+08:00" content="2015-10-07">
-            2015-10-07
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/10/07/js中3个循环调用的方法/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/07/js中3个循环调用的方法/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>###requestAnimFrame、setTimeout和setInterval三者的区别</p>
-<ul>
-<li>requestAnimFrame（function（）{}）<br>  根据电脑的性能来决定调用的时间间隔。</li>
-<li>setTimeout（function（）{}，time）：<br>  该方法在设定的time之后才会执行一次。<br>  setTimeout( ) 预设只是执行一次, 但我们可以使用一个循环方式, 使到一个setTimeout( ) 再启动自己一次, 就会使到第二个 setTimeout( ) 执行, 第二个又启动第三个, 这样循环下去, 这 setTimeout( ) 就会不断执行。</li>
-<li>setInterval（function（）{}，time）<br>  该方法被调用后会立刻执行function，之后每间隔time之后不断循环执行。</li>
-</ul>
-</span>
-        
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
       
     </div>
+  </div>
 
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/10/07/hello-world/" itemprop="url">
-                用hexo快速搭建博客
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-10-07T22:16:37+08:00" content="2015-10-07">
-            2015-10-07
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/10/07/hello-world/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/07/hello-world/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is my very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="install_hexo">install hexo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$npm</span> install -g hexo</span><br></pre></td></tr></table></figure>
-<h3 id="create_a_project">create a project</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$hexo</span> init nodejs-hexo</span><br></pre></td></tr></table></figure>
-<h3 id="start_the_project">start the project</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$npm</span> install</span><br><span class="line"><span class="variable">$hexo</span> server</span><br></pre></td></tr></table></figure>
-<h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
  </div>
 
         
 
+        
+          <div class="comments" id="comments">
+            
+              <div class="ds-thread" data-thread-key="2015/10/11/bower入门/"
+                   data-title="bower入门" data-url="http://blog.yzzhuo.com/2015/10/11/bower入门/">
+              </div>
+            
+          </div>
         
       </div>
 
@@ -488,6 +389,15 @@
   <aside id="sidebar" class="sidebar">
     <div class="sidebar-inner">
 
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
       
 
       <section class="site-overview">
@@ -552,6 +462,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
       
 
     </div>
@@ -636,6 +557,165 @@
   <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
   
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
 
   <script type="text/javascript">
     $(document).ready(function () {
