@@ -238,60 +238,41 @@
           <span itemprop="articleBody"><blockquote>
 <p>随着网页功能变得越来越复杂，同一张网页加载多个JavaScript函数库早已是家常便饭。开发者越来越需要一个工具，对浏览器端的各种库进行管理，比如搜索、自动安装\卸载、检查更新、确保依赖关系等等。Bower就是为了解决这个问题而诞生的针对浏览器端的库管理工具。</p>
 </blockquote>
-<p>###bower的常用操作###</p>
+<h3 id="bower的常用操作">bower的常用操作</h3><ul>
+<li>包的安装：   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bower install（包名）</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>若包安装失败，执行”bower cache clean”，后重新安装。</p>
 <ul>
-<li><p>包的安装：   </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ bower install（包名）</span><br><span class="line">```  </span><br><span class="line">若包安装失败，执行<span class="string">"bower cache clean"</span>，后重新安装。</span><br><span class="line">* 包的搜索  </span><br><span class="line">```bash</span><br><span class="line">$ bower search （包名）</span><br></pre></td></tr></table></figure>
+<li><p>包的搜索  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bower search （包名）</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>对已安装的包进行查看   </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ bower list</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">* 查看某个包的信息  </span><br><span class="line">```bash</span><br><span class="line">$ bower info （包名）</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>卸载包<br>```bash<br>$ bower uninstall （包名）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bower list</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>###bower.json###<br>这个文件便于在项目中对于包可以进行批量安装</p>
 <ul>
-<li><p>在项目中创建bower.json    </p>
-<pre><code class="bash">$ bower init
-</code></pre>
-<p>bower.json的一般格式：</p>
-<pre><code class="bash">{
-<span class="string">"name"</span>: <span class="string">"blog"</span>,  
-<span class="string">"version"</span>: <span class="string">"0.0.1"</span>     
-<span class="string">"authors"</span>: [
-  <span class="string">"sb"</span>
-],
-<span class="string">"license"</span>: <span class="string">"MIT"</span>,
-<span class="string">"ignore"</span>: [      
-  <span class="string">"**/.*"</span>,    
-  <span class="string">"node_modules"</span>,      
-  <span class="string">"bower_components"</span>,    
-  <span class="string">"test"</span>,
-  <span class="string">"tests"</span>
-],
-<span class="string">"dependencies"</span>: {
-  <span class="string">"jquery"</span>: <span class="string">"~2.0.3"</span>
-}
-}
-</code></pre>
-<p>其中dependencies就是项目依赖的包列表。</p>
+<li><p>查看某个包的信息  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bower info （包名）</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>安装包并更新bower.json  </p>
-<pre><code class="bash">$ bower install （某包） --save
-</code></pre>
+<li><p>卸载包  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bower uninstall （包名）</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>###.bowerrc###<br>  若不希望包文件下载到/bower-component中，而下载安装到自己习惯的目录，则在项目目录下新建一个.bowerrc文件，修改里面的directory的路径。<br>一般的.bowerrc文件：     </p>
-<pre><code class="bash">{
-  <span class="string">"directory"</span> : <span class="string">"components"</span>,//存放库文件的目录。
-  <span class="string">"json"</span>      : <span class="string">"bower.json"</span>,//描述各个库的json文件名。
-  <span class="string">"endpoint"</span>  : <span class="string">"https://Bower.herokuapp.com"</span>,//在线索引的网址，用来搜索各种库。
-  <span class="string">"searchpath"</span>  : <span class="string">""</span>,//一个数组，储存备选的在线索引网址。如果某个库在endpoint中找不到，则继续搜索该属性指定的网址，通常用于放置某些不公开的库。
-  <span class="string">"shorthand_resolver"</span> : <span class="string">""</span>//定义各个库名称简写形式
-}
-</code></pre>
-<p>###bower与npm###</p>
-<p><strong>npm和bower都是包管理器。npm是node端的包管理工具包，而bower是基于node的，用于管理前端依赖资源的管理工具。</strong><br>  通常，在实际项目中，npm和bower都会用到，并且bower的安装和升级依赖于npm。<br>NPM主要运用于Node.js项目的内部依赖包管理，安装的模块位于项目根目录下的node_modules文件夹内。而Bower大部分情况下用于前端开发，对于CSS/JS/模板等内容进行依赖管理，依赖的下载目录结构可以自定义。<br>npm采用嵌套的依赖关系树，而bower采用变片的依赖关系管理方式，而一个普通前端的依赖树非常荣昌，同时和其它安装包不能共享依赖代码，采用npm管理会导致文件非常多，不依赖前端代码部署。<br>实际项目中，后端可以采用npm进行包管理，而前端可以采用bower进行包管理，让各自的工作效率大大提升。</p>
+<h3 id="bower-json">bower.json</h3><p>这个文件便于在项目中对于包可以进行批量安装</p>
+<ul>
+<li>在项目中创建bower.json    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bower init</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>bower.json的一般格式：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"name"</span>: <span class="string">"blog"</span>,  </span><br><span class="line">  <span class="string">"version"</span>: <span class="string">"0.0.1"</span>     </span><br><span class="line">  <span class="string">"authors"</span>: [</span><br><span class="line">    <span class="string">"sb"</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="string">"license"</span>: <span class="string">"MIT"</span>,</span><br><span class="line">  <span class="string">"ignore"</span>: [      </span><br><span class="line">    <span class="string">"**/.*"</span>,    </span><br><span class="line">    <span class="string">"node_modules"</span>,      </span><br><span class="line">    <span class="string">"bower_components"</span>,    </span><br><span class="line">    <span class="string">"test"</span>,</span><br><span class="line">    <span class="string">"tests"</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="string">"dependencies"</span>: &#123;</span><br><span class="line">    <span class="string">"jquery"</span>: <span class="string">"~2.0.3"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>其中dependencies就是项目依赖的包列表。</p>
+<ul>
+<li>安装包并更新bower.json  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bower install （某包） --save</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="-bowerrc">.bowerrc</h3><p>  若不希望包文件下载到/bower-component中，而下载安装到自己习惯的目录，则在项目目录下新建一个.bowerrc文件，修改里面的directory的路径。<br>一般的.bowerrc文件：     </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"directory"</span> : <span class="string">"components"</span>,//存放库文件的目录。</span><br><span class="line">  <span class="string">"json"</span>      : <span class="string">"bower.json"</span>,//描述各个库的json文件名。</span><br><span class="line">  <span class="string">"endpoint"</span>  : <span class="string">"https://Bower.herokuapp.com"</span>,//在线索引的网址，用来搜索各种库。</span><br><span class="line">  <span class="string">"searchpath"</span>  : <span class="string">""</span>,//一个数组，储存备选的在线索引网址。如果某个库在endpoint中找不到，则继续搜索该属性指定的网址，通常用于放置某些不公开的库。</span><br><span class="line">  <span class="string">"shorthand_resolver"</span> : <span class="string">""</span>//定义各个库名称简写形式</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="bower与npm">bower与npm</h3><p><strong>npm和bower都是包管理器。npm是node端的包管理工具包，而bower是基于node的，用于管理前端依赖资源的管理工具。</strong><br>  通常，在实际项目中，npm和bower都会用到，并且bower的安装和升级依赖于npm。<br>NPM主要运用于Node.js项目的内部依赖包管理，安装的模块位于项目根目录下的node_modules文件夹内。而Bower大部分情况下用于前端开发，对于CSS/JS/模板等内容进行依赖管理，依赖的下载目录结构可以自定义。<br>npm采用嵌套的依赖关系树，而bower采用变片的依赖关系管理方式，而一个普通前端的依赖树非常荣昌，同时和其它安装包不能共享依赖代码，采用npm管理会导致文件非常多，不依赖前端代码部署。<br>实际项目中，后端可以采用npm进行包管理，而前端可以采用bower进行包管理，让各自的工作效率大大提升。</p>
 </span>
         
       
@@ -360,8 +341,7 @@
 
       
         
-          <span itemprop="articleBody"><p>###requestAnimFrame、setTimeout和setInterval三者的区别</p>
-<ul>
+          <span itemprop="articleBody"><h3 id="requestAnimFrame、setTimeout和setInterval三者的区别">requestAnimFrame、setTimeout和setInterval三者的区别</h3><ul>
 <li>requestAnimFrame（function（）{}）<br>  根据电脑的性能来决定调用的时间间隔。</li>
 <li>setTimeout（function（）{}，time）：<br>  该方法在设定的time之后才会执行一次。<br>  setTimeout( ) 预设只是执行一次, 但我们可以使用一个循环方式, 使到一个setTimeout( ) 再启动自己一次, 就会使到第二个 setTimeout( ) 执行, 第二个又启动第三个, 这样循环下去, 这 setTimeout( ) 就会不断执行。</li>
 <li>setInterval（function（）{}，time）<br>  该方法被调用后会立刻执行function，之后每间隔time之后不断循环执行。</li>
