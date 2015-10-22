@@ -56,7 +56,7 @@ Yeoman实践
 Yeoman实践
 和bower等类似，利用npm即可安">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/63739cabjw1ex9y2z3owzj20e40d7q3y.jpg">
-<meta property="og:updated_time" content="2015-10-22T07:51:29.302Z">
+<meta property="og:updated_time" content="2015-10-22T10:33:15.983Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用Yeoman来创建我的web应用">
 <meta name="twitter:description" content="最近在用AngularJS折腾些东西，打算写一个基于Angular的项目，打算手动创建时被告知可以用Yeoman来生成Angualr项目文件，于是乎去了解了一下Yeoman这玩意。
@@ -252,14 +252,17 @@ Yeoman实践
 <p>官网显示Yeoman是一个现代Web app的脚手架工具，这里的脚手架就是说在开发者开发web应用的立项阶段，可以使用Yeoman来生成项目的文件和代码结构。</p>
 </blockquote>
 <h3 id="Yeoman实践">Yeoman实践</h3><ul>
-<li>和bower等类似，利用npm即可安装yeoman,只是安装时用不必打全称:   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g yo</span><br></pre></td></tr></table></figure>
+<li><p>和bower等类似，利用npm即可安装yeoman,只是安装时用不必打全称:   </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g yo</span><br></pre></td></tr></table></figure>
+<p>  确认是否安装成功，若能显示版本号即安装成功  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yo -v</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建项目<br>在创建项目前，要先安装模具，比如这里我想要创建一个基于Angular的项目，我要先安装angular这个模具。yeoman官网有generator的列表，可以根据自己实际情况去看自己需要的模具。  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g generator-angular</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>确认是否安装成功，若能显示版本号即安装成功<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yo -v</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>创建项目<br>在创建项目前，要先安装模具，比如这里我想要创建一个基于Angular的项目，我要先安装angular这个模具。yeoman官网有generator的列表，可以根据自己实际情况去看自己需要的模具。  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">npm install -g generator-angular    </span><br><span class="line">```      </span><br><span class="line">此外，也可以使用yo命令，后选择安装模块来进行安装。    </span><br><span class="line"></span><br><span class="line">安装完模块后，就可以开始创建项目了。进入自己的项目目录angualr-app文件夹，执行以下命令：   </span><br><span class="line">```bash</span><br><span class="line">yo angular</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+<p>此外，也可以使用yo命令，后选择安装模块来进行安装。    </p>
+<p>安装完模块后，就可以开始创建项目了。进入自己的项目目录angualr-app文件夹，执行以下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yo angular</span><br></pre></td></tr></table></figure></p>
 <p>在回答了一些问题后，就可以看到该目录生成了一系列的文件。<br><img src="http://ww1.sinaimg.cn/large/63739cabjw1ex9y2z3owzj20e40d7q3y.jpg" alt=""><br>app/:web应用的父级目录。<br>Gruntfile.js、package.json 以及node_modules：Grunt需要使用的依赖以及配置。<br>test、karma.conf.js/karma-e2e.conf.js：测试框架以及针对这个项目的单元测试。   </p>
 <ul>
 <li>运行创建好的初始应用<pre><code class="bash">grunt serve
