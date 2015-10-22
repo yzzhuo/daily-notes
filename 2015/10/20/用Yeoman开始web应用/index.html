@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="JavaScript," />
+  <meta name="keywords" content="前端开发工具," />
 
 
 
@@ -39,22 +39,32 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="requestAnimFrame、setTimeout和setInterval三者的区别
-requestAnimFrame（function（）{}）  根据电脑的性能来决定调用的时间间隔。
-setTimeout（function（）{}，time）：  该方法在设定的time之后才会执行一次。  setTimeout( ) 预设只是执行一次, 但我们可以使用一个循环方式, 使到一个setTime">
+<meta name="description" content="最近在用AngularJS折腾些东西，打算写一个基于Angular的项目，打算手动创建时被告知可以用Yeoman来生成Angualr项目文件，于是乎去了解了一个Yeoman这玩意。
+
+官网显示Yeoman是一个现代Web app的脚手架工具，这里的脚手架就是说在开发者开发web项目的立项阶段，使用Yeoman来生成项目的文件和代码结构。
+
+Yeoman实践
+和bower等类似，利用npm即可安装y">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js中3个循环调用的方法">
-<meta property="og:url" content="http://blog.yzzhuo.com/2015/10/07/js中3个循环调用的方法/index.html">
+<meta property="og:title" content="用Yeoman来生成项目文件">
+<meta property="og:url" content="http://blog.yzzhuo.com/2015/10/20/用Yeoman开始web应用/index.html">
 <meta property="og:site_name" content="珠君的博客">
-<meta property="og:description" content="requestAnimFrame、setTimeout和setInterval三者的区别
-requestAnimFrame（function（）{}）  根据电脑的性能来决定调用的时间间隔。
-setTimeout（function（）{}，time）：  该方法在设定的time之后才会执行一次。  setTimeout( ) 预设只是执行一次, 但我们可以使用一个循环方式, 使到一个setTime">
-<meta property="og:updated_time" content="2015-10-12T06:33:38.202Z">
+<meta property="og:description" content="最近在用AngularJS折腾些东西，打算写一个基于Angular的项目，打算手动创建时被告知可以用Yeoman来生成Angualr项目文件，于是乎去了解了一个Yeoman这玩意。
+
+官网显示Yeoman是一个现代Web app的脚手架工具，这里的脚手架就是说在开发者开发web项目的立项阶段，使用Yeoman来生成项目的文件和代码结构。
+
+Yeoman实践
+和bower等类似，利用npm即可安装y">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/63739cabjw1ex9y2z3owzj20e40d7q3y.jpg">
+<meta property="og:updated_time" content="2015-10-22T07:41:42.548Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js中3个循环调用的方法">
-<meta name="twitter:description" content="requestAnimFrame、setTimeout和setInterval三者的区别
-requestAnimFrame（function（）{}）  根据电脑的性能来决定调用的时间间隔。
-setTimeout（function（）{}，time）：  该方法在设定的time之后才会执行一次。  setTimeout( ) 预设只是执行一次, 但我们可以使用一个循环方式, 使到一个setTime">
+<meta name="twitter:title" content="用Yeoman来生成项目文件">
+<meta name="twitter:description" content="最近在用AngularJS折腾些东西，打算写一个基于Angular的项目，打算手动创建时被告知可以用Yeoman来生成Angualr项目文件，于是乎去了解了一个Yeoman这玩意。
+
+官网显示Yeoman是一个现代Web app的脚手架工具，这里的脚手架就是说在开发者开发web项目的立项阶段，使用Yeoman来生成项目的文件和代码结构。
+
+Yeoman实践
+和bower等类似，利用npm即可安装y">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -64,7 +74,7 @@ setTimeout（function（）{}，time）：  该方法在设定的time之后才�
   };
 </script>
 
-  <title> js中3个循环调用的方法 | 珠君的博客 </title>
+  <title> 用Yeoman来生成项目文件 | 珠君的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -202,7 +212,7 @@ setTimeout（function（）{}，time）：  该方法在设定的time之后才�
           
           
             
-              js中3个循环调用的方法
+              用Yeoman来生成项目文件
             
           
         </h1>
@@ -211,8 +221,8 @@ setTimeout（function（）{}，time）：  该方法在设定的time之后才�
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-10-07T22:18:44+08:00" content="2015-10-07">
-            2015-10-07
+          <time itemprop="dateCreated" datetime="2015-10-20T11:07:35+08:00" content="2015-10-20">
+            2015-10-20
           </time>
         </span>
 
@@ -222,8 +232,8 @@ setTimeout（function（）{}，time）：  该方法在设定的time之后才�
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/10/07/js中3个循环调用的方法/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/07/js中3个循环调用的方法/" itemprop="commentsCount"></span>
+              <a href="/2015/10/20/用Yeoman开始web应用/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/20/用Yeoman开始web应用/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -237,11 +247,31 @@ setTimeout（function（）{}，time）：  该方法在设定的time之后才�
       
 
       
-        <span itemprop="articleBody"><h3 id="requestAnimFrame、setTimeout和setInterval三者的区别">requestAnimFrame、setTimeout和setInterval三者的区别</h3><ul>
-<li>requestAnimFrame（function（）{}）<br>  根据电脑的性能来决定调用的时间间隔。</li>
-<li>setTimeout（function（）{}，time）：<br>  该方法在设定的time之后才会执行一次。<br>  setTimeout( ) 预设只是执行一次, 但我们可以使用一个循环方式, 使到一个setTimeout( ) 再启动自己一次, 就会使到第二个 setTimeout( ) 执行, 第二个又启动第三个, 这样循环下去, 这 setTimeout( ) 就会不断执行。</li>
-<li>setInterval（function（）{}，time）<br>  该方法被调用后会立刻执行function，之后每间隔time之后不断循环执行。</li>
+        <span itemprop="articleBody"><p>  最近在用AngularJS折腾些东西，打算写一个基于Angular的项目，打算手动创建时被告知可以用Yeoman来生成Angualr项目文件，于是乎去了解了一个Yeoman这玩意。</p>
+<blockquote>
+<p>官网显示Yeoman是一个现代Web app的脚手架工具，这里的脚手架就是说在开发者开发web项目的立项阶段，使用Yeoman来生成项目的文件和代码结构。</p>
+</blockquote>
+<h3 id="Yeoman实践">Yeoman实践</h3><ul>
+<li><p>和bower等类似，利用npm即可安装yeoman,只是安装时用不必打全称:   </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install -g yo</span><br><span class="line">```   </span><br><span class="line">确认是否安装成功，若能显示版本号即安装成功  </span><br><span class="line">```bash</span><br><span class="line">yo -v</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建项目<br>在创建项目前，要先安装模具，比如这里我想要创建一个基于Angular的项目，我要先安装angular这个模具。yeoman官网有generator的列表，可以根据自己实际情况去看自己需要的模具。  </p>
+<pre><code class="bash">npm install -g generator-angular
+</code></pre>
+<p>此外，也可以使用yo命令，后选择安装模块来进行安装。    </p>
+<p>  安装完模块后，就可以开始创建项目了。进入自己的项目目录angualr-app文件夹。执行以下命令：   </p>
+<pre><code class="bash">yo angular
+</code></pre>
+<p>  在回答了一些问题后，就可以看到该目录生成了一系列的文件。这里顺便就记录和说明这些文件吧。<br><img src="http://ww1.sinaimg.cn/large/63739cabjw1ex9y2z3owzj20e40d7q3y.jpg" alt=""><br>app/:web应用的父级目录。<br>Gruntfile.js、package.json 以及node_modules：Grunt需要使用的依赖以及配置。<br>test、karma.conf.js/karma-e2e.conf.js：测试框架以及针对这个项目的单元测试。   </p>
+</li>
+<li><p>运行创建好的初始应用</p>
+<pre><code class="bash">grunt serve
+</code></pre>
+<p>通过在浏览器访问localhost:9000就可以看到初始的应用了。</p>
+</li>
 </ul>
+<p>通过yeoman创建好了我的项目结构后，就可以开始编写自己的应用啦   </p>
+<p>另外再说一点：在用编辑器更改应用，每次保存更改后，浏览器会自动刷新，可以实时来查看应用的状态真的太赞了。</p>
 </span>
       
     </div>
@@ -250,7 +280,7 @@ setTimeout（function（）{}，time）：  该方法在设定的time之后才�
       
         <div class="post-tags">
           
-            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
+            <a href="/tags/前端开发工具/" rel="tag">#前端开发工具</a>
           
         </div>
       
@@ -259,13 +289,11 @@ setTimeout（function（）{}，time）：  该方法在设定的time之后才�
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/10/11/bower入门/" rel="prev">bower入门</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/10/07/hello-world/" rel="next">用hexo快速搭建博客</a>
+              <a href="/2015/10/11/bower入门/" rel="next">bower入门</a>
             
           </div>
         </div>
@@ -280,10 +308,10 @@ setTimeout（function（）{}，time）：  该方法在设定的time之后才�
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/10/07/js中3个循环调用的方法/"
-     data-title="js中3个循环调用的方法"
+        <div class="ds-share flat" data-thread-key="2015/10/20/用Yeoman开始web应用/"
+     data-title="用Yeoman来生成项目文件"
      data-content=""
-     data-url="http://blog.yzzhuo.com/2015/10/07/js中3个循环调用的方法/">
+     data-url="http://blog.yzzhuo.com/2015/10/20/用Yeoman开始web应用/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -309,8 +337,8 @@ setTimeout（function（）{}，time）：  该方法在设定的time之后才�
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/10/07/js中3个循环调用的方法/"
-                   data-title="js中3个循环调用的方法" data-url="http://blog.yzzhuo.com/2015/10/07/js中3个循环调用的方法/">
+              <div class="ds-thread" data-thread-key="2015/10/20/用Yeoman开始web应用/"
+                   data-title="用Yeoman来生成项目文件" data-url="http://blog.yzzhuo.com/2015/10/20/用Yeoman开始web应用/">
               </div>
             
           </div>
@@ -409,7 +437,7 @@ setTimeout（function（）{}，time）：  该方法在设定的time之后才�
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#requestAnimFrame、setTimeout和setInterval三者的区别"><span class="nav-number">1.</span> <span class="nav-text">requestAnimFrame、setTimeout和setInterval三者的区别</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Yeoman实践"><span class="nav-number">1.</span> <span class="nav-text">Yeoman实践</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
