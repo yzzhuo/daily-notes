@@ -49,7 +49,7 @@
 <meta property="og:description" content="昨天经历了一次百度的电话面试（一次带着淡淡忧伤的面试，有时间再写个面筋）被问到BFC这个东西问到傻了。昨晚谷歌看了好多篇关于BFC的文章。在终于理清了BFC这个东西时，突然就有想写篇博文的冲动了呢！（怒~）
 
 在学习BFC这个东西前，先说说FC这两个字的含义吧。FC(Formatting Context):格式化上下文是W3C CSS2.1规范中的一个概念。它是页面中的一块渲染区域，并且有一套渲染">
-<meta property="og:updated_time" content="2016-07-20T03:25:08.192Z">
+<meta property="og:updated_time" content="2016-07-20T03:45:45.920Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS的BFC">
 <meta name="twitter:description" content="昨天经历了一次百度的电话面试（一次带着淡淡忧伤的面试，有时间再写个面筋）被问到BFC这个东西问到傻了。昨晚谷歌看了好多篇关于BFC的文章。在终于理清了BFC这个东西时，突然就有想写篇博文的冲动了呢！（怒~）
@@ -392,7 +392,7 @@
 <h3 id="拓展延伸思考">拓展延伸思考</h3><p> 看完了网络上各位大神对BFC详尽的介绍，总算知道了BFC这个家伙是干吗的了。这个学习的过程也伴随着几个曾经很纠结的问题。</p>
 <ol>
 <li><p><strong>页面写了普通的几个div，这时就存在了BFC了吗？</strong></p>
-<p> 实践正面是的，因为你写两个div时会发现它们垂直排列，而且垂直的边距margin发生了重叠，这符合BFC的特性。说明了根元素(html)会生成默认BFC供其子孙block-level box使用。</p>
+<p> 实践证明是的，因为你写两个div时会发现它们垂直排列，而且垂直的边距margin发生了重叠，这符合BFC的特性。说明了根元素(html)会生成默认BFC供其子孙block-level box使用。</p>
 </li>
 <li><p><strong>在和舍友讨论这个问题时，舍友说到，为什么明明叫做块级格式化上下文，生成一个BFC的条件怎么好像跟块级元素不搭边呢？</strong><br> 盒子是CSS布局的基本单位，CSS有不同类型的盒子，不同的盒子会参与不同的FC。display为block，table等的元素会生成块级盒子，参与BFC（html生成的默认的BFC）。但其实BFC这个概念对我们的最大作用是如何生成一个新的BFC,来达到自己想要的布局排版方式。</p>
 </li>
@@ -405,7 +405,7 @@
 </li>
 </ol>
 <h4 id="后话">后话</h4><p>对于IFC，等自己了解完有勇气了再写吧~！另外有了点人生感悟想拿来分享：年少无知的自己曾经觉得CSS和html是最容易学最小儿科的东西，觉得大不了用时有不会的再看看文档大概也能实现自己想要的效果。但是现在深刻体会到了CSS入门简单，精通难（前端也是这个道理）。很多时候原来我们不仅要知道怎么去实现一个效果和样式，更要去探究其实现的原理，通过探究学习这个原理，往往会发现一个我们未知的真理，而这个真理将带我们有一个质的飞跃~！</p>
-<p>在此感谢巨人让我看的更高<br>参考内容：<br><a href="小科普：到底什么是BFC、IFC、GFC和FFC，次奥？" title="http://www.xiaomeiti.com/note/3608">小科普：到底什么是BFC、IFC、GFC和FFC，次奥？</a><br><a href="CSS之BFC详解" title="http://www.html-js.com/article/1866">CSS之BFC详解</a><br><a href="https://segmentfault.com/a/1190000004625635#articleHeader11" target="_blank" rel="external">CSS魔法堂：重新认识Box Model、IFC、BFC和Collapsing margins</a><br><a href="https://www.w3.org/TR/CSS2/visuren.html#block-formatting" target="_blank" rel="external">W3C对BFC的定义</a></p>
+<p>在此感谢巨人让我看的更高<br>参考内容：<br><a href="http://www.xiaomeiti.com/note/3608" target="_blank" rel="external">小科普：到底什么是BFC、IFC、GFC和FFC，次奥？</a><br><a href="http://www.html-js.com/article/1866" target="_blank" rel="external">CSS之BFC详解</a><br><a href="https://segmentfault.com/a/1190000004625635#articleHeader11" target="_blank" rel="external">CSS魔法堂：重新认识Box Model、IFC、BFC和Collapsing margins</a><br><a href="https://www.w3.org/TR/CSS2/visuren.html#block-formatting" target="_blank" rel="external">W3C对BFC的定义</a></p>
 </span>
       
     </div>
