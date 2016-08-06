@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="前端工程化," />
+  <meta name="keywords" content="前端工程化 gulp," />
 
 
 
@@ -47,7 +47,7 @@
 <meta property="og:description" content="实习了一个星期，给我的工作还是比较简单的。根据设计稿来实现宣传页面。如果时间回退，接手这类工作，也许我会立刻开始切图，然后写html，css和js，并且在改样式的过程，少不了改完代码，为了看看效果，手动刷新页面。这样循环往复，等到大致完成了，再看看代码有什么要优化的，比如去掉无用的代码，顺便在压缩一下图片….终于完成的时候，感叹一声，前端真是个体力活啊！">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/63739cabjw1f6k4hxza1aj20d209fmxt.jpg">
 <meta property="og:image" content="https://cdn.css-tricks.com/wp-content/uploads/2015/08/bs-change-bg.gif">
-<meta property="og:updated_time" content="2016-08-06T10:30:22.441Z">
+<meta property="og:updated_time" content="2016-08-06T10:38:14.381Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端工程化-gulp应用篇1">
 <meta name="twitter:description" content="实习了一个星期，给我的工作还是比较简单的。根据设计稿来实现宣传页面。如果时间回退，接手这类工作，也许我会立刻开始切图，然后写html，css和js，并且在改样式的过程，少不了改完代码，为了看看效果，手动刷新页面。这样循环往复，等到大致完成了，再看看代码有什么要优化的，比如去掉无用的代码，顺便在压缩一下图片….终于完成的时候，感叹一声，前端真是个体力活啊！">
@@ -232,7 +232,7 @@
 
           <div class="site-state-item site-state-categories">
             
-              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-count">2</span>
               <span class="site-state-item-name">分类</span>
               
           </div>
@@ -284,7 +284,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">1.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么选择gulp？"><span class="nav-number">1.1.</span> <span class="nav-text">为什么选择gulp？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#此次工作流的目标"><span class="nav-number">1.2.</span> <span class="nav-text">此次工作流的目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装gulp"><span class="nav-number">1.3.</span> <span class="nav-text">安装gulp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#建立项目目录"><span class="nav-number">1.4.</span> <span class="nav-text">建立项目目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开始配置gulp来完成我们的第一个任务"><span class="nav-number">1.5.</span> <span class="nav-text">开始配置gulp来完成我们的第一个任务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#利用gulp来进行css预编译"><span class="nav-number">1.6.</span> <span class="nav-text">利用gulp来进行css预编译</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Globbing_in_Node"><span class="nav-number">1.7.</span> <span class="nav-text">Globbing in Node</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现浏览器实时更新"><span class="nav-number">1.8.</span> <span class="nav-text">实现浏览器实时更新</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">1.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么选择gulp？"><span class="nav-number">1.1.</span> <span class="nav-text">为什么选择gulp？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#此次工作流的目标"><span class="nav-number">1.2.</span> <span class="nav-text">此次工作流的目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装gulp"><span class="nav-number">1.3.</span> <span class="nav-text">安装gulp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#建立项目目录"><span class="nav-number">1.4.</span> <span class="nav-text">建立项目目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开始配置gulp来完成我们的第一个任务"><span class="nav-number">1.5.</span> <span class="nav-text">开始配置gulp来完成我们的第一个任务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#利用gulp来进行css预编译"><span class="nav-number">1.6.</span> <span class="nav-text">利用gulp来进行css预编译</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Globbing_in_Node"><span class="nav-number">1.7.</span> <span class="nav-text">Globbing in Node</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#监听sass文件的变化"><span class="nav-number">1.8.</span> <span class="nav-text">监听sass文件的变化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现浏览器实时更新"><span class="nav-number">1.9.</span> <span class="nav-text">实现浏览器实时更新</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -323,6 +323,21 @@
           </time>
         </span>
 
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/前端工程化/" itemprop="url" rel="index">
+                  <span itemprop="name">前端工程化</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
         
 
         
@@ -382,7 +397,7 @@
 .pipe(aGulpPlugin()) <span class="comment">// Sends it through a gulp plugin</span>
 .pipe(gulp.dest(<span class="string">'destination'</span>)) <span class="comment">// Outputs the file in the destination folder</span>
 })
-</code></pre><p>如你所见，一个实际的gulp task通常还会用到另外另个gulp的方法：<code>gulp.src</code>和<code>gulp.dest</code>。前者来告诉gulp task要应用在哪些文件上，后者则是告诉gulp要把任务处理的结果输出到哪里。</p>
+</code></pre><p>如你所见，一个实际的gulp task通常还会用到另外两个gulp的方法：<code>gulp.src</code>和<code>gulp.dest</code>。前者来告诉gulp task要应用在哪些文件上，后者则是告诉gulp要把任务处理的结果输出到哪里。</p>
 <h3 id="利用gulp来进行css预编译">利用gulp来进行css预编译</h3><p>为了把sass编译成css，我们需要利用一个模块叫<code>gulp-sass</code>。所以，先进行模块的安装</p>
 <pre><code>npm install gulp-sass --<span class="built_in">save</span>-<span class="built_in">dev</span>
 </code></pre><p>并且在文件中引入<br>    var sass = require(‘gulp-sass’);<br>建立一个叫做<code>sass</code>的任务来完成sass编译成css</p>
@@ -399,19 +414,21 @@
     });
 </code></pre><p>试着在scss文件写个样式然后在命令行运行<code>gulp sass</code>。运行结束，你就可以看到app/css文件下出现了一个编译好的css文件<code>styles.css</code>啦~但是，有人会问，如果我需要对多个sass文件一次性进行编译呢？那我们就需要<code>Node globs</code>来帮助了</p>
 <h3 id="Globbing_in_Node">Globbing in Node</h3><p>Globs用来匹配文件s，它类似正则表达式，但是通常用于文件匹配。</p>
-<p>多数基于gulp的工作流常常会用到一下四种glob表达式：    </p>
-<pre><code><span class="number">1</span>. <span class="escape">`*</span>.scss<span class="escape">`：</span>匹配当前项目目录下所有以scss为文件后缀的文件。  
-<span class="number">2</span>. <span class="escape">`*</span>*/*.scss<span class="escape">`:</span>匹配在当前目录下和任何子目录下的以scss为文件后缀的文件。    
-<span class="number">3</span>. <span class="escape">`！</span><span class="literal">not</span>-me.scss<span class="escape">`：</span>匹配中剔除<span class="literal">not</span>-me.scss，       
-<span class="number">4</span>. <span class="escape">`*</span>.+(scss|sass):<span class="escape">`:</span>匹配项目目录下任何以scss或者sass为文件后缀的文件。
-</code></pre><p>了解了这么多后，就可以修改我们上面的代码来达到编译多个sass文件的目的了：</p>
+<p>多数基于gulp的工作流常常会用到一下四种glob表达式：      </p>
+<ol>
+<li><code>*.scss</code>：匹配当前项目目录下所有以scss为文件后缀的文件。  </li>
+<li><code>**/*.scss</code>:匹配在当前目录下和任何子目录下的以scss为文件后缀的文件。    </li>
+<li><code>！not-me.scss</code>：匹配中剔除not-me.scss，       </li>
+<li><code>*.+(scss|sass):</code>:匹配项目目录下任何以scss或者sass为文件后缀的文件。</li>
+</ol>
+<p>了解了这么多后，就可以修改我们上面的代码来达到编译多个sass文件的目的了：</p>
 <pre><code>gulp.task(<span class="string">'sass'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span></span> {
       <span class="keyword">return</span> gulp.src(<span class="string">'app/scss/**/*.scss'</span>) // Gets all files ending with .scss <span class="keyword">in</span> app/scss <span class="keyword">and</span> children dirs
     .pipe(sass())
     .pipe(gulp.dest(<span class="string">'app/css'</span>))
 })
 </code></pre><p>不过，如果我们每次修改了sass文件，都要手动去命令行运行以下gulp sass的话其实也够呛。幸运的是，gulp提供了一个方法来监听文件的变化。</p>
-<p>###监听sass文件的变化<br>gulp的watch方法可以来帮我们监听文件是否发生了变化。该方法的用法大概如下：</p>
+<h3 id="监听sass文件的变化">监听sass文件的变化</h3><p>gulp的watch方法可以来帮我们监听文件是否发生了变化。该方法的用法大概如下：</p>
 <pre><code><span class="comment">// Gulp watch syntax</span>
 gulp.watch(<span class="string">'files-to-watch'</span>, [<span class="string">'tasks'</span>, <span class="string">'to'</span>, <span class="string">'run'</span>]);
 </code></pre><p>为了让gulp在我们对sass文件进行修改了之后自动帮我们进行编译，我们可以写上如下的代码：</p>
@@ -452,22 +469,20 @@ gulp.task(<span class="string">'browserSync'</span>, <span class="function"><spa
   gulp.watch(<span class="string">'app/scss/**/*.scss'</span>, [<span class="string">'sass'</span>]); 
   <span class="comment">// Other watchers</span>
 });
-</code></pre><p>现在，在命令行运行<code>gulp watch</code>，试着修改sass，发现样式在浏览器上得到了实时更新。so amazing  </p>
-<p>如果我们希望修改html，js文件也能在浏览器上实时更新呢？加上两条代码就行拉：</p>
+</code></pre><p>现在，在命令行运行<code>gulp watch</code>，试着修改sass，发现样式在浏览器上得到了实时更新。so amazing<br><img src="https://cdn.css-tricks.com/wp-content/uploads/2015/08/bs-change-bg.gif" alt=""><br>如果我们希望修改html，js文件也能在浏览器上实时更新呢？加上两条代码就行拉：</p>
 <pre><code>gulp.task(<span class="string">'watch'</span>, [<span class="string">'browserSync'</span>, <span class="string">'sass'</span>], <span class="function"><span class="keyword">function</span> <span class="params">()</span></span>{
       gulp.watch(<span class="string">'app/scss/**/*.scss'</span>, [<span class="string">'sass'</span>]); 
     <span class="comment">// Reloads the browser whenever HTML or JS files change</span>
     gulp.watch(<span class="string">'app/*.html'</span>, browserSync.reload); 
      gulp.watch(<span class="string">'app/js/**/*.js'</span>, browserSync.reload); 
 });
-</code></pre><p><img src="https://cdn.css-tricks.com/wp-content/uploads/2015/08/bs-change-bg.gif" alt=""></p>
-<p>至今我们已经完成了三件事了：   </p>
+</code></pre><p>至今我们已经完成了三件事了：   </p>
 <ol>
 <li>为开发需要跑一个本地服务器</li>
 <li>使用sass预编译  </li>
 <li>文件修改保存后浏览器可以实时刷新</li>
 </ol>
-<p>解析来就是要解决如何优化生产环境用的资源了，请听下回分解~</p>
+<p>下篇文章将会讲述解决如何优化生产环境用的资源，请听下回分解~</p>
 </span>
       
     </div>
@@ -476,7 +491,7 @@ gulp.task(<span class="string">'browserSync'</span>, <span class="function"><spa
       
         <div class="post-tags">
           
-            <a href="/tags/前端工程化/" rel="tag">#前端工程化</a>
+            <a href="/tags/前端工程化-gulp/" rel="tag">#前端工程化 gulp</a>
           
         </div>
       
