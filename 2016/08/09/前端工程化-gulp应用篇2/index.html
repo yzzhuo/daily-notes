@@ -39,23 +39,17 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="今天是七夕节，我和工作有个约会。尽管如此，心情还是很高兴，因为在公司负责的第一个项目赶在七夕佳节上线了。虽然是很简单的展示页面，但是做的过程也有了许多的收获，并且和工作伙伴也更加熟悉了，嘿嘿嘿。BUT回校路上的一个追魂夺命Call打破了今日的宁静….好吧，回归正题，继续讲“前端工程化的gulp应用篇”之下回分解。
-##正文
-优化CSS和JS文件通常在生产环节，我们会对css和js进行一些优化：压缩">
+<meta name="description" content="今天是七夕节，我和工作有个约会。尽管如此，心情还是很高兴，因为在公司负责的第一个项目赶在七夕佳节上线了。虽然是很简单的展示页面，但是做的过程也有了许多的收获，并且和工作伙伴也更加熟悉了，嘿嘿嘿。BUT回校路上的一个追魂夺命Call打破了今日的宁静….好吧，回归正题，继续讲“前端工程化的gulp应用篇”之下回分解。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端工程化-gulp应用篇2">
 <meta property="og:url" content="http://blog.yzzhuo.com/2016/08/09/前端工程化-gulp应用篇2/index.html">
 <meta property="og:site_name" content="珠君的博客">
-<meta property="og:description" content="今天是七夕节，我和工作有个约会。尽管如此，心情还是很高兴，因为在公司负责的第一个项目赶在七夕佳节上线了。虽然是很简单的展示页面，但是做的过程也有了许多的收获，并且和工作伙伴也更加熟悉了，嘿嘿嘿。BUT回校路上的一个追魂夺命Call打破了今日的宁静….好吧，回归正题，继续讲“前端工程化的gulp应用篇”之下回分解。
-##正文
-优化CSS和JS文件通常在生产环节，我们会对css和js进行一些优化：压缩">
+<meta property="og:description" content="今天是七夕节，我和工作有个约会。尽管如此，心情还是很高兴，因为在公司负责的第一个项目赶在七夕佳节上线了。虽然是很简单的展示页面，但是做的过程也有了许多的收获，并且和工作伙伴也更加熟悉了，嘿嘿嘿。BUT回校路上的一个追魂夺命Call打破了今日的宁静….好吧，回归正题，继续讲“前端工程化的gulp应用篇”之下回分解。">
 <meta property="og:image" content="https://cdn.css-tricks.com/wp-content/uploads/2015/08/useref-html-1024x291.png">
-<meta property="og:updated_time" content="2016-08-09T14:28:41.016Z">
+<meta property="og:updated_time" content="2016-08-09T14:34:53.419Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端工程化-gulp应用篇2">
-<meta name="twitter:description" content="今天是七夕节，我和工作有个约会。尽管如此，心情还是很高兴，因为在公司负责的第一个项目赶在七夕佳节上线了。虽然是很简单的展示页面，但是做的过程也有了许多的收获，并且和工作伙伴也更加熟悉了，嘿嘿嘿。BUT回校路上的一个追魂夺命Call打破了今日的宁静….好吧，回归正题，继续讲“前端工程化的gulp应用篇”之下回分解。
-##正文
-优化CSS和JS文件通常在生产环节，我们会对css和js进行一些优化：压缩">
+<meta name="twitter:description" content="今天是七夕节，我和工作有个约会。尽管如此，心情还是很高兴，因为在公司负责的第一个项目赶在七夕佳节上线了。虽然是很简单的展示页面，但是做的过程也有了许多的收获，并且和工作伙伴也更加熟悉了，嘿嘿嘿。BUT回校路上的一个追魂夺命Call打破了今日的宁静….好吧，回归正题，继续讲“前端工程化的gulp应用篇”之下回分解。">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -289,7 +283,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#优化CSS和JS文件"><span class="nav-number">1.</span> <span class="nav-text">优化CSS和JS文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化图片"><span class="nav-number">2.</span> <span class="nav-text">优化图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对于fonts等其它资源"><span class="nav-number">3.</span> <span class="nav-text">对于fonts等其它资源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动清空生成的文件"><span class="nav-number">4.</span> <span class="nav-text">自动清空生成的文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对gulp_tasks进行合并"><span class="nav-number">5.</span> <span class="nav-text">对gulp tasks进行合并</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#这就是所有了吗？"><span class="nav-number">6.</span> <span class="nav-text">这就是所有了吗？</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">1.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#优化CSS和JS文件"><span class="nav-number">1.1.</span> <span class="nav-text">优化CSS和JS文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化图片"><span class="nav-number">1.2.</span> <span class="nav-text">优化图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对fonts等其它资源进行简单输出"><span class="nav-number">1.3.</span> <span class="nav-text">对fonts等其它资源进行简单输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动清空生成的文件"><span class="nav-number">1.4.</span> <span class="nav-text">自动清空生成的文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对gulp_tasks进行合并"><span class="nav-number">1.5.</span> <span class="nav-text">对gulp tasks进行合并</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#这就是所有了吗？"><span class="nav-number">1.6.</span> <span class="nav-text">这就是所有了吗？</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -365,8 +359,8 @@
 
       
         <span itemprop="articleBody"><p>今天是七夕节，我和工作有个约会。尽管如此，心情还是很高兴，因为在公司负责的第一个项目赶在七夕佳节上线了。虽然是很简单的展示页面，但是做的过程也有了许多的收获，并且和工作伙伴也更加熟悉了，嘿嘿嘿。BUT回校路上的一个追魂夺命Call打破了今日的宁静….好吧，回归正题，继续讲“前端工程化的gulp应用篇”之下回分解。</p>
-<p>##正文</p>
-<h3 id="优化CSS和JS文件">优化CSS和JS文件</h3><p>通常在生产环节，我们会对css和js进行一些优化：压缩和合并。这样可以减少http请求和减少文件大小，从而实现一定程度的性能优化。<br>在gulp中，我们可以用<a href="https://www.npmjs.com/package/gulp-useref" target="_blank" rel="external"><code>gulp-useref</code></a>来帮助我们进行合并。</p>
+<a id="more"></a>
+<h2 id="正文">正文</h2><h3 id="优化CSS和JS文件">优化CSS和JS文件</h3><p>通常在生产环节，我们会对css和js进行一些优化：压缩和合并。这样可以减少http请求和减少文件大小，从而实现一定程度的性能优化。<br>在gulp中，我们可以用<a href="https://www.npmjs.com/package/gulp-useref" target="_blank" rel="external"><code>gulp-useref</code></a>来帮助我们进行合并。</p>
 <p><code>gulp-useref</code>通过在html加入一段注释来判断要对那些文件进行合并。</p>
 <pre><code><span class="comment">&lt;!-- build:&lt;type&gt; &lt;path&gt; --&gt;</span>
 ... HTML Markup, list of script / link tags.
@@ -403,8 +397,10 @@ gulp.task(<span class="string">'useref'</span>, <span class="function"><span cla
 <span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">href</span>=<span class="value">"css/styles.css"</span>&gt;</span>
 <span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">href</span>=<span class="value">"css/another-stylesheet.css"</span>&gt;</span>
 <span class="comment">&lt;!--endbuild--&gt;</span>
-</code></pre><p>gulpfile配置<br>    var cssnano = require(‘gulp-cssnano’);</p>
-<pre><code>gulp.task(<span class="string">'useref'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
+</code></pre><p>gulpfile配置</p>
+<pre><code><span class="keyword">var</span> cssnano = <span class="built_in">require</span>(<span class="string">'gulp-cssnano'</span>);
+
+gulp.task(<span class="string">'useref'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
       <span class="keyword">return</span> gulp.src(<span class="string">'app/*.html'</span>)
                 .pipe(useref())
                     .pipe(gulpIf(<span class="string">'*.js'</span>, uglify()))
@@ -412,7 +408,14 @@ gulp.task(<span class="string">'useref'</span>, <span class="function"><span cla
                     .pipe(gulpIf(<span class="string">'*.css'</span>, cssnano()))
                     .pipe(gulp.dest(<span class="string">'dist'</span>))
 });
-</code></pre><h3 id="优化图片">优化图片</h3><p><code>gulp-imagemin</code>可以帮我们对图片进行压缩。利用这个插件，我们可以对png，jpg，gif甚至是svg进行压缩，来上栗子：<br>    var imagemin = require(‘gulp-imagemin’);<br>    gulp.task(‘images’, function(){<br>              return gulp.src(‘app/images/<em>*/</em>.+(png|jpg|gif|svg)’)<br>                          .pipe(imagemin())<br>                          .pipe(gulp.dest(‘dist/images’))<br>            });<br><code>imagemin()</code>方法可以传入其它的参数对压缩进行设置，具体看<a href="https://www.npmjs.com/package/gulp-imagemin" target="_blank" rel="external"><code>gulp-imagemin</code>文档</a>。</p>
+</code></pre><h3 id="优化图片">优化图片</h3><p><code>gulp-imagemin</code>可以帮我们对图片进行压缩。利用这个插件，我们可以对png，jpg，gif甚至是svg进行压缩，来上栗子：</p>
+<pre><code><span class="keyword">var</span> imagemin = <span class="built_in">require</span>(<span class="string">'gulp-imagemin'</span>);
+gulp.task(<span class="string">'images'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+          <span class="keyword">return</span> gulp.src(<span class="string">'app/images/**/*.+(png|jpg|gif|svg)'</span>)
+                      .pipe(imagemin())
+                      .pipe(gulp.dest(<span class="string">'dist/images'</span>))
+        });
+</code></pre><p><code>imagemin()</code>方法可以传入其它的参数对压缩进行设置，具体看<a href="https://www.npmjs.com/package/gulp-imagemin" target="_blank" rel="external"><code>gulp-imagemin</code>文档</a>。</p>
 <p>图片压缩的过程或许会比较慢，有时我们无需对所有图片重复进行压缩，为了达到这个目的，我们可以用<code>gulp-cache</code>。</p>
 <pre><code><span class="keyword">var</span> cache = <span class="built_in">require</span>(<span class="string">'gulp-cache'</span>);
 
@@ -422,7 +425,7 @@ gulp.task(<span class="string">'images'</span>, <span class="function"><span cla
                   .pipe(cache(imagemin()))
                   .pipe(gulp.dest(<span class="string">'dist/images'</span>))
     });
-</code></pre><h3 id="对于fonts等其它资源">对于fonts等其它资源</h3><p>有些资源，如果我们无须进行进一步处理，仅仅想把它从app目录（开发环境）复制到dist（生产环境）中，那就只要简单的进行输出和输出就好啦~</p>
+</code></pre><h3 id="对fonts等其它资源进行简单输出">对fonts等其它资源进行简单输出</h3><p>有些资源，如果我们无须进行进一步处理，仅仅想把它从app目录（开发环境）复制到dist（生产环境）中，那就只要简单的进行输出和输出就好啦~</p>
 <pre><code>gulp.task(<span class="string">'fonts'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{
       <span class="keyword">return</span> gulp.src(<span class="string">'app/fonts/**/*'</span>)
                   .pipe(gulp.dest(<span class="string">'dist/fonts'</span>))
@@ -464,7 +467,7 @@ gulp.task(<span class="symbol">'task</span>-name', <span class="keyword">functio
       )
 })
 </code></pre><p>注意，名为default的task可以直接在命令行运行gulp来执行该任务。</p>
-<h3 id="这就是所有了吗？">这就是所有了吗？</h3><p>通过上面的教程，我们可以配置出一个简单的前端工作流，代码已经po到github上了<a href="https://github.com/yzzhuo/basic-workflow" target="_blank" rel="external"><code>basic-workflow</code></a>.开发过程，我们可以通过<code>gulp</code>命令来自动编译sass并且在浏览器自动刷新等，完成了开发后通过<code>gulp build</code>就可以优化资源，输出到用语生产环节的dist目录中。</p>
+<h3 id="这就是所有了吗？">这就是所有了吗？</h3><p>通过上面的教程，我们可以配置出一个简单的前端工作流，代码已经po到github上了<a href="https://github.com/yzzhuo/basic-workflow" target="_blank" rel="external"><code>basic-workflow</code></a>。开发过程，我们可以通过<code>gulp</code>命令来自动编译sass并且在浏览器自动刷新等，完成了开发后通过<code>gulp build</code>就可以优化资源，输出到用于生产的dist目录中。</p>
 <p>但是，千万别以为它能做的只是这些。你可以做更多的事情：    </p>
 <ul>
 <li><a href="https://www.npmjs.com/package/gulp-sourcemaps" target="_blank" rel="external">sourcemap</a>可以更容易定位到错误     </li>
@@ -473,7 +476,7 @@ gulp.task(<span class="symbol">'task</span>-name', <span class="keyword">functio
 <li>利用模板引擎模块化html       </li>
 <li>自动部署到服务器<br>….</li>
 </ul>
-<p><strong>对于不同的项目，可能需要根据自己的需求来构件不一样的前端工作流。但一旦能在开发之前构建出一个好的前端工作流，开发工作就会达到事半功倍的效果。用gulp就像有了一个供使唤的小弟，工作一下子轻松了许多，so amazing</strong></p>
+<p><strong>对于不同的项目，可能需要根据自己的需求来构件不一样的前端工作流。但一旦能在开发之前构建出一个好的前端工作流，开发工作就会达到事半功倍的效果。用gulp就像有了一个供使唤的小弟，工作一下子轻松了许多，姐姐我终于不用到处瞎折腾啦</strong></p>
 </span>
       
     </div>

@@ -342,117 +342,12 @@
 
       
         
-          <span itemprop="articleBody"><p>今天是七夕节，我和工作有个约会。尽管如此，心情还是很高兴，因为在公司负责的第一个项目赶在七夕佳节上线了。虽然是很简单的展示页面，但是做的过程也有了许多的收获，并且和工作伙伴也更加熟悉了，嘿嘿嘿。BUT回校路上的一个追魂夺命Call打破了今日的宁静….好吧，回归正题，继续讲“前端工程化的gulp应用篇”之下回分解。</p>
-<p>##正文</p>
-<h3 id="优化CSS和JS文件">优化CSS和JS文件</h3><p>通常在生产环节，我们会对css和js进行一些优化：压缩和合并。这样可以减少http请求和减少文件大小，从而实现一定程度的性能优化。<br>在gulp中，我们可以用<a href="https://www.npmjs.com/package/gulp-useref" target="_blank" rel="external"><code>gulp-useref</code></a>来帮助我们进行合并。</p>
-<p><code>gulp-useref</code>通过在html加入一段注释来判断要对那些文件进行合并。</p>
-<pre><code><span class="comment">&lt;!-- build:&lt;type&gt; &lt;path&gt; --&gt;</span>
-... HTML Markup, list of script / link tags.
-<span class="comment">&lt;!-- endbuild --&gt;</span>
-</code></pre><p><code>&lt;type&gt;</code>可以是js，css或其它。<code>&lt;path&gt;</code>则是指合并目标的路径。   </p>
-<p>如果想把我们js里面的几个文件合并为一个<code>main.min.js</code>，html中添加如下代码：</p>
-<pre><code><span class="comment">&lt;!--build:js js/main.min.js --&gt;</span>
-<span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"js/lib/a-library.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
-<span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"js/lib/another-library.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
-<span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"js/main.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
-<span class="comment">&lt;!-- endbuild --&gt;</span>
-</code></pre><p>之后，还要在gulpfile文件进行配置（安装gulp-useref的过程我就省略了,后面的模块安装过程也同样省略了）</p>
-<pre><code><span class="keyword">var</span> useref = <span class="built_in">require</span>(<span class="string">'gulp-useref'</span>);
-
-gulp.task(<span class="string">'useref'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-      <span class="keyword">return</span> gulp.src(<span class="string">'app/*.html'</span>)
-                .pipe(useref())
-                .pipe(gulp.dest(<span class="string">'dist'</span>))
-});
-</code></pre><p>运行gulp useref，gulp就会合并注释标注的那3个js文件为main.min.js，并且dist文件也会有一个html文件，引用js的script标签也变成一个。（强烈建议自己动手试试，观察下结果！）<br><img src="https://cdn.css-tricks.com/wp-content/uploads/2015/08/useref-html-1024x291.png" alt=""><br>合并之后的文件，其实没有被压缩，这时我们可以用<code>gulp-uglify</code>来帮助我们对文件进行压缩，为了判断只对js文件进行压缩，我们还要引入另外一个压缩<code>gulp-if</code>。</p>
-<pre><code><span class="comment">// Other requires...</span>
-<span class="keyword">var</span> uglify = <span class="built_in">require</span>(<span class="string">'gulp-uglify'</span>);
-<span class="keyword">var</span> gulpIf = <span class="built_in">require</span>(<span class="string">'gulp-if'</span>);
-
-gulp.task(<span class="string">'useref'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-          <span class="keyword">return</span> gulp.src(<span class="string">'app/*.html'</span>)
-                    .pipe(useref())
-        <span class="comment">// Minifies only if it's a JavaScript file</span>
-                    .pipe(gulpIf(<span class="string">'*.js'</span>, uglify()))
-                    .pipe(gulp.dest(<span class="string">'dist'</span>))
-});
-</code></pre><p>现在当我们运行了useref任务（合并了文件）之后gulp就立刻帮我们对合并的文件进行压缩。so wonderfu~我们可以似乎用相同的方法来对css文件进行合并，然后用<code>gulp-cssnano</code>来帮助我们对css文件进行压缩。</p>
-<pre><code><span class="comment">&lt;!--build:css css/styles.min.css--&gt;</span>
-<span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">href</span>=<span class="value">"css/styles.css"</span>&gt;</span>
-<span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">href</span>=<span class="value">"css/another-stylesheet.css"</span>&gt;</span>
-<span class="comment">&lt;!--endbuild--&gt;</span>
-</code></pre><p>gulpfile配置<br>    var cssnano = require(‘gulp-cssnano’);</p>
-<pre><code>gulp.task(<span class="string">'useref'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
-      <span class="keyword">return</span> gulp.src(<span class="string">'app/*.html'</span>)
-                .pipe(useref())
-                    .pipe(gulpIf(<span class="string">'*.js'</span>, uglify()))
-                <span class="comment">// Minifies only if it's a CSS file</span>
-                    .pipe(gulpIf(<span class="string">'*.css'</span>, cssnano()))
-                    .pipe(gulp.dest(<span class="string">'dist'</span>))
-});
-</code></pre><h3 id="优化图片">优化图片</h3><p><code>gulp-imagemin</code>可以帮我们对图片进行压缩。利用这个插件，我们可以对png，jpg，gif甚至是svg进行压缩，来上栗子：<br>    var imagemin = require(‘gulp-imagemin’);<br>    gulp.task(‘images’, function(){<br>              return gulp.src(‘app/images/<em>*/</em>.+(png|jpg|gif|svg)’)<br>                          .pipe(imagemin())<br>                          .pipe(gulp.dest(‘dist/images’))<br>            });<br><code>imagemin()</code>方法可以传入其它的参数对压缩进行设置，具体看<a href="https://www.npmjs.com/package/gulp-imagemin" target="_blank" rel="external"><code>gulp-imagemin</code>文档</a>。</p>
-<p>图片压缩的过程或许会比较慢，有时我们无需对所有图片重复进行压缩，为了达到这个目的，我们可以用<code>gulp-cache</code>。</p>
-<pre><code><span class="keyword">var</span> cache = <span class="built_in">require</span>(<span class="string">'gulp-cache'</span>);
-
-gulp.task(<span class="string">'images'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-      <span class="keyword">return</span> gulp.src(<span class="string">'app/images/**/*.+(png|jpg|jpeg|gif|svg)'</span>)
-          <span class="comment">// Caching images that ran through imagemin</span>
-                  .pipe(cache(imagemin()))
-                  .pipe(gulp.dest(<span class="string">'dist/images'</span>))
-    });
-</code></pre><h3 id="对于fonts等其它资源">对于fonts等其它资源</h3><p>有些资源，如果我们无须进行进一步处理，仅仅想把它从app目录（开发环境）复制到dist（生产环境）中，那就只要简单的进行输出和输出就好啦~</p>
-<pre><code>gulp.task(<span class="string">'fonts'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{
-      <span class="keyword">return</span> gulp.src(<span class="string">'app/fonts/**/*'</span>)
-                  .pipe(gulp.dest(<span class="string">'dist/fonts'</span>))
-    })
-</code></pre><p>我们现在有六个gulp任务可以进行不同的处理，为了方便我们使用，我们往往想把多个任务合并成一个任务，这样，我们只要运行一个命令就能执行多个任务了。但在此之前，我们可以了解一下怎么把生成的文件进行清空。</p>
-<h3 id="自动清空生成的文件">自动清空生成的文件</h3><p>因为通过gulp的一些任务，gulp会自动帮我们生成一些文件，但是对于我们之前生成的，但是现在不需要的文件，我们需要对其进行清空时，就需要<code>del</code>模块来帮助我们。</p>
-<p><code>del（）</code>方法可以接收一组node globs来告诉gulp哪些文件要被删除。如果我们想把dist文件全部清空的话，这样就可以实现：</p>
-<pre><code>gulp.task(<span class="string">'clean:dist'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{
-      <span class="keyword">return</span> del.sync(<span class="string">'dist'</span>);
-    })
-</code></pre><p>但是，前面<code>gulp-cache</code>来报错在缓存中的<code>dist/images</code>是不会被删除的，如果你想把这个文件也删除了，可以这样写：</p>
-<pre><code>gulp.task(<span class="string">'cache:clear'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(callback)</span> </span>{
-    <span class="keyword">return</span> cache.clearAll(<span class="keyword">callback</span>)
-    })
-</code></pre><h3 id="对gulp_tasks进行合并">对gulp tasks进行合并</h3><p>回想一下我们至今做的一切。<br>对于开发环境，我们把sass编译成css，而且对其进行实时监控，浏览器可以在文件修改保存后自动刷新。  对于生产环境，我们对css和js进行合并压缩，对图片进行了压缩，对其它一些资源（fonts）直接进行复制。<br>对于后者，我们可以建立一个<code>build</code>来合并我们的<code>clean:dist</code>,<code>sass</code>.<code>useref</code>,<code>images</code>和<code>fonts</code>，有人会想到这么写：</p>
-<pre><code>gulp.task(<span class="string">'build'</span>, [<span class="string">`clean`</span>, <span class="string">`sass`</span>, <span class="string">`useref`</span>, <span class="string">`images`</span>, <span class="string">`fonts`</span>], <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>{
-        <span class="built_in">console</span>.log(<span class="string">'Building files'</span>);
-})
-</code></pre><p>然而，当我们执行build时，gulp会自发同时地去执行中括号里面的所有任务。</p>
-<p>我们希望的是<code>clean</code>任务执行完了之后才执行其它任务。所以，为了按顺序执行某些任务，我们可以借助<code>run-sequence</code>。</p>
-<pre><code>var runSequence = require(<span class="symbol">'run</span>-sequence');
-
-gulp.task(<span class="symbol">'task</span>-name', <span class="keyword">function</span>(callback) {
-      runSequence(<span class="symbol">'task</span>-one', <span class="symbol">'task</span>-two', <span class="symbol">'task</span>-three', callback);
-    });
-</code></pre><p>当<code>task-name</code>被执行，gulp会先运行<code>task-one</code>，运行完这个任务，再执行<code>task-two</code>，执行完了再执行最后一个任务。<br><code>run-sequence</code>也允许同步执行某些任务：</p>
-<pre><code>gulp.task(<span class="string">'task-name'</span>, <span class="function"><span class="keyword">function</span><span class="params">(callback)</span> </span>{
-      runSequence(<span class="string">'task-one'</span>, [<span class="string">'tasks'</span>,<span class="string">'two'</span>,<span class="string">'run'</span>,<span class="string">'in'</span>,<span class="string">'parallel'</span>], <span class="string">'task-three'</span>, <span class="keyword">callback</span>);
-});
-</code></pre><p>这种情况下，gulp先运行task-one,运行完了再同时执行第二个参数里面的任务，里面的所有任务执行完毕就执行task-three。</p>
-<p>好了，来构建我们生产环境的指令：</p>
-<pre><code>gulp.task(<span class="string">'build'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(callback)</span> </span>{
-      runSequence(<span class="string">'clean:dist'</span>, [<span class="string">'sass'</span>, <span class="string">'useref'</span>, <span class="string">'images'</span>, <span class="string">'fonts'</span>], <span class="keyword">callback</span>
-  )
-})
-</code></pre><p>对于开发环境的指令，类似的方法，可以这么写：</p>
-<pre><code>gulp.task(<span class="string">'default'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(callback)</span> </span>{
-      runSequence([<span class="string">'sass'</span>,<span class="string">'browserSync'</span>, <span class="string">'watch'</span>],<span class="keyword">callback</span>
-      )
-})
-</code></pre><p>注意，名为default的task可以直接在命令行运行gulp来执行该任务。</p>
-<h3 id="这就是所有了吗？">这就是所有了吗？</h3><p>通过上面的教程，我们可以配置出一个简单的前端工作流，代码已经po到github上了<a href="https://github.com/yzzhuo/basic-workflow" target="_blank" rel="external"><code>basic-workflow</code></a>.开发过程，我们可以通过<code>gulp</code>命令来自动编译sass并且在浏览器自动刷新等，完成了开发后通过<code>gulp build</code>就可以优化资源，输出到用语生产环节的dist目录中。</p>
-<p>但是，千万别以为它能做的只是这些。你可以做更多的事情：    </p>
-<ul>
-<li><a href="https://www.npmjs.com/package/gulp-sourcemaps" target="_blank" rel="external">sourcemap</a>可以更容易定位到错误     </li>
-<li><a href="https://www.npmjs.com/package/sprity" target="_blank" rel="external">sprity</a>或者gulp.spritesmith可以合成雪碧图        </li>
-<li>通过webpack，browserify模块化js文件            </li>
-<li>利用模板引擎模块化html       </li>
-<li>自动部署到服务器<br>….</li>
-</ul>
-<p><strong>对于不同的项目，可能需要根据自己的需求来构件不一样的前端工作流。但一旦能在开发之前构建出一个好的前端工作流，开发工作就会达到事半功倍的效果。用gulp就像有了一个供使唤的小弟，工作一下子轻松了许多，so amazing</strong></p>
-</span>
+          <p>今天是七夕节，我和工作有个约会。尽管如此，心情还是很高兴，因为在公司负责的第一个项目赶在七夕佳节上线了。虽然是很简单的展示页面，但是做的过程也有了许多的收获，并且和工作伙伴也更加熟悉了，嘿嘿嘿。BUT回校路上的一个追魂夺命Call打破了今日的宁静….好吧，回归正题，继续讲“前端工程化的gulp应用篇”之下回分解。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/08/09/前端工程化-gulp应用篇2/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
