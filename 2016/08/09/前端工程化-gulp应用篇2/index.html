@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,next" />
+  <meta name="keywords" content="gulp," />
 
 
 
@@ -39,15 +39,23 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="be a dreamer">
-<meta property="og:type" content="website">
-<meta property="og:title" content="珠君的博客">
-<meta property="og:url" content="http://blog.yzzhuo.com/index.html">
+<meta name="description" content="今天是七夕节，我和工作有个约会。尽管如此，心情还是很高兴，因为在公司负责的第一个项目赶在七夕佳节上线了。虽然是很简单的展示页面，但是做的过程也有了许多的收获，并且和工作伙伴也更加熟悉了，嘿嘿嘿。BUT回校路上的一个追魂夺命Call打破了今日的宁静….好吧，回归正题，继续讲“前端工程化的gulp应用篇”之下回分解。
+##正文
+优化CSS和JS文件通常在生产环节，我们会对css和js进行一些优化：压缩">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端工程化-gulp应用篇2">
+<meta property="og:url" content="http://blog.yzzhuo.com/2016/08/09/前端工程化-gulp应用篇2/index.html">
 <meta property="og:site_name" content="珠君的博客">
-<meta property="og:description" content="be a dreamer">
+<meta property="og:description" content="今天是七夕节，我和工作有个约会。尽管如此，心情还是很高兴，因为在公司负责的第一个项目赶在七夕佳节上线了。虽然是很简单的展示页面，但是做的过程也有了许多的收获，并且和工作伙伴也更加熟悉了，嘿嘿嘿。BUT回校路上的一个追魂夺命Call打破了今日的宁静….好吧，回归正题，继续讲“前端工程化的gulp应用篇”之下回分解。
+##正文
+优化CSS和JS文件通常在生产环节，我们会对css和js进行一些优化：压缩">
+<meta property="og:image" content="https://cdn.css-tricks.com/wp-content/uploads/2015/08/useref-html-1024x291.png">
+<meta property="og:updated_time" content="2016-08-09T14:28:41.016Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="珠君的博客">
-<meta name="twitter:description" content="be a dreamer">
+<meta name="twitter:title" content="前端工程化-gulp应用篇2">
+<meta name="twitter:description" content="今天是七夕节，我和工作有个约会。尽管如此，心情还是很高兴，因为在公司负责的第一个项目赶在七夕佳节上线了。虽然是很简单的展示页面，但是做的过程也有了许多的收获，并且和工作伙伴也更加熟悉了，嘿嘿嘿。BUT回校路上的一个追魂夺命Call打破了今日的宁静….好吧，回归正题，继续讲“前端工程化的gulp应用篇”之下回分解。
+##正文
+优化CSS和JS文件通常在生产环节，我们会对css和js进行一些优化：压缩">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -57,7 +65,7 @@
   };
 </script>
 
-  <title> 珠君的博客 </title>
+  <title> 前端工程化-gulp应用篇2 | 珠君的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -85,9 +93,7 @@
 
 
 
-  <div class="container one-column 
-   page-home 
-">
+  <div class="container one-column page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -192,8 +198,6 @@
     <main id="main" class="main">
       <div class="main-inner">
         
-        <div id="content" class="content"> 
-  
   
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
@@ -206,6 +210,15 @@
   <aside id="sidebar" class="sidebar">
     <div class="sidebar-inner">
 
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
       
 
       <section class="site-overview">
@@ -271,14 +284,26 @@
       </section>
 
       
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#优化CSS和JS文件"><span class="nav-number">1.</span> <span class="nav-text">优化CSS和JS文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化图片"><span class="nav-number">2.</span> <span class="nav-text">优化图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对于fonts等其它资源"><span class="nav-number">3.</span> <span class="nav-text">对于fonts等其它资源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动清空生成的文件"><span class="nav-number">4.</span> <span class="nav-text">自动清空生成的文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对gulp_tasks进行合并"><span class="nav-number">5.</span> <span class="nav-text">对gulp tasks进行合并</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#这就是所有了吗？"><span class="nav-number">6.</span> <span class="nav-text">这就是所有了吗？</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
 
     </div>
   </aside>
 
 
-<section id="posts" class="posts-expand">
+        <div id="content" class="content"> 
+
+  <div id="posts" class="posts-expand">
     
-      
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
@@ -289,9 +314,7 @@
           
           
             
-              <a class="post-title-link" href="/2016/08/09/前端工程化-gulp应用篇2/" itemprop="url">
-                前端工程化-gulp应用篇2
-              </a>
+              前端工程化-gulp应用篇2
             
           
         </h1>
@@ -341,8 +364,7 @@
       
 
       
-        
-          <span itemprop="articleBody"><p>今天是七夕节，我和工作有个约会。尽管如此，心情还是很高兴，因为在公司负责的第一个项目赶在七夕佳节上线了。虽然是很简单的展示页面，但是做的过程也有了许多的收获，并且和工作伙伴也更加熟悉了，嘿嘿嘿。BUT回校路上的一个追魂夺命Call打破了今日的宁静….好吧，回归正题，继续讲“前端工程化的gulp应用篇”之下回分解。</p>
+        <span itemprop="articleBody"><p>今天是七夕节，我和工作有个约会。尽管如此，心情还是很高兴，因为在公司负责的第一个项目赶在七夕佳节上线了。虽然是很简单的展示页面，但是做的过程也有了许多的收获，并且和工作伙伴也更加熟悉了，嘿嘿嘿。BUT回校路上的一个追魂夺命Call打破了今日的宁静….好吧，回归正题，继续讲“前端工程化的gulp应用篇”之下回分解。</p>
 <p>##正文</p>
 <h3 id="优化CSS和JS文件">优化CSS和JS文件</h3><p>通常在生产环节，我们会对css和js进行一些优化：压缩和合并。这样可以减少http请求和减少文件大小，从而实现一定程度的性能优化。<br>在gulp中，我们可以用<a href="https://www.npmjs.com/package/gulp-useref" target="_blank" rel="external"><code>gulp-useref</code></a>来帮助我们进行合并。</p>
 <p><code>gulp-useref</code>通过在html加入一段注释来判断要对那些文件进行合并。</p>
@@ -453,508 +475,75 @@ gulp.task(<span class="symbol">'task</span>-name', <span class="keyword">functio
 </ul>
 <p><strong>对于不同的项目，可能需要根据自己的需求来构件不一样的前端工作流。但一旦能在开发之前构建出一个好的前端工作流，开发工作就会达到事半功倍的效果。用gulp就像有了一个供使唤的小弟，工作一下子轻松了许多，so amazing</strong></p>
 </span>
-        
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
+        <div class="post-tags">
           
+            <a href="/tags/gulp/" rel="tag">#gulp</a>
           
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
             
-              <a class="post-title-link" href="/2016/08/06/前端工程化之gulp应用篇(1)/" itemprop="url">
-                前端工程化-gulp应用篇1
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2016-08-06T16:07:15+08:00" content="2016-08-06">
-            2016-08-06
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/前端工程化/" itemprop="url" rel="index">
-                  <span itemprop="name">前端工程化</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2016/08/06/前端工程化之gulp应用篇(1)/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/06/前端工程化之gulp应用篇(1)/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <p>实习了一个星期，给我的工作还是比较简单的。根据设计稿来实现宣传页面。如果时间回退，接手这类工作，也许我会立刻开始切图，然后写html，css和js，并且在改样式的过程，少不了改完代码，为了看看效果，手动刷新页面。这样循环往复，等到大致完成了，再看看代码有什么要优化的，比如去掉无用的代码，顺便在压缩一下图片….终于完成的时候，感叹一声，前端真是个体力活啊！</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/08/06/前端工程化之gulp应用篇(1)/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
           </div>
-        
-      
-    </div>
 
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
+          <div class="post-nav-next post-nav-item">
             
-              <a class="post-title-link" href="/2016/07/20/CSS的BFC/" itemprop="url">
-                CSS的BFC
-              </a>
+              <a href="/2016/08/06/前端工程化之gulp应用篇(1)/" rel="next">前端工程化-gulp应用篇1</a>
             
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2016-07-20T09:33:22+08:00" content="2016-07-20">
-            2016-07-20
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/CSS/" itemprop="url" rel="index">
-                  <span itemprop="name">CSS</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2016/07/20/CSS的BFC/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/20/CSS的BFC/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <p>昨天经历了一次百度的电话面试（一次带着淡淡忧伤的面试，有时间再写个面筋）被问到BFC这个东西问到傻了。昨晚谷歌看了好多篇关于BFC的文章。在终于理清了BFC这个东西时，突然就有想写篇博文的冲动了呢！（怒~）</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/07/20/CSS的BFC/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
           </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
+        </div>
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
+
+    <div class="post-spread">
       
+        <div class="ds-share flat" data-thread-key="2016/08/09/前端工程化-gulp应用篇2/"
+     data-title="前端工程化-gulp应用篇2"
+     data-content=""
+     data-url="http://blog.yzzhuo.com/2016/08/09/前端工程化-gulp应用篇2/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
 
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/11/05/hello-world/" itemprop="url">
-                用hexo快速搭建博客
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-11-05T18:35:26+08:00" content="2015-11-05">
-            2015-11-05
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/11/05/hello-world/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/05/hello-world/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <p>Welcome to <a href="http://hexo.io/">Hexo</a>! This is my very first post. Check <a href="http://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/11/05/hello-world/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
       
     </div>
+  </div>
 
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/10/20/用Yeoman开始web应用/" itemprop="url">
-                用Yeoman来创建我的web应用
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-10-20T11:07:35+08:00" content="2015-10-20">
-            2015-10-20
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/10/20/用Yeoman开始web应用/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/20/用Yeoman开始web应用/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <p>  最近在用AngularJS折腾些东西，打算写一个基于Angular的项目，打算手动创建时被告知可以用Yeoman来生成Angualr项目文件，于是乎去了解了一下Yeoman这玩意。</p>
-<blockquote>
-<p>官网显示Yeoman是一个现代Web app的脚手架工具，这里的脚手架就是说在开发者开发web应用的立项阶段，可以使用Yeoman来生成项目的文件和代码结构。</p>
-</blockquote>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/10/20/用Yeoman开始web应用/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/10/11/bower入门/" itemprop="url">
-                bower入门
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-10-11T23:38:50+08:00" content="2015-10-11">
-            2015-10-11
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/10/11/bower入门/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/11/bower入门/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>随着网页功能变得越来越复杂，同一张网页加载多个JavaScript函数库早已是家常便饭。开发者越来越需要一个工具，对浏览器端的各种库进行管理，比如搜索、自动安装\卸载、检查更新、确保依赖关系等等。Bower就是为了解决这个问题而诞生的针对浏览器端的库管理工具。</p>
-</blockquote>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/10/11/bower入门/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/10/07/js中3个循环调用的方法/" itemprop="url">
-                js中3个循环调用的方法
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-10-07T22:18:44+08:00" content="2015-10-07">
-            2015-10-07
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/10/07/js中3个循环调用的方法/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/07/js中3个循环调用的方法/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <h3 id="requestAnimFrame、setTimeout和setInterval三者的区别">requestAnimFrame、setTimeout和setInterval三者的区别</h3><ul>
-<li>requestAnimFrame（function（）{}）<br>  根据电脑的性能来决定调用的时间间隔。</li>
-<li>setTimeout（function（）{}，time）：<br>  该方法在设定的time之后才会执行一次。<br>  setTimeout( ) 预设只是执行一次, 但我们可以使用一个循环方式, 使到一个setTimeout( ) 再启动自己一次, 就会使到第二个 setTimeout( ) 执行, 第二个又启动第三个, 这样循环下去, 这 setTimeout( ) 就会不断执行。</li>
-<li>setInterval（function（）{}，time）<br>  该方法被调用后会立刻执行function，之后每间隔time之后不断循环执行。</li>
-</ul>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/10/07/js中3个循环调用的方法/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
  </div>
 
         
 
+        
+          <div class="comments" id="comments">
+            
+              <div class="ds-thread" data-thread-key="2016/08/09/前端工程化-gulp应用篇2/"
+                   data-title="前端工程化-gulp应用篇2" data-url="http://blog.yzzhuo.com/2016/08/09/前端工程化-gulp应用篇2/">
+              </div>
+            
+          </div>
         
       </div>
 
@@ -1037,6 +626,165 @@ gulp.task(<span class="symbol">'task</span>-name', <span class="keyword">functio
   <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
   
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
 
   <script type="text/javascript">
     $(document).ready(function () {
