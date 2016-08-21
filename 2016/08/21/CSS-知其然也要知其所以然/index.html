@@ -52,7 +52,7 @@
 <meta property="og:image" content="http://yangyong-test.qiniudn.com/wp-content/uploads/2014/11/block-box.png">
 <meta property="og:image" content="https://github.com/dolymood/blog/raw/master/pics/001.png">
 <meta property="og:image" content="http://yangyong-test.qiniudn.com/wp-content/uploads/2014/11/inline-box.png">
-<meta property="og:updated_time" content="2016-08-21T12:04:45.345Z">
+<meta property="og:updated_time" content="2016-08-21T12:15:11.105Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS-知其然也要知其所以然（一）">
 <meta name="twitter:description" content="我知道好多人，包括以前的自己，都对CSS侧目以待。不就是选择器和一些样式嘛，给我半天的时间就能学会啦。对于css的使用，的确看看W3Cschool可能一下子就会了。但是当实际做项目的时候，你不知道为什么有时候给一些元素设置了宽，高值却不生效；不知道为什么两个inline-block的元素在并排在一起，它们却不是从同一高度开始渲染；不知道给一些设置了vertical-align：middle却不能实">
@@ -275,7 +275,7 @@
             <p class="site-author-name">Links</p>
             
               <span class="links-of-author-item">
-              <a href="" target="_blank">个人简历</a>
+              <a href="https://github.com/yzzhuo/resume" target="_blank">个人简历</a>
               </span>
             
           
@@ -406,15 +406,20 @@
 <li>如果元素的定位（position）为 “relative” （相对定位）或者 “static”（静态定位），它的包含块由它最近的块级、单元格（table cell）或者行内块（inline-block）祖先元素的 内容框1创建。<br>*如果元素是固定定位 (“position:fixed”) 元素，那么它的包含块是当前可视窗口</li>
 <li>绝对定位（”position: absolute”）元素的包含块由离它最近的 ‘position’ 属性为 ‘absolute’、’relative’ 或者 ‘fixed’ 的祖先元素创建。如果其祖先元素是行内元素，则包含块取决于其祖先元素的 ‘direction’ 特性：<ul>
 <li>如果 ‘direction’ 是 ‘ltr’，包含块的顶、左边是祖先元素生成的第一个框的顶、左内边距边界(padding edges) ，右、下边是祖先元素生成的最后一个框的右、下内边距边界(padding edges)</li>
-<li>如果 ‘direction’ 是 ‘rtl’，包含块的顶、右边是祖先元素生成的第一个框的顶、右内边距边界 (padding edges) ，左、下边是祖先元素生成的最后一个框的左、下内边距边界 (padding edges)<br>详细的说明可以看<a href="http://w3help.org/zh-cn/kb/008/" target="_blank" rel="external">W3help关于包含块的这篇文章</a></li>
+<li>如果 ‘direction’ 是 ‘rtl’，包含块的顶、右边是祖先元素生成的第一个框的顶、右内边距边界 (padding edges) ，左、下边是祖先元素生成的最后一个框的左、下内边距边界 (padding edges)</li>
 </ul>
 </li>
 </ul>
+<p>详细的说明可以看<a href="http://w3help.org/zh-cn/kb/008/" target="_blank" rel="external">W3help关于包含块的这篇文章</a></p>
 <h3 id="盒子的生成">盒子的生成</h3><p>从文档元素生成盒子是CSS视觉格式化模型的一部分工作。display属性决定了生成盒的类型，不同类型的盒子，视觉格式化模型对它的处理也不同。</p>
-<h4 id="块级元素与块盒">块级元素与块盒</h4><p>display为block，list-item或table的元素是块级元素，它们在视觉呈现为独占一行的块，竖直排列。每个块级元素至少生成一个主要块级盒，且这个盒子可以参与任一一种定位方案。</p>
-<p>块级盒会参与BFC(块级格式化上下文)。</p>
-<p>除了table盒子和替换元素，一个块级盒子一般也是一个块容器盒。<br>块容器盒要么只包含块级盒，要么只包含创建了IFC（行内格式化上下文）的行内级盒。<br>（块级盒侧重描述了元素和它的父元素及兄弟元素之间的表现，块容器盒侧重描述元素跟它的后代元素之间的影响）</p>
-<p>块级盒不一定是块容器盒（如table），块容器盒也不一定是块级盒（如非替换的inline blocks和非替换的table cells）。既是块级盒又是块容器盒的称为块盒。<br><img src="http://yangyong-test.qiniudn.com/wp-content/uploads/2014/11/block-box.png" alt=""></p>
+<h4 id="块级元素与块盒">块级元素与块盒</h4><ul>
+<li>display为block，list-item或table的元素是块级元素，它们在视觉呈现为独占一行的块，竖直排列。每个块级元素至少生成一个主要块级盒，且这个盒子可以参与任一一种定位方案。</li>
+<li>块级盒会参与BFC(块级格式化上下文)。</li>
+<li>除了table盒子和替换元素，一个块级盒子一般也是一个块容器盒。</li>
+<li>块容器盒要么只包含块级盒，要么只包含创建了IFC（行内格式化上下文）的行内级盒。</li>
+<li>块级盒不一定是块容器盒（如table），块容器盒也不一定是块级盒（如非替换的inline blocks和非替换的table cells）。既是块级盒又是块容器盒的称为块盒。</li>
+<li>（块级盒侧重描述了元素和它的父元素及兄弟元素之间的表现，块容器盒侧重描述元素跟它的后代元素之间的影响）<br><img src="http://yangyong-test.qiniudn.com/wp-content/uploads/2014/11/block-box.png" alt=""></li>
+</ul>
 <p><strong>匿名块盒</strong></p>
 <pre><code>&lt;<span class="operator">div</span>&gt;Some inline <span class="keyword">text</span> 
 &lt;p&gt;followed <span class="keyword">by</span> <span class="operator">a</span> <span class="keyword">paragraph</span>&lt;/p&gt; 
@@ -425,17 +430,19 @@
 <ol>
 <li>块容器盒同时包含行内级盒和块级盒时，将创建匿名块盒来包含毗邻的行内级盒。即上面的例子。</li>
 <li><p>一个行内盒包含了一个或者几个块盒，包含块盒的盒将拆分为两个行内盒放置于块盒前后，然后分别由两个匿名块盒包含。</p>
-<p> <style><br> p { display: inline；</p>
-<pre><code><span class="attribute">border</span>：1px <span class="value">solid</span> gray; }
-</code></pre><p> span { display: block }<br> </style><br>-<br> <body><br> <p><br> This is anonymous text before the SPAN。<br> <span>This is the content of SPAN.</span><br> This is anonymous text after the SPAN。<br> </p><br> </body><br>效果：<br><img src="https://github.com/dolymood/blog/raw/master/pics/001.png" alt=""></p>
+<p> //<style><br> //p { display: inline；<br> //    border：1px solid gray; }<br> //span { display: block }<br> </style><br> <body><br> <p><br> This is anonymous text before the SPAN。<br> <span>This is the content of SPAN.</span><br> This is anonymous text after the SPAN。<br> </p><br> </body><br>效果：<br><img src="https://github.com/dolymood/blog/raw/master/pics/001.png" alt=""></p>
 </li>
 </ol>
-<h3 id="行内级元素和行内盒">行内级元素和行内盒</h3><p>display为inline，inline-block和inline-table的元素为行内级元素。视觉上它与其它行内级元素水平排列，比如input，img等。<br>行内级元素生成行内级盒，参与IFC（行内格式化上下文）。</p>
-<p>参与生成IFC的行内级盒为行内盒。而不参与生成IFC的行内级盒为原子行内级盒。</p>
-<p><img src="http://yangyong-test.qiniudn.com/wp-content/uploads/2014/11/inline-box.png" alt=""><br>所有display为inline的非替换元素生成的盒都是行内盒。<br>可替换行内元素或display为inline-block或inline-table的元素生成的是原子行内级盒。原子行内级盒在行内格式化上下文里不能分成多行。</p>
+<h3 id="行内级元素和行内盒">行内级元素和行内盒</h3><ul>
+<li>display为inline，inline-block和inline-table的元素为行内级元素。视觉上它与其它行内级元素水平排列，比如input，img等。</li>
+<li>行内级元素生成行内级盒，参与IFC（行内格式化上下文）。   </li>
+<li>参与生成IFC的行内级盒为行内盒。而不参与生成IFC的行内级盒为原子行内级盒。</li>
+<li>所有display为inline的非替换元素生成的盒都是行内盒。   </li>
+<li>可替换行内元素或display为inline-block或inline-table的元素生成的是原子行内级盒。原子行内级盒在行内格式化上下文里不能分成多行。<br><img src="http://yangyong-test.qiniudn.com/wp-content/uploads/2014/11/inline-box.png" alt=""></li>
+</ul>
 <p><strong>匿名行盒</strong><br>类似于块盒，CSS 引擎有时自动生成行内盒。<br>产生匿名行内盒的情况是块盒直接包含文本，文本将包含在匿名行内盒中。空白如果使用white-space 去掉，则不会生成匿名行内盒。</p>
 <p><strong>行盒</strong><br>行盒由行内格式化上下文(inline formatting context)产生的盒，用于表示一行。</p>
-<p>附录：<br>不妨结合上面的知识思考一下不同值的display可以生成什么盒子？</p>
+<p>最后附上一个display属性：不妨结合上面的知识思考一下不同值的display可以生成什么盒子？</p>
 <blockquote>
 <p>display<br>值： inline | block | list-item | inline-block | table | inline-table | table-row-group | table-header-group | table-footer-group | table-row | table-column-group | table-column | table-cell | table-caption | none | inherit</p>
 </blockquote>
