@@ -52,7 +52,7 @@
 <meta property="og:image" content="http://yangyong-test.qiniudn.com/wp-content/uploads/2014/11/block-box.png">
 <meta property="og:image" content="https://github.com/dolymood/blog/raw/master/pics/001.png">
 <meta property="og:image" content="http://yangyong-test.qiniudn.com/wp-content/uploads/2014/11/inline-box.png">
-<meta property="og:updated_time" content="2016-08-21T12:15:11.105Z">
+<meta property="og:updated_time" content="2016-08-21T12:21:23.717Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS-知其然也要知其所以然（一）">
 <meta name="twitter:description" content="我知道好多人，包括以前的自己，都对CSS侧目以待。不就是选择器和一些样式嘛，给我半天的时间就能学会啦。对于css的使用，的确看看W3Cschool可能一下子就会了。但是当实际做项目的时候，你不知道为什么有时候给一些元素设置了宽，高值却不生效；不知道为什么两个inline-block的元素在并排在一起，它们却不是从同一高度开始渲染；不知道给一些设置了vertical-align：middle却不能实">
@@ -430,9 +430,11 @@
 <ol>
 <li>块容器盒同时包含行内级盒和块级盒时，将创建匿名块盒来包含毗邻的行内级盒。即上面的例子。</li>
 <li><p>一个行内盒包含了一个或者几个块盒，包含块盒的盒将拆分为两个行内盒放置于块盒前后，然后分别由两个匿名块盒包含。</p>
-<p> //<style><br> //p { display: inline；<br> //    border：1px solid gray; }<br> //span { display: block }<br> </style><br> <body><br> <p><br> This is anonymous text before the SPAN。<br> <span>This is the content of SPAN.</span><br> This is anonymous text after the SPAN。<br> </p><br> </body><br>效果：<br><img src="https://github.com/dolymood/blog/raw/master/pics/001.png" alt=""></p>
+ <p style="display:inline;border=1px solid gray"><br> This is anonymous text before the SPAN。<br> <span style="display:block">This is the content of SPAN.</span><br> This is anonymous text after the SPAN。<br> </p>
+
 </li>
 </ol>
+<p>效果：<br><img src="https://github.com/dolymood/blog/raw/master/pics/001.png" alt=""></p>
 <h3 id="行内级元素和行内盒">行内级元素和行内盒</h3><ul>
 <li>display为inline，inline-block和inline-table的元素为行内级元素。视觉上它与其它行内级元素水平排列，比如input，img等。</li>
 <li>行内级元素生成行内级盒，参与IFC（行内格式化上下文）。   </li>
