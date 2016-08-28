@@ -45,9 +45,10 @@
 <meta property="og:url" content="http://blog.yzzhuo.com/2016/08/28/CSS定位那些事儿/index.html">
 <meta property="og:site_name" content="珠君的博客">
 <meta property="og:description" content="秋风煞爽，迎来了新学期。稍不留神，时间就把我推到了大学的尾巴，容不得我愿不愿意。所有大四老油条都在给自己的未来定位。人生的定位过程，是一个现实和理想的挣扎。CSS的定位，有时也是呢。继上一篇初略探讨了CSS的视觉格式化上下文后，谈谈CSS定位的那些事吧。">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/63739cabjw1f79rsqjfmyj20it07g3zc.jpg">
 <meta property="og:image" content="http://w3help.org/zh-cn/kb/011/011/around_float.png">
 <meta property="og:image" content="http://w3help.org/zh-cn/kb/011/011/float_overflow1.png">
-<meta property="og:updated_time" content="2016-08-28T13:09:12.092Z">
+<meta property="og:updated_time" content="2016-08-28T13:15:45.893Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS定位那些事儿">
 <meta name="twitter:description" content="秋风煞爽，迎来了新学期。稍不留神，时间就把我推到了大学的尾巴，容不得我愿不愿意。所有大四老油条都在给自己的未来定位。人生的定位过程，是一个现实和理想的挣扎。CSS的定位，有时也是呢。继上一篇初略探讨了CSS的视觉格式化上下文后，谈谈CSS定位的那些事吧。">
@@ -413,16 +414,14 @@
 <li><p>根元素，其display也会根据规则来转换。</p>
 </li>
 <li><p>最后，非根元素，并且非浮动元素，并且非绝对定位的元素，根据’display’ 特性值来定位。</p>
-<p><strong>以上也反映了一个问题：浮动或绝对定位的元素，只能是块元素或表格。</strong>对于非块元素或者表格的元素，在应用绝对定位或者float时，都会按照以下规则进行转换。</p>
- <table class="compare"><br>   <tbody><tr><br>     <th>设定值</th><br>     <th>计算值</th><br>   </tr><br>   <tr><br>     <td>inline-table </td><br>     <td>table</td><br>   </tr><br>   <tr><br>     <td>inline, run-in, table-row-group, table-column, table-column-group, table-header-group, <br><br>       table-footer-group, table-row, table-cell, table-caption, inline-block </td><br>     <td>block</td><br>   </tr><br>   <tr><br>     <td>其他</td><br>     <td>同设定值</td><br>   </tr><br> </tbody></table>
-
-</li>
-</ol>
+<p><strong>以上也反映了一个问题：浮动或绝对定位的元素，只能是块元素或表格。</strong>对于非块元素或者表格的元素，在应用绝对定位或者float时，都会按照以下规则进行转换。<br><img src="http://ww3.sinaimg.cn/large/63739cabjw1f79rsqjfmyj20it07g3zc.jpg" alt=""></p>
 <h2 id="常规流">常规流</h2><p>常规流里的每一个盒子，都属于一个格式化的上下文中。不同的的元素会依据不同的格式化上下文来决定在当前环境中如何布局，块盒参与块级格式化上下文，行内盒子参与行内格式化上下文。</p>
 <h3 id="块级格式化上下文BFC">块级格式化上下文BFC</h3><p>在BFC中，盒子会一个接着一个垂直排列，且其中相邻的块级元素的垂直外边会发生折叠。</p>
 <blockquote>
 <p>块格式化上下文是一个比较抽象的概念。可以把它想象成一个大箱子，很多元素装在里面，箱子把它们和外面的元素隔开。</p>
 </blockquote>
+</li>
+</ol>
 <p>浮动元素，绝对定位元，display为inline-block，table-cell或table-captain的元素，以及overflow不为visible的元素，会创建新的格式化上下文。（！注意这些元素创建了块级格式化上下文，但它们本身不是块级格式化上下文）</p>
 <p>块级格式化很重要，因为它对宽高的计算，外边距折叠，定位都有影响。<br>具体请看<a href="http://blog.yzzhuo.com/2016/07/20/CSS%E7%9A%84BFC/">之前的一篇文章CSS的BFC</a></p>
 <h3 id="行内格式化上下文IFC">行内格式化上下文IFC</h3><p>块级格式化上下文的盒子一个接一个水平排列，起点是包含块的顶部。水平方向的margin，border，padding在盒子之间得以保留。 这些盒子在垂直方向可以以不同的方式来对齐。<br>行内级盒子(inline-level boxes)布局到一个由行盒(line boxes)垂直排列而成的容器里。</p>
