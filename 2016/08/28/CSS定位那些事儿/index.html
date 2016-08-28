@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,next" />
+  <meta name="keywords" content="position定位 常规流 浮动 绝对定位," />
 
 
 
@@ -39,16 +39,27 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="图片来自instagram，正在加载..">
-<meta property="og:type" content="website">
-<meta property="og:title" content="相册">
-<meta property="og:url" content="http://blog.yzzhuo.com/instagram/index.html">
+<meta name="description" content="秋风煞爽，迎来了新学期。稍不留神，时间就把我推到了大学的尾巴，容不得我愿不愿意。所有大四老油条都在给自己的未来定位。人生的定位过程，是一个现实和理想的挣扎。CSS的定位，有时也是呢。继上一篇初略探讨了CSS的视觉格式化上下文后，谈谈CSS定位的那些事吧。
+CSS定位概述上一篇说过CSS的盒生成完毕了，就会指定它们的位置。总的来说，CSS提供了三种定位方案：    
+
+常规流（normal flow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS定位那些事儿">
+<meta property="og:url" content="http://blog.yzzhuo.com/2016/08/28/CSS定位那些事儿/index.html">
 <meta property="og:site_name" content="珠君的博客">
-<meta property="og:description" content="图片来自instagram，正在加载..">
-<meta property="og:updated_time" content="2016-03-08T14:01:50.309Z">
+<meta property="og:description" content="秋风煞爽，迎来了新学期。稍不留神，时间就把我推到了大学的尾巴，容不得我愿不愿意。所有大四老油条都在给自己的未来定位。人生的定位过程，是一个现实和理想的挣扎。CSS的定位，有时也是呢。继上一篇初略探讨了CSS的视觉格式化上下文后，谈谈CSS定位的那些事吧。
+CSS定位概述上一篇说过CSS的盒生成完毕了，就会指定它们的位置。总的来说，CSS提供了三种定位方案：    
+
+常规流（normal flow">
+<meta property="og:image" content="http://w3help.org/zh-cn/kb/011/011/around_float.png">
+<meta property="og:image" content="http://w3help.org/zh-cn/kb/011/011/float_overflow1.png">
+<meta property="og:updated_time" content="2016-08-28T12:55:17.913Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="相册">
-<meta name="twitter:description" content="图片来自instagram，正在加载..">
+<meta name="twitter:title" content="CSS定位那些事儿">
+<meta name="twitter:description" content="秋风煞爽，迎来了新学期。稍不留神，时间就把我推到了大学的尾巴，容不得我愿不愿意。所有大四老油条都在给自己的未来定位。人生的定位过程，是一个现实和理想的挣扎。CSS的定位，有时也是呢。继上一篇初略探讨了CSS的视觉格式化上下文后，谈谈CSS定位的那些事吧。
+CSS定位概述上一篇说过CSS的盒生成完毕了，就会指定它们的位置。总的来说，CSS提供了三种定位方案：    
+
+常规流（normal flow">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -58,7 +69,7 @@
   };
 </script>
 
-  <title> 相册 | 珠君的博客 </title>
+  <title> CSS定位那些事儿 | 珠君的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -282,7 +293,7 @@
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS定位概述"><span class="nav-number">1.</span> <span class="nav-text">CSS定位概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS的position属性"><span class="nav-number">1.1.</span> <span class="nav-text">CSS的position属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#display,position和float的影响"><span class="nav-number">1.2.</span> <span class="nav-text">display,position和float的影响</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常规流"><span class="nav-number">2.</span> <span class="nav-text">常规流</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#块级格式化上下文BFC"><span class="nav-number">2.1.</span> <span class="nav-text">块级格式化上下文BFC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#行内格式化上下文IFC"><span class="nav-number">2.2.</span> <span class="nav-text">行内格式化上下文IFC</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浮动"><span class="nav-number">3.</span> <span class="nav-text">浮动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绝对定位"><span class="nav-number">4.</span> <span class="nav-text">绝对定位</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -307,7 +318,7 @@
           
           
             
-              相册
+              CSS定位那些事儿
             
           
         </h1>
@@ -316,19 +327,34 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2016-03-08T22:01:50+08:00" content="2016-03-08">
-            2016-03-08
+          <time itemprop="dateCreated" datetime="2016-08-28T15:56:30+08:00" content="2016-08-28">
+            2016-08-28
           </time>
         </span>
 
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/CSS/" itemprop="url" rel="index">
+                  <span itemprop="name">CSS</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
         
 
         
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/instagram/index.html#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="instagram/index.html" itemprop="commentsCount"></span>
+              <a href="/2016/08/28/CSS定位那些事儿/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/28/CSS定位那些事儿/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -342,16 +368,134 @@
       
 
       
-        <span itemprop="articleBody"><p><div class="instagram" data-client-id="75c574db419b43a18aad4f4e08b3c399" data-user-id="555889570" access_token="555889570.75c574d.af9670b2443748039287865d29380370"><br>    <a href="http://instagram.com/junerzyz" target="_blank" class="open-ins">图片来自instagram，正在加载..</a><br></div></p>
-<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
-<script src="/js/lazyload.js"></script>
-<script src="/js/instagram.js"></script></span>
+        <span itemprop="articleBody"><p>秋风煞爽，迎来了新学期。稍不留神，时间就把我推到了大学的尾巴，容不得我愿不愿意。所有大四老油条都在给自己的未来定位。人生的定位过程，是一个现实和理想的挣扎。CSS的定位，有时也是呢。继上一篇初略探讨了CSS的视觉格式化上下文后，谈谈CSS定位的那些事吧。</p>
+<h2 id="CSS定位概述">CSS定位概述</h2><p>上一篇说过CSS的盒生成完毕了，就会指定它们的位置。总的来说，CSS提供了三种定位方案：    </p>
+<ul>
+<li>常规流（normal flow）<ul>
+<li>normal flow的盒子一个接一个的排列，块级盒子安装BFC进行排列，行内及盒子按照IFC进行排列。</li>
+<li>通常position为static或relateive或float为none的元素都会触发常规流的定位方案。</li>
+</ul>
+</li>
+<li>绝对定位<ul>
+<li>绝对定位的盒子会从常规流中移除，且不影响常规流的布局。它的相对定位相对于它的包含块。</li>
+<li>元素属性position为absolute|fixed的元素触发绝对定位布局。</li>
+</ul>
+</li>
+<li>浮动 <ul>
+<li>它通常漂浮在常规流的上方。</li>
+<li>float:left|right的元素触发浮动定位</li>
+</ul>
+</li>
+</ul>
+<h3 id="CSS的position属性">CSS的position属性</h3><ul>
+<li>static：<ul>
+<li>元素的默认值，位置是常规流布局力的位置，不能使用top，bottom，left，right，z-index来定位。</li>
+</ul>
+</li>
+<li>relative：<ul>
+<li>可以相对于自身的默认位置来进行定位偏移。但即使有偏移，仍然保留原有的位置，即其它常规流的元素不能占用它原本的位置，它偏移的位置也不影响其他常规流元素的布局。</li>
+</ul>
+</li>
+<li>absolute：<ul>
+<li>脱离常规流，可以相对于position不为static的第一个父元素进行定位。</li>
+</ul>
+</li>
+<li>fixed：<ul>
+<li>可以相对于浏览器窗口进行定位。旧版IE不支持。</li>
+</ul>
+</li>
+<li>inherit:<ul>
+<li>从父元素继承position属性的值。</li>
+</ul>
+</li>
+</ul>
+<p>ps：static和relative都属于常规流，而fixed和absolute都属于绝对定位。</p>
+<h3 id="display,position和float的影响">display,position和float的影响</h3><blockquote>
+<p>定位有类似优先级的机制。</p>
+</blockquote>
+<ol>
+<li><p><strong>“position:absolute” 和 “position:fixed” 优先级最高，有它存在的时候，浮动不起作用，’display’ 会按一定规则进行重置</strong></p>
+<div id="test" style="position:absolute; float:left; display:inline;"></div>
+
+<p>上面的代码中，因为设置了绝对定位，元素根据定位规则重新计算后的值为：float为none（浮动失效）display为block。</p>
+<p>but在IE:计算后的值’float’ 值和 ‘display’ 的特性值未发生变化，还是 “float: left; display: inline”。</p>
+</li>
+<li><p><strong>设置了float不为none的元素，display会按照规则转换成特定的值。 </strong></p>
+<pre><code>&lt;<span class="tag">span</span> style=<span class="string">"width:100px; height:100px; border:1px solid red; float:left;"</span>&gt;<span class="attribute">float</span> span&lt;/span&gt;
+</code></pre><p> 上面的代码，虽然span是行内元素，但是因为设置了浮动，在正常的浏览器中其display会被转换成block，因此可以设置其宽和高。</p>
+</li>
+<li><p>根元素，其display也会根据规则来转换。</p>
+</li>
+<li><p>最后，非根元素，并且非浮动元素，并且非绝对定位的元素，根据’display’ 特性值来定位。</p>
+<blockquote>
+<p><strong>以上也反映了一个问题：浮动或绝对定位的元素，只能是块元素或表格。</strong>对于非块元素或者表格的元素，在应用绝对定位或者float时，都会按照以下规则进行转换。</p>
+<table class="compare"><br>   <tbody><tr><br>     <th>设定值</th><br>     <th>计算值</th><br>   </tr><br>   <tr><br>     <td>inline-table </td><br>     <td>table</td><br>   </tr><br>   <tr><br>     <td>inline, run-in, table-row-group, table-column, table-column-group, table-header-group, <br><br>       table-footer-group, table-row, table-cell, table-caption, inline-block </td><br>     <td>block</td><br>   </tr><br>   <tr><br>     <td>其他</td><br>     <td>同设定值</td><br>   </tr><br> </tbody></table>
+
+</blockquote>
+</li>
+</ol>
+<h2 id="常规流">常规流</h2><p>常规流里的每一个盒子，都属于一个格式化的上下文中。不同的的元素会依据不同的格式化上下文来决定在当前环境中如何布局，块盒参与块级格式化上下文，行内盒子参与行内格式化上下文。</p>
+<h3 id="块级格式化上下文BFC">块级格式化上下文BFC</h3><p>在BFC中，盒子会一个接着一个垂直排列，且其中相邻的块级元素的垂直外边会发生折叠。</p>
+<blockquote>
+<p>块格式化上下文是一个比较抽象的概念。可以把它想象成一个大箱子，很多元素装在里面，箱子把它们和外面的元素隔开。</p>
+</blockquote>
+<p>浮动元素，绝对定位元，display为inline-block，table-cell或table-captain的元素，以及overflow不为visible的元素，会创建新的格式化上下文。（！注意这些元素创建了块级格式化上下文，但它们本身不是块级格式化上下文）</p>
+<p>块级格式化很重要，因为它对宽高的计算，外边距折叠，定位都有影响。<br>具体请看<a href="http://blog.yzzhuo.com/2016/07/20/CSS%E7%9A%84BFC/">之前的一篇文章CSS的BFC</a></p>
+<h3 id="行内格式化上下文IFC">行内格式化上下文IFC</h3><p>块级格式化上下文的盒子一个接一个水平排列，起点是包含块的顶部。水平方向的margin，border，padding在盒子之间得以保留。 这些盒子在垂直方向可以以不同的方式来对齐。<br>行内级盒子(inline-level boxes)布局到一个由行盒(line boxes)垂直排列而成的容器里。</p>
+<p>IFC里面的盒子不能指定宽高。<br>超出行盒宽度限制的行内框会被分割成多行。<br>IFC涉及的东西很多，包括  </p>
+<ul>
+<li>行盒和其大小计算</li>
+<li>行内级盒子的对齐方式    </li>
+<li>…<br>在此必须知道基线是什么，以及line-height和vertical-align的原理。篇幅会比较长，为了避免本文篇幅过长，所以这部分打算之后有时间再另外抽出时间来探讨。</li>
+</ul>
+<h2 id="浮动">浮动</h2><p>浮动的元素脱离常规流，并且内容（line box）可与沿着浮动盒子的边缘环绕，比如文字环绕效果就是利用浮动来实现的。给元素设置clear属性就能清除其环绕在周围的浮动元素。</p>
+<pre><code>&lt;p style=<span class="string">" margin: 2em; border: 1px solid red;width: 200px;"</span>&gt;
+&lt;span style=<span class="string">"width:100px; height:100px; background-color:green; margin:20px;float: left;"</span>&gt;&lt;/span&gt;
+The IMG box <span class="keyword">is</span> floated <span class="keyword">to</span> <span class="keyword">the</span> left. The content <span class="keyword">that</span> follows <span class="keyword">is</span> formatted <span class="keyword">to</span> <span class="keyword">the</span>
+right <span class="keyword">of</span> <span class="keyword">the</span> float, starting <span class="function_start"><span class="keyword">on</span></span> <span class="keyword">the</span> same line <span class="keyword">as</span> <span class="keyword">the</span> float.
+&lt;/p&gt;
+</code></pre><p><img src="http://w3help.org/zh-cn/kb/011/011/around_float.png" alt="">     </p>
+<p> <strong>浮动框的位置</strong><br>一个浮动框要么向左偏移或向右偏移，偏移到直到它的外边界接触到它包含块的边界或者另外一个浮动框的外边界。<br>（注意，浮动框虽然脱离了常规流，但是确实是会被常规流所决定它的位置的。反正很久之前自己就错误地，单纯的以为float元素在另外一个层叠空间起作用，也不受其他非浮动元素影响）</p>
+<p><strong>浮动框对其它框的影响</strong> 因为浮动框脱离了常规流，所以常规流中的框会把浮动框当作不存在一样，即不会影响它们本来的排列布局。但是，在浮动框后创建的行盒会被缩短。</p>
+<p>对于table元素，块级替换元素，BFC元素和浮动元素,它们不能覆盖任何浮动元素。例子如下。</p>
+<pre><code>&lt;<span class="keyword">div</span> style=<span class="string">" margin: 2em;border: 1px solid red;width: 200px;overflow: hidden;"</span>&gt;
+&lt;<span class="keyword">div</span> <span class="property">id</span>=<span class="string">"A"</span> style=<span class="string">"width:50px; height:50px; background-color:green; margin:20px; float:left;"</span>&gt;A&lt;/<span class="keyword">div</span>&gt;
+&lt;<span class="keyword">div</span> <span class="property">id</span>=<span class="string">"B"</span> style=<span class="string">" width:50px; background-color:blue; overflow:hidden;"</span>&gt;B&lt;/<span class="keyword">div</span>&gt;
+&lt;/<span class="keyword">div</span>&gt;
+</code></pre><p><img src="http://w3help.org/zh-cn/kb/011/011/float_overflow1.png" alt=""></p>
+<h2 id="绝对定位">绝对定位</h2><p>绝对定位元素定位的参照物是其包含块，关于包含块的判定可以回顾上一篇文章。         </p>
+<blockquote>
+<p>常规流中的框，都在同一个层上，浮动框是处于常规流之上的一个特殊层，它可能会对常规流中的框的定位产生影响。但绝对定位的框不会， 每个绝对定位的框都可以看做一个单独的图层，不会对其他层框的定位产生影响。</p>
+</blockquote>
+<ul>
+<li>需要注意的是，在没有给绝对定位元素设置偏移时，它们的位置还是在常规流中的默认位置。</li>
+</ul>
+<p>参考文献：<br><a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/" target="_blank" rel="external">CSS规范</a></p>
+</span>
       
     </div>
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/position定位-常规流-浮动-绝对定位/" rel="tag">#position定位 常规流 浮动 绝对定位</a>
+          
+        </div>
+      
 
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/21/CSS-知其然也要知其所以然/" rel="next">CSS-盒模型和视觉格式化上下文</a>
+            
+          </div>
+        </div>
       
 
       
@@ -363,10 +507,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="instagram/index.html"
-     data-title="相册"
+        <div class="ds-share flat" data-thread-key="2016/08/28/CSS定位那些事儿/"
+     data-title="CSS定位那些事儿"
      data-content=""
-     data-url="http://blog.yzzhuo.com/instagram/index.html">
+     data-url="http://blog.yzzhuo.com/2016/08/28/CSS定位那些事儿/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -392,8 +536,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="instagram/index.html"
-                   data-title="相册" data-url="http://blog.yzzhuo.com/instagram/index.html">
+              <div class="ds-thread" data-thread-key="2016/08/28/CSS定位那些事儿/"
+                   data-title="CSS定位那些事儿" data-url="http://blog.yzzhuo.com/2016/08/28/CSS定位那些事儿/">
               </div>
             
           </div>
