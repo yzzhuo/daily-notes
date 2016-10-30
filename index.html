@@ -180,7 +180,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -194,7 +194,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -872,79 +872,6 @@
           
           
             
-              <a class="post-title-link" href="/2015/11/05/hello-world/" itemprop="url">
-                用hexo快速搭建博客
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-11-05T18:35:26+08:00" content="2015-11-05">
-            2015-11-05
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/11/05/hello-world/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/05/hello-world/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <p>Welcome to <a href="http://hexo.io/">Hexo</a>! This is my very first post. Check <a href="http://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/11/05/hello-world/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
               <a class="post-title-link" href="/2015/10/20/用Yeoman开始web应用/" itemprop="url">
                 用Yeoman来创建我的web应用
               </a>
@@ -961,6 +888,21 @@
           </time>
         </span>
 
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/前端开发工具/" itemprop="url" rel="index">
+                  <span itemprop="name">前端开发工具</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
         
 
         
@@ -1085,13 +1027,86 @@
 
 
     
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2015/10/07/js中3个循环调用的方法/" itemprop="url">
+                js中3个循环调用的方法
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-10-07T22:18:44+08:00" content="2015-10-07">
+            2015-10-07
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/10/07/js中3个循环调用的方法/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/07/js中3个循环调用的方法/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <h3 id="requestAnimFrame、setTimeout和setInterval三者的区别">requestAnimFrame、setTimeout和setInterval三者的区别</h3><ul>
+<li>requestAnimFrame（function（）{}）<br>  根据电脑的性能来决定调用的时间间隔。</li>
+<li>setTimeout（function（）{}，time）：<br>  该方法在设定的time之后才会执行一次。<br>  setTimeout( ) 预设只是执行一次, 但我们可以使用一个循环方式, 使到一个setTimeout( ) 再启动自己一次, 就会使到第二个 setTimeout( ) 执行, 第二个又启动第三个, 这样循环下去, 这 setTimeout( ) 就会不断执行。</li>
+<li>setInterval（function（）{}，time）<br>  该方法被调用后会立刻执行function，之后每间隔time之后不断循环执行。</li>
+</ul>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/10/07/js中3个循环调用的方法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">&raquo;</a>
-  </nav>
-
  </div>
 
         
@@ -1125,6 +1140,15 @@
 </div>
 
 
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?33ff34d1612dfb81cb15e44273ed9e55";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
  </div>
     </footer>
 
