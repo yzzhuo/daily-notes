@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="position定位 常规流 浮动 绝对定位," />
+  <meta name="keywords" content="项目总结," />
 
 
 
@@ -39,19 +39,18 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="秋风煞爽，迎来了新学期。稍不留神，时间就把我推到了大学的尾巴，容不得我愿不愿意。所有大四老油条都在给自己的未来定位。人生的定位过程，是一个现实和理想的挣扎。CSS的定位，有时也是呢。继上一篇初略探讨了CSS的视觉格式化上下文后，谈谈CSS定位的那些事吧。">
+<meta name="description" content="上个星期末，给公司的一个微信公众号接微信支付的接口。本以为不就是一个小小的接口，应该是一会儿的功夫，结果却折腾得快要神经崩溃。所幸的是，在和另外一个负责服务器端的伙伴的研究下，最终成功折腾出来了。在此，为了避免之后再次掉坑，记录一下遇到的坑和解决的方法。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS定位那些事儿">
-<meta property="og:url" content="http://blog.yzzhuo.com/2016/08/28/CSS定位那些事儿/index.html">
+<meta property="og:title" content="微信支付踩过的坑">
+<meta property="og:url" content="http://blog.yzzhuo.com/2016/10/30/微信支付踩过的坑/index.html">
 <meta property="og:site_name" content="珠君的博客">
-<meta property="og:description" content="秋风煞爽，迎来了新学期。稍不留神，时间就把我推到了大学的尾巴，容不得我愿不愿意。所有大四老油条都在给自己的未来定位。人生的定位过程，是一个现实和理想的挣扎。CSS的定位，有时也是呢。继上一篇初略探讨了CSS的视觉格式化上下文后，谈谈CSS定位的那些事吧。">
-<meta property="og:image" content="http://ww3.sinaimg.cn/large/63739cabjw1f79rsqjfmyj20it07g3zc.jpg">
-<meta property="og:image" content="http://w3help.org/zh-cn/kb/011/011/around_float.png">
-<meta property="og:image" content="http://w3help.org/zh-cn/kb/011/011/float_overflow1.png">
-<meta property="og:updated_time" content="2016-08-28T13:15:45.893Z">
+<meta property="og:description" content="上个星期末，给公司的一个微信公众号接微信支付的接口。本以为不就是一个小小的接口，应该是一会儿的功夫，结果却折腾得快要神经崩溃。所幸的是，在和另外一个负责服务器端的伙伴的研究下，最终成功折腾出来了。在此，为了避免之后再次掉坑，记录一下遇到的坑和解决的方法。">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/63739cabgw1f9a5vanb1rj20ay0e4dhg.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/63739cabgw1f9a6xg11zpj20gg066dh7.jpg">
+<meta property="og:updated_time" content="2016-10-30T04:51:35.572Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS定位那些事儿">
-<meta name="twitter:description" content="秋风煞爽，迎来了新学期。稍不留神，时间就把我推到了大学的尾巴，容不得我愿不愿意。所有大四老油条都在给自己的未来定位。人生的定位过程，是一个现实和理想的挣扎。CSS的定位，有时也是呢。继上一篇初略探讨了CSS的视觉格式化上下文后，谈谈CSS定位的那些事吧。">
+<meta name="twitter:title" content="微信支付踩过的坑">
+<meta name="twitter:description" content="上个星期末，给公司的一个微信公众号接微信支付的接口。本以为不就是一个小小的接口，应该是一会儿的功夫，结果却折腾得快要神经崩溃。所幸的是，在和另外一个负责服务器端的伙伴的研究下，最终成功折腾出来了。在此，为了避免之后再次掉坑，记录一下遇到的坑和解决的方法。">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -61,7 +60,7 @@
   };
 </script>
 
-  <title> CSS定位那些事儿 | 珠君的博客 </title>
+  <title> 微信支付踩过的坑 | 珠君的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -252,7 +251,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS定位概述"><span class="nav-number">1.</span> <span class="nav-text">CSS定位概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS的position属性"><span class="nav-number">1.1.</span> <span class="nav-text">CSS的position属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#display,position和float的影响"><span class="nav-number">1.2.</span> <span class="nav-text">display,position和float的影响</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常规流"><span class="nav-number">2.</span> <span class="nav-text">常规流</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#块级格式化上下文BFC"><span class="nav-number">2.1.</span> <span class="nav-text">块级格式化上下文BFC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#行内格式化上下文IFC"><span class="nav-number">2.2.</span> <span class="nav-text">行内格式化上下文IFC</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浮动"><span class="nav-number">3.</span> <span class="nav-text">浮动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绝对定位"><span class="nav-number">4.</span> <span class="nav-text">绝对定位</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -277,7 +276,7 @@
           
           
             
-              CSS定位那些事儿
+              微信支付踩过的坑
             
           
         </h1>
@@ -286,8 +285,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2016-08-28T15:56:30+08:00" content="2016-08-28">
-            2016-08-28
+          <time itemprop="dateCreated" datetime="2016-10-30T10:26:28+08:00" content="2016-10-30">
+            2016-10-30
           </time>
         </span>
 
@@ -296,8 +295,8 @@
             &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/CSS/" itemprop="url" rel="index">
-                  <span itemprop="name">CSS</span>
+                <a href="/categories/项目总结/" itemprop="url" rel="index">
+                  <span itemprop="name">项目总结</span>
                 </a>
               </span>
 
@@ -312,8 +311,8 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2016/08/28/CSS定位那些事儿/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/28/CSS定位那些事儿/" itemprop="commentsCount"></span>
+              <a href="/2016/10/30/微信支付踩过的坑/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/30/微信支付踩过的坑/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -327,105 +326,44 @@
       
 
       
-        <span itemprop="articleBody"><p>秋风煞爽，迎来了新学期。稍不留神，时间就把我推到了大学的尾巴，容不得我愿不愿意。所有大四老油条都在给自己的未来定位。人生的定位过程，是一个现实和理想的挣扎。CSS的定位，有时也是呢。继上一篇初略探讨了CSS的视觉格式化上下文后，谈谈CSS定位的那些事吧。<br><a id="more"></a></p>
-<h2 id="CSS定位概述">CSS定位概述</h2><p>上一篇说过CSS的盒生成完毕了，就会指定它们的位置。总的来说，CSS提供了三种定位方案：    </p>
-<ul>
-<li>常规流（normal flow）<ul>
-<li>normal flow的盒子一个接一个的排列，块级盒子参与BFC进行排列，行内及盒子参与IFC进行排列</li>
-<li>通常position为static或relateive或float为none的元素都会触发常规流的定位方案</li>
-</ul>
-</li>
-<li>绝对定位<ul>
-<li>绝对定位的盒子会从常规流中移除，且不影响常规流的布局。它的相对定位相对于它的包含块</li>
-<li>元素属性position为absolute|fixed的元素触发绝对定位布局</li>
-</ul>
-</li>
-<li>浮动 <ul>
-<li>它通常漂浮在常规流的上方</li>
-<li>float:left|right的元素触发浮动定位</li>
-</ul>
-</li>
-</ul>
-<h3 id="CSS的position属性">CSS的position属性</h3><ul>
-<li>static：<ul>
-<li>元素的默认值，位置是常规流布局里的位置，不能使用top，bottom，left，right，z-index来定位</li>
-</ul>
-</li>
-<li>relative：<ul>
-<li>可以相对于自身的默认位置来进行定位偏移。但即使有偏移，仍然保留原有的位置，即其它常规流的元素不能占用它原本的位置，它偏移的位置也不影响其他常规流元素的布局</li>
-</ul>
-</li>
-<li>absolute：<ul>
-<li>脱离常规流，可以相对于position不为static的第一个父元素进行定位。</li>
-</ul>
-</li>
-<li>fixed：<ul>
-<li>可以相对于浏览器窗口进行定位。旧版IE不支持。</li>
-</ul>
-</li>
-<li>inherit:<ul>
-<li>从父元素继承position属性的值。</li>
-</ul>
-</li>
-</ul>
-<p>ps：static和relative都属于常规流，而fixed和absolute都属于绝对定位。</p>
-<h3 id="display,position和float的影响">display,position和float的影响</h3><blockquote>
-<p>定位有类似优先级的机制。</p>
-</blockquote>
-<p>1.”position:absolute” 和 “position:fixed” 优先级最高，有它存在的时候，浮动不起作用，’display’ 会按一定规则进行重置</p>
-<pre><code>&lt;<span class="keyword">div</span> <span class="property">id</span>=<span class="string">"test"</span> style=<span class="string">"position:absolute; float:left; display:inline;"</span>&gt;&lt;/<span class="keyword">div</span>&gt;
-</code></pre><p>上面的代码中，因为设置了绝对定位，元素根据定位规则重新计算后的值为：float为none（浮动失效）display为block。<br>but在IE:计算后的值’float’ 值和 ‘display’ 的特性值未发生变化，还是 “float: left; display: inline”。<br>2.设置了float不为none的元素，display会按照规则转换成特定的值。</p>
-<pre><code>&lt;<span class="tag">span</span> style=<span class="string">"width:100px; height:100px; border:1px solid red; float:left;"</span>&gt;<span class="attribute">float</span> span&lt;/span&gt;
-</code></pre><p>上面的代码，虽然span是行内元素，但是因为设置了浮动，在正常的浏览器中其display会被转换成block，因此可以设置其宽和高。</p>
-<ol>
-<li><p>根元素，其display也会根据规则来转换。</p>
-</li>
-<li><p>最后，非根元素，并且非浮动元素，并且非绝对定位的元素，根据’display’ 特性值来定位。</p>
-<p><strong>以上也反映了一个问题：浮动或绝对定位的元素，只能是块元素或表格。</strong>对于非块元素或者表格的元素，在应用绝对定位或者float时，都会按照以下规则进行转换。<br><img src="http://ww3.sinaimg.cn/large/63739cabjw1f79rsqjfmyj20it07g3zc.jpg" alt=""></p>
-<h2 id="常规流">常规流</h2><p>常规流里的每一个盒子，都属于一个格式化的上下文中。不同的的元素会依据不同的格式化上下文来决定在当前环境中如何布局，块盒参与块级格式化上下文，行内盒子参与行内格式化上下文。</p>
-<h3 id="块级格式化上下文BFC">块级格式化上下文BFC</h3><p>在BFC中，盒子会一个接着一个垂直排列，且其中相邻的块级元素的垂直外边会发生折叠。</p>
+        <span itemprop="articleBody"><p>上个星期末，给公司的一个微信公众号接微信支付的接口。本以为不就是一个小小的接口，应该是一会儿的功夫，结果却折腾得快要神经崩溃。所幸的是，在和另外一个负责服务器端的伙伴的研究下，最终成功折腾出来了。在此，为了避免之后再次掉坑，记录一下遇到的坑和解决的方法。</p>
+<a id="more"></a>
+<h3 id="前言">前言</h3><p>在此之前，我先吐槽一下微信公众号（包括微信支付）的开发者文档。第一眼看的时候，流程和步骤讲得很简单，然而到真正开始做的时候，才发现文档的很多东西真的让人一脸懵逼。其次，微信这一块其实后端的活比前端要多，但是两端都应该理解微信支付的整个流程。这里的总结主要针对是前端的工作。</p>
+<h3 id="正文">正文</h3><ul>
+<li><p>微信支付的大概流程？</p>
+<p>  看完微信<a href="https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=7_1" target="_blank" rel="external">公众号支付开发者文档</a>，认真看完，看完两三遍，似乎没什么用，依旧是一脸懵逼.jpg。</p>
+<p>  还好，后来找到一篇<a href="http://blog.sina.com.cn/s/blog_48422a050102w364.html" target="_blank" rel="external">微信支付流程精简版的文章</a>，是这篇文章让我对微信支付的整个流程清晰了许多。</p>
+<p>  结合了教程，这次接入支付的大概流程就是：</p>
 <blockquote>
-<p>块格式化上下文是一个比较抽象的概念。可以把它想象成一个大箱子，很多元素装在里面，箱子把它们和外面的元素隔开。</p>
+<p>1.前端在要接入微信支付的页面时会进行一次重定向，进入一个后端提供的带验证的入口URI（此过程的目的是为了让后端根据code来获取openId）<br>2.后端调用统一下单的接口来告诉微信交易的一些详情信息。<br>3.前端引入微信的sdk（<a href="https://mp.weixin.qq.com/wiki/7/aaa137b55fb2e0456bf8dd9148dd613f.html" target="_blank" rel="external">详见开发文档</a>），配置wx.config。<br>4.前端配置chooseWXPay<br>5.测试      </p>
 </blockquote>
 </li>
-</ol>
-<p>浮动元素，绝对定位元，display为inline-block，table-cell或table-captain的元素，以及overflow不为visible的元素，会创建新的格式化上下文。（！注意这些元素创建了块级格式化上下文，但它们本身不是块级格式化上下文）</p>
-<p>块级格式化很重要，因为它对宽高的计算，外边距折叠，定位都有影响。<br>具体请看<a href="http://blog.yzzhuo.com/2016/07/20/CSS%E7%9A%84BFC/">之前的一篇文章CSS的BFC</a></p>
-<h3 id="行内格式化上下文IFC">行内格式化上下文IFC</h3><p>块级格式化上下文的盒子一个接一个水平排列，起点是包含块的顶部。水平方向的margin，border，padding在盒子之间得以保留。 这些盒子在垂直方向可以以不同的方式来对齐。<br>行内级盒子(inline-level boxes)布局到一个由行盒(line boxes)垂直排列而成的容器里。</p>
-<ul>
-<li>IFC里面的盒子不能指定宽高。</li>
-<li>超出行盒宽度限制的行内框会被分割成多行。</li>
-<li>IFC涉及的东西很多，包括              <ul>
-<li>行盒和其大小计算</li>
-<li>行内级盒子的对齐方式    </li>
-<li>…     </li>
 </ul>
+<p>以上几乎每一步基本都有遇到坑，接下来会根据部分步骤遇到坑进行详细的说明。</p>
+<ul>
+<li><p>刚开始调用后台提供的支付接口时，前端出现了跨域问题，打开开发者工具，发现是在调用接口过程中进行了重定向发生的。</p>
+<p>  原因和解决方法：原本后端打算在我前端调用它的这个接口来获取到code然后重定向去获取openID,但是因为整个过程是在Ajax里进行的，所以会发生跨域错误。<br>   解决方法：前端不直接用ajax去调用后端支付的接口，而是在进入要接入微信支付的页面时，重定向到后端的接口地址去，而后端对该接口做了相应修改，即在前端重定向后去根据code获取openId，并把openID存入cookies中。</p>
+</li>
+<li><p>前端如何调用支付API。</p>
+<p>  如果把<a href="https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=7_7&amp;index=6" target="_blank" rel="external">微信支付开发文档</a>的示例代码信以为真，那就呵呵了。反正我当时真的把<code>getBrandWCPayRequest</code>这个东西当真了，直到意识到折腾这个东西是没有未来的。</p>
+<p>  在调用微信支付API时，前端要先引入微信JS-SDK，<a href="https://mp.weixin.qq.com/wiki/7/aaa137b55fb2e0456bf8dd9148dd613f.html" target="_blank" rel="external">详见这个开发文档</a>，配置wx.config来注入权限验证配置。之后才可以去发起一个微信支付的请求，发起微信支付的过程具体可以先看<a href="https://mp.weixin.qq.com/wiki/7/aaa137b55fb2e0456bf8dd9148dd613f.html#.E5.8F.91.E8.B5.B7.E4.B8.80.E4.B8.AA.E5.BE.AE.E4.BF.A1.E6.94.AF.E4.BB.98.E8.AF.B7.E6.B1.82" target="_blank" rel="external">文档1</a>再去看<a href="https://pay.weixin.qq.com/wiki/doc/api/index.html" target="_blank" rel="external">文档2</a></p>
+</li>
+<li><p>前端wx.config和wx.chooseWXPay的参数</p>
+<p>  一开始我调用后端支付的接口返回的数据是这样的<br><img src="http://ww4.sinaimg.cn/large/63739cabgw1f9a5vanb1rj20ay0e4dhg.jpg" alt=""><br>  第一次配置wx.config时便以为signature就是上图接口访问的sign，timestamp是自己生成的等等.（当时前后端都在支付上有些懵懂，后端too simple too native的以为把统一下单传回来的数据直接传给前端就行了，而前端以为调微信支付API时参数哪个像就拿哪个…..）</p>
 </li>
 </ul>
-<p>在此必须知道基线是什么，以及line-height和vertical-align的原理。篇幅会比较长，为了避免本文篇幅过长，所以这部分打算之后有时间再另外抽出时间来探讨。</p>
-<h2 id="浮动">浮动</h2><p>浮动的元素脱离常规流，并且内容（line box）可与沿着浮动盒子的边缘环绕，比如文字环绕效果就是利用浮动来实现的。给元素设置clear属性就能清除其环绕在周围的浮动元素。</p>
-<pre><code>&lt;p style=<span class="string">" margin: 2em; border: 1px solid red;width: 200px;"</span>&gt;
-&lt;span style=<span class="string">"width:100px; height:100px; background-color:green; margin:20px;float: left;"</span>&gt;&lt;/span&gt;
-The IMG box <span class="keyword">is</span> floated <span class="keyword">to</span> <span class="keyword">the</span> left. The content <span class="keyword">that</span> follows <span class="keyword">is</span> formatted <span class="keyword">to</span> <span class="keyword">the</span>
-right <span class="keyword">of</span> <span class="keyword">the</span> float, starting <span class="function_start"><span class="keyword">on</span></span> <span class="keyword">the</span> same line <span class="keyword">as</span> <span class="keyword">the</span> float.
-&lt;/p&gt;
-</code></pre><p><img src="http://w3help.org/zh-cn/kb/011/011/around_float.png" alt="">     </p>
-<p> <strong>浮动框的位置</strong><br>一个浮动框要么向左偏移或向右偏移，偏移到直到它的外边界接触到它包含块的边界或者另外一个浮动框的外边界。<br>（注意，浮动框虽然脱离了常规流，但是确实是会被常规流所决定它的位置的。反正很久之前自己就错误地，单纯的以为float元素在另外一个层叠空间起作用，也不受其他非浮动元素影响）</p>
-<p><strong>浮动框对其它框的影响</strong> 因为浮动框脱离了常规流，所以常规流中的框会把浮动框当作不存在一样，即不会影响它们本来的排列布局。但是，在浮动框后创建的行盒会被缩短。</p>
-<p>对于table元素，块级替换元素，BFC元素和浮动元素,它们不能覆盖任何浮动元素。例子如下。</p>
-<pre><code>&lt;<span class="keyword">div</span> style=<span class="string">" margin: 2em;border: 1px solid red;width: 200px;overflow: hidden;"</span>&gt;
-&lt;<span class="keyword">div</span> <span class="property">id</span>=<span class="string">"A"</span> style=<span class="string">"width:50px; height:50px; background-color:green; margin:20px; float:left;"</span>&gt;A&lt;/<span class="keyword">div</span>&gt;
-&lt;<span class="keyword">div</span> <span class="property">id</span>=<span class="string">"B"</span> style=<span class="string">" width:50px; background-color:blue; overflow:hidden;"</span>&gt;B&lt;/<span class="keyword">div</span>&gt;
-&lt;/<span class="keyword">div</span>&gt;
-</code></pre><p><img src="http://w3help.org/zh-cn/kb/011/011/float_overflow1.png" alt=""></p>
-<h2 id="绝对定位">绝对定位</h2><p>绝对定位元素定位的参照物是其包含块，关于包含块的判定可以回顾上一篇文章。         </p>
-<blockquote>
-<p>常规流中的框，都在同一个层上，浮动框是处于常规流之上的一个特殊层，它可能会对常规流中的框的定位产生影响。但绝对定位的框不会， 每个绝对定位的框都可以看做一个单独的图层，不会对其他层框的定位产生影响。</p>
-</blockquote>
+<p><strong>配置时注意的几个参数有：<br>    1.wx.config的signature参数是需要服务端生成的，生产的具体方法见<a href="https://mp.weixin.qq.com/wiki/7/aaa137b55fb2e0456bf8dd9148dd613f.html#.E9.99.84.E5.BD.951-JS-SDK.E4.BD.BF.E7.94.A8.E6.9D.83.E9.99.90.E7.AD.BE.E5.90.8D.E7.AE.97.E6.B3.95" target="_blank" rel="external">文档的附录1</a><br>    2.chooseWXPay的timestamp参数是小写，要和后端生产signature用的timestamp保持一致。<br>    3.chooseWXPay的paySign参数也需要服务器端生成传给前端。（paySign生成的具体规则依旧见<a href="https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=4_3" target="_blank" rel="external">文档的前面算法生成规则</a>）
+</strong><br>    于是，后端一番整改，返回的参数总算齐了，前端只要把传回的数据填充到对于的参数即可。<br><img src="http://ww2.sinaimg.cn/large/63739cabgw1f9a6xg11zpj20gg066dh7.jpg" alt=""></p>
 <ul>
-<li>需要注意的是，在没有给绝对定位元素设置偏移时，它们的位置还是在常规流中的默认位置。</li>
+<li><p>前端进行测试的注意点</p>
+<p>  1.一开始用微信开发者的web调试工具来进行测试，但是发现调用微信支付时会报<code>不支持该类型的SDK模拟</code>的错误，后来才知道微信支付必须在手机进行测试，还好微信web调试工具有一个移动调试的功能，可以帮助我们在手机测试的时候方便看我们看到调试过程输出的信息。</p>
+<p>  2.实践证明最好在IPhone进行测试，因为调用支付失败时，安卓手机只会报（chooseWXPay:fail），而苹果手机则会报更加具体的错误。比如后面折腾了一番，用iphone测试后终于发现原来是<code>授权目录</code>出了差错ORZ。</p>
+</li>
 </ul>
-<p>参考文献：<br><a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/" target="_blank" rel="external">CSS规范</a></p>
+<p>more：</p>
+<ul>
+<li>因为代码就不便贴出，代码方面有疑问的话可参考<a href="http://www.jb51.net/article/89239.htm" target="_blank" rel="external">脚本网站提供的前端接入微信支付的代码</a></li>
+</ul>
 </span>
       
     </div>
@@ -434,7 +372,7 @@ right <span class="keyword">of</span> <span class="keyword">the</span> float, st
       
         <div class="post-tags">
           
-            <a href="/tags/position定位-常规流-浮动-绝对定位/" rel="tag">#position定位 常规流 浮动 绝对定位</a>
+            <a href="/tags/项目总结/" rel="tag">#项目总结</a>
           
         </div>
       
@@ -443,13 +381,11 @@ right <span class="keyword">of</span> <span class="keyword">the</span> float, st
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/10/30/微信支付踩过的坑/" rel="prev">微信支付踩过的坑</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/21/盒模型&视觉格式化上下文/" rel="next">CSS-盒模型和视觉格式化上下文</a>
+              <a href="/2016/08/28/CSS定位那些事儿/" rel="next">CSS定位那些事儿</a>
             
           </div>
         </div>
@@ -464,10 +400,10 @@ right <span class="keyword">of</span> <span class="keyword">the</span> float, st
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/08/28/CSS定位那些事儿/"
-     data-title="CSS定位那些事儿"
+        <div class="ds-share flat" data-thread-key="2016/10/30/微信支付踩过的坑/"
+     data-title="微信支付踩过的坑"
      data-content=""
-     data-url="http://blog.yzzhuo.com/2016/08/28/CSS定位那些事儿/">
+     data-url="http://blog.yzzhuo.com/2016/10/30/微信支付踩过的坑/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -493,8 +429,8 @@ right <span class="keyword">of</span> <span class="keyword">the</span> float, st
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2016/08/28/CSS定位那些事儿/"
-                   data-title="CSS定位那些事儿" data-url="http://blog.yzzhuo.com/2016/08/28/CSS定位那些事儿/">
+              <div class="ds-thread" data-thread-key="2016/10/30/微信支付踩过的坑/"
+                   data-title="微信支付踩过的坑" data-url="http://blog.yzzhuo.com/2016/10/30/微信支付踩过的坑/">
               </div>
             
           </div>
