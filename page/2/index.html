@@ -42,7 +42,7 @@
 <meta name="description" content="常常放空 不善言辞">
 <meta property="og:type" content="website">
 <meta property="og:title" content="珠君的博客">
-<meta property="og:url" content="http://blog.yzzhuo.com/tags/CSS盒模型-视觉可视化模型-包含块-盒的生成/index.html">
+<meta property="og:url" content="http://blog.yzzhuo.com/page/2/index.html">
 <meta property="og:site_name" content="珠君的博客">
 <meta property="og:description" content="常常放空 不善言辞">
 <meta name="twitter:card" content="summary">
@@ -57,7 +57,7 @@
   };
 </script>
 
-  <title> 标签: CSS盒模型 视觉可视化模型 包含块 盒的生成 | 珠君的博客 </title>
+  <title> 珠君的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -85,7 +85,9 @@
 
 
 
-  <div class="container one-column ">
+  <div class="container one-column 
+   page-home 
+">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -153,6 +155,8 @@
     <main id="main" class="main">
       <div class="main-inner">
         
+        <div id="content" class="content"> 
+  
   
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
@@ -239,42 +243,92 @@
   </aside>
 
 
-        <div id="content" class="content"> 
-
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        CSS盒模型 视觉可视化模型 包含块 盒的生成
-        <small>标签</small>
-      </h2>
-    </div>
-
+<section id="posts" class="posts-expand">
     
       
 
-  <article class="post post-type-normal"itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/08/21/盒模型&视觉格式化上下文/" itemprop="url">
-              <span itemprop="name">CSS-盒模型和视觉格式化上下文</span>
-            </a>
-        
-      </h1>
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2015/10/07/js中3个循环调用的方法/" itemprop="url">
+                js中3个循环调用的方法
+              </a>
+            
+          
+        </h1>
+      
 
       <div class="post-meta">
-        <time class="post-time" datetime="2016-08-21T08:18:55.000Z" itemprop="dateCreated" content="2016-08-21"> 08-21 </time>
-      </div>
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-10-07T22:18:44+08:00" content="2015-10-07">
+            2015-10-07
+          </time>
+        </span>
 
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/10/07/js中3个循环调用的方法/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/07/js中3个循环调用的方法/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
     </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <h3 id="requestAnimFrame、setTimeout和setInterval三者的区别">requestAnimFrame、setTimeout和setInterval三者的区别</h3><ul>
+<li>requestAnimFrame（function（）{}）<br>  根据电脑的性能来决定调用的时间间隔。</li>
+<li>setTimeout（function（）{}，time）：<br>  该方法在设定的time之后才会执行一次。<br>  setTimeout( ) 预设只是执行一次, 但我们可以使用一个循环方式, 使到一个setTimeout( ) 再启动自己一次, 就会使到第二个 setTimeout( ) 执行, 第二个又启动第三个, 这样循环下去, 这 setTimeout( ) 就会不断执行。</li>
+<li>setInterval（function（）{}，time）<br>  该方法被调用后会立刻执行function，之后每间隔time之后不断循环执行。</li>
+</ul>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/10/07/js中3个循环调用的方法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
   </article>
 
 
     
-  </div>
+  </section>
 
   
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/">&laquo;</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
  </div>
 
         
@@ -318,12 +372,6 @@
 
   
   
-  
-    <script type="text/javascript">
-      postMotionOptions = {stagger: 100, drag: true};
-    </script>
-  
-
   
     
 

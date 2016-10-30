@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="position定位 常规流 浮动 绝对定位," />
+  <meta name="keywords" content="生活随笔," />
 
 
 
@@ -39,19 +39,16 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="秋风煞爽，迎来了新学期。稍不留神，时间就把我推到了大学的尾巴，容不得我愿不愿意。所有大四老油条都在给自己的未来定位。人生的定位过程，是一个现实和理想的挣扎。CSS的定位，有时也是呢。继上一篇初略探讨了CSS的视觉格式化上下文后，谈谈CSS定位的那些事吧。">
+<meta name="description" content="金九银十，人人繁忙。我忙忙碌碌，兜兜转转，最终却越发不知道自己要往哪里走。我不是一个乐观主义者，不会去抑制自己偶尔冒出的负面或悲伤的情绪，毕竟难过和开心都是平等的情绪，所以即使此时此刻我本不应该悠闲地在这书写生活，但是我知道不面对这个低谷去理一理自己的内心，自己便无法向前。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS定位那些事儿">
-<meta property="og:url" content="http://blog.yzzhuo.com/2016/08/28/CSS定位那些事儿/index.html">
+<meta property="og:title" content="走在人生的夜路上">
+<meta property="og:url" content="http://blog.yzzhuo.com/2016/10/16/走在人生的夜路上/index.html">
 <meta property="og:site_name" content="珠君的博客">
-<meta property="og:description" content="秋风煞爽，迎来了新学期。稍不留神，时间就把我推到了大学的尾巴，容不得我愿不愿意。所有大四老油条都在给自己的未来定位。人生的定位过程，是一个现实和理想的挣扎。CSS的定位，有时也是呢。继上一篇初略探讨了CSS的视觉格式化上下文后，谈谈CSS定位的那些事吧。">
-<meta property="og:image" content="http://ww3.sinaimg.cn/large/63739cabjw1f79rsqjfmyj20it07g3zc.jpg">
-<meta property="og:image" content="http://w3help.org/zh-cn/kb/011/011/around_float.png">
-<meta property="og:image" content="http://w3help.org/zh-cn/kb/011/011/float_overflow1.png">
-<meta property="og:updated_time" content="2016-08-28T13:15:45.893Z">
+<meta property="og:description" content="金九银十，人人繁忙。我忙忙碌碌，兜兜转转，最终却越发不知道自己要往哪里走。我不是一个乐观主义者，不会去抑制自己偶尔冒出的负面或悲伤的情绪，毕竟难过和开心都是平等的情绪，所以即使此时此刻我本不应该悠闲地在这书写生活，但是我知道不面对这个低谷去理一理自己的内心，自己便无法向前。">
+<meta property="og:updated_time" content="2016-10-30T09:24:03.655Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS定位那些事儿">
-<meta name="twitter:description" content="秋风煞爽，迎来了新学期。稍不留神，时间就把我推到了大学的尾巴，容不得我愿不愿意。所有大四老油条都在给自己的未来定位。人生的定位过程，是一个现实和理想的挣扎。CSS的定位，有时也是呢。继上一篇初略探讨了CSS的视觉格式化上下文后，谈谈CSS定位的那些事吧。">
+<meta name="twitter:title" content="走在人生的夜路上">
+<meta name="twitter:description" content="金九银十，人人繁忙。我忙忙碌碌，兜兜转转，最终却越发不知道自己要往哪里走。我不是一个乐观主义者，不会去抑制自己偶尔冒出的负面或悲伤的情绪，毕竟难过和开心都是平等的情绪，所以即使此时此刻我本不应该悠闲地在这书写生活，但是我知道不面对这个低谷去理一理自己的内心，自己便无法向前。">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -61,7 +58,7 @@
   };
 </script>
 
-  <title> CSS定位那些事儿 | 珠君的博客 </title>
+  <title> 走在人生的夜路上 | 珠君的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -252,7 +249,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS定位概述"><span class="nav-number">1.</span> <span class="nav-text">CSS定位概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS的position属性"><span class="nav-number">1.1.</span> <span class="nav-text">CSS的position属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#display,position和float的影响"><span class="nav-number">1.2.</span> <span class="nav-text">display,position和float的影响</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常规流"><span class="nav-number">2.</span> <span class="nav-text">常规流</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#块级格式化上下文BFC"><span class="nav-number">2.1.</span> <span class="nav-text">块级格式化上下文BFC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#行内格式化上下文IFC"><span class="nav-number">2.2.</span> <span class="nav-text">行内格式化上下文IFC</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浮动"><span class="nav-number">3.</span> <span class="nav-text">浮动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绝对定位"><span class="nav-number">4.</span> <span class="nav-text">绝对定位</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -277,7 +274,7 @@
           
           
             
-              CSS定位那些事儿
+              走在人生的夜路上
             
           
         </h1>
@@ -286,8 +283,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2016-08-28T15:56:30+08:00" content="2016-08-28">
-            2016-08-28
+          <time itemprop="dateCreated" datetime="2016-10-16T10:26:28+08:00" content="2016-10-16">
+            2016-10-16
           </time>
         </span>
 
@@ -296,8 +293,8 @@
             &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/CSS/" itemprop="url" rel="index">
-                  <span itemprop="name">CSS</span>
+                <a href="/categories/生活随笔/" itemprop="url" rel="index">
+                  <span itemprop="name">生活随笔</span>
                 </a>
               </span>
 
@@ -312,8 +309,8 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2016/08/28/CSS定位那些事儿/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/28/CSS定位那些事儿/" itemprop="commentsCount"></span>
+              <a href="/2016/10/16/走在人生的夜路上/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/16/走在人生的夜路上/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -327,105 +324,15 @@
       
 
       
-        <span itemprop="articleBody"><p>秋风煞爽，迎来了新学期。稍不留神，时间就把我推到了大学的尾巴，容不得我愿不愿意。所有大四老油条都在给自己的未来定位。人生的定位过程，是一个现实和理想的挣扎。CSS的定位，有时也是呢。继上一篇初略探讨了CSS的视觉格式化上下文后，谈谈CSS定位的那些事吧。<br><a id="more"></a></p>
-<h2 id="CSS定位概述">CSS定位概述</h2><p>上一篇说过CSS的盒生成完毕了，就会指定它们的位置。总的来说，CSS提供了三种定位方案：    </p>
-<ul>
-<li>常规流（normal flow）<ul>
-<li>normal flow的盒子一个接一个的排列，块级盒子参与BFC进行排列，行内及盒子参与IFC进行排列</li>
-<li>通常position为static或relateive或float为none的元素都会触发常规流的定位方案</li>
-</ul>
-</li>
-<li>绝对定位<ul>
-<li>绝对定位的盒子会从常规流中移除，且不影响常规流的布局。它的相对定位相对于它的包含块</li>
-<li>元素属性position为absolute|fixed的元素触发绝对定位布局</li>
-</ul>
-</li>
-<li>浮动 <ul>
-<li>它通常漂浮在常规流的上方</li>
-<li>float:left|right的元素触发浮动定位</li>
-</ul>
-</li>
-</ul>
-<h3 id="CSS的position属性">CSS的position属性</h3><ul>
-<li>static：<ul>
-<li>元素的默认值，位置是常规流布局里的位置，不能使用top，bottom，left，right，z-index来定位</li>
-</ul>
-</li>
-<li>relative：<ul>
-<li>可以相对于自身的默认位置来进行定位偏移。但即使有偏移，仍然保留原有的位置，即其它常规流的元素不能占用它原本的位置，它偏移的位置也不影响其他常规流元素的布局</li>
-</ul>
-</li>
-<li>absolute：<ul>
-<li>脱离常规流，可以相对于position不为static的第一个父元素进行定位。</li>
-</ul>
-</li>
-<li>fixed：<ul>
-<li>可以相对于浏览器窗口进行定位。旧版IE不支持。</li>
-</ul>
-</li>
-<li>inherit:<ul>
-<li>从父元素继承position属性的值。</li>
-</ul>
-</li>
-</ul>
-<p>ps：static和relative都属于常规流，而fixed和absolute都属于绝对定位。</p>
-<h3 id="display,position和float的影响">display,position和float的影响</h3><blockquote>
-<p>定位有类似优先级的机制。</p>
-</blockquote>
-<p>1.”position:absolute” 和 “position:fixed” 优先级最高，有它存在的时候，浮动不起作用，’display’ 会按一定规则进行重置</p>
-<pre><code>&lt;<span class="keyword">div</span> <span class="property">id</span>=<span class="string">"test"</span> style=<span class="string">"position:absolute; float:left; display:inline;"</span>&gt;&lt;/<span class="keyword">div</span>&gt;
-</code></pre><p>上面的代码中，因为设置了绝对定位，元素根据定位规则重新计算后的值为：float为none（浮动失效）display为block。<br>but在IE:计算后的值’float’ 值和 ‘display’ 的特性值未发生变化，还是 “float: left; display: inline”。<br>2.设置了float不为none的元素，display会按照规则转换成特定的值。</p>
-<pre><code>&lt;<span class="tag">span</span> style=<span class="string">"width:100px; height:100px; border:1px solid red; float:left;"</span>&gt;<span class="attribute">float</span> span&lt;/span&gt;
-</code></pre><p>上面的代码，虽然span是行内元素，但是因为设置了浮动，在正常的浏览器中其display会被转换成block，因此可以设置其宽和高。</p>
-<ol>
-<li><p>根元素，其display也会根据规则来转换。</p>
-</li>
-<li><p>最后，非根元素，并且非浮动元素，并且非绝对定位的元素，根据’display’ 特性值来定位。</p>
-<p><strong>以上也反映了一个问题：浮动或绝对定位的元素，只能是块元素或表格。</strong>对于非块元素或者表格的元素，在应用绝对定位或者float时，都会按照以下规则进行转换。<br><img src="http://ww3.sinaimg.cn/large/63739cabjw1f79rsqjfmyj20it07g3zc.jpg" alt=""></p>
-<h2 id="常规流">常规流</h2><p>常规流里的每一个盒子，都属于一个格式化的上下文中。不同的的元素会依据不同的格式化上下文来决定在当前环境中如何布局，块盒参与块级格式化上下文，行内盒子参与行内格式化上下文。</p>
-<h3 id="块级格式化上下文BFC">块级格式化上下文BFC</h3><p>在BFC中，盒子会一个接着一个垂直排列，且其中相邻的块级元素的垂直外边会发生折叠。</p>
-<blockquote>
-<p>块格式化上下文是一个比较抽象的概念。可以把它想象成一个大箱子，很多元素装在里面，箱子把它们和外面的元素隔开。</p>
-</blockquote>
-</li>
-</ol>
-<p>浮动元素，绝对定位元，display为inline-block，table-cell或table-captain的元素，以及overflow不为visible的元素，会创建新的格式化上下文。（！注意这些元素创建了块级格式化上下文，但它们本身不是块级格式化上下文）</p>
-<p>块级格式化很重要，因为它对宽高的计算，外边距折叠，定位都有影响。<br>具体请看<a href="http://blog.yzzhuo.com/2016/07/20/CSS%E7%9A%84BFC/">之前的一篇文章CSS的BFC</a></p>
-<h3 id="行内格式化上下文IFC">行内格式化上下文IFC</h3><p>块级格式化上下文的盒子一个接一个水平排列，起点是包含块的顶部。水平方向的margin，border，padding在盒子之间得以保留。 这些盒子在垂直方向可以以不同的方式来对齐。<br>行内级盒子(inline-level boxes)布局到一个由行盒(line boxes)垂直排列而成的容器里。</p>
-<ul>
-<li>IFC里面的盒子不能指定宽高。</li>
-<li>超出行盒宽度限制的行内框会被分割成多行。</li>
-<li>IFC涉及的东西很多，包括              <ul>
-<li>行盒和其大小计算</li>
-<li>行内级盒子的对齐方式    </li>
-<li>…     </li>
-</ul>
-</li>
-</ul>
-<p>在此必须知道基线是什么，以及line-height和vertical-align的原理。篇幅会比较长，为了避免本文篇幅过长，所以这部分打算之后有时间再另外抽出时间来探讨。</p>
-<h2 id="浮动">浮动</h2><p>浮动的元素脱离常规流，并且内容（line box）可与沿着浮动盒子的边缘环绕，比如文字环绕效果就是利用浮动来实现的。给元素设置clear属性就能清除其环绕在周围的浮动元素。</p>
-<pre><code>&lt;p style=<span class="string">" margin: 2em; border: 1px solid red;width: 200px;"</span>&gt;
-&lt;span style=<span class="string">"width:100px; height:100px; background-color:green; margin:20px;float: left;"</span>&gt;&lt;/span&gt;
-The IMG box <span class="keyword">is</span> floated <span class="keyword">to</span> <span class="keyword">the</span> left. The content <span class="keyword">that</span> follows <span class="keyword">is</span> formatted <span class="keyword">to</span> <span class="keyword">the</span>
-right <span class="keyword">of</span> <span class="keyword">the</span> float, starting <span class="function_start"><span class="keyword">on</span></span> <span class="keyword">the</span> same line <span class="keyword">as</span> <span class="keyword">the</span> float.
-&lt;/p&gt;
-</code></pre><p><img src="http://w3help.org/zh-cn/kb/011/011/around_float.png" alt="">     </p>
-<p> <strong>浮动框的位置</strong><br>一个浮动框要么向左偏移或向右偏移，偏移到直到它的外边界接触到它包含块的边界或者另外一个浮动框的外边界。<br>（注意，浮动框虽然脱离了常规流，但是确实是会被常规流所决定它的位置的。反正很久之前自己就错误地，单纯的以为float元素在另外一个层叠空间起作用，也不受其他非浮动元素影响）</p>
-<p><strong>浮动框对其它框的影响</strong> 因为浮动框脱离了常规流，所以常规流中的框会把浮动框当作不存在一样，即不会影响它们本来的排列布局。但是，在浮动框后创建的行盒会被缩短。</p>
-<p>对于table元素，块级替换元素，BFC元素和浮动元素,它们不能覆盖任何浮动元素。例子如下。</p>
-<pre><code>&lt;<span class="keyword">div</span> style=<span class="string">" margin: 2em;border: 1px solid red;width: 200px;overflow: hidden;"</span>&gt;
-&lt;<span class="keyword">div</span> <span class="property">id</span>=<span class="string">"A"</span> style=<span class="string">"width:50px; height:50px; background-color:green; margin:20px; float:left;"</span>&gt;A&lt;/<span class="keyword">div</span>&gt;
-&lt;<span class="keyword">div</span> <span class="property">id</span>=<span class="string">"B"</span> style=<span class="string">" width:50px; background-color:blue; overflow:hidden;"</span>&gt;B&lt;/<span class="keyword">div</span>&gt;
-&lt;/<span class="keyword">div</span>&gt;
-</code></pre><p><img src="http://w3help.org/zh-cn/kb/011/011/float_overflow1.png" alt=""></p>
-<h2 id="绝对定位">绝对定位</h2><p>绝对定位元素定位的参照物是其包含块，关于包含块的判定可以回顾上一篇文章。         </p>
-<blockquote>
-<p>常规流中的框，都在同一个层上，浮动框是处于常规流之上的一个特殊层，它可能会对常规流中的框的定位产生影响。但绝对定位的框不会， 每个绝对定位的框都可以看做一个单独的图层，不会对其他层框的定位产生影响。</p>
-</blockquote>
-<ul>
-<li>需要注意的是，在没有给绝对定位元素设置偏移时，它们的位置还是在常规流中的默认位置。</li>
-</ul>
-<p>参考文献：<br><a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/" target="_blank" rel="external">CSS规范</a></p>
+        <span itemprop="articleBody"><p>金九银十，人人繁忙。我忙忙碌碌，兜兜转转，最终却越发不知道自己要往哪里走。我不是一个乐观主义者，不会去抑制自己偶尔冒出的负面或悲伤的情绪，毕竟难过和开心都是平等的情绪，所以即使此时此刻我本不应该悠闲地在这书写生活，但是我知道不面对这个低谷去理一理自己的内心，自己便无法向前。<br><a id="more"></a></p>
+<p>我害怕对不起过去的自己和翩然而至的未来。但人生就是没有什么道理可循，即使我常常觉得自己不够努力，但有时却也不知道要努力到什么样的程度才足够。之所以努力，是想避免最后发现自己“本可以”，但是有时候现实却会变着法子给你一拳，把你做过的努力一拳粉碎。</p>
+<p>实习和校招的这段时间给我上了一课：人生并没有想象中的那么美好，在自己最狼狈的时候也许会脆弱得想哭，但是回过头发现自己咬咬牙已经走过了那么漫长和陡峭的道路,便发现了人生也没有想象中的那么糟糕。</p>
+<p>这两个月，前一个月常常是一下班以飞奔的速度赶回宿舍做在线笔试，后一个月为了赶赴面试，一来一回跑了好几趟大学城。这过程的确累，但是我也知道这是几乎所有应届毕业生都会经历的事。然而，每当我加班劳累在下班的路上，或者奔波劳碌结束了一场场面试时，就会思考这样的忙碌是否有意义。再后来，校招不尽如意的日子，每天早上醒来时，会思考自己曾经做过的选择是否是正确的。</p>
+<p>但现在想来选择或许根本就没有对错之分，无论面临多少次选择，一个人的性格往往决定了一个人会做什么样的选择。我害怕自己处于一种麻木的状态，每天都机械地做事，例行公事，无意义地按部就班，醒来和入睡前都感受到自己梦想匮乏，生活毫无目标和激情。更害怕自己渐渐对这种状态不自知，然后习惯了这种“安逸”的状态，而变得不愿意去改变和冲破。</p>
+<p>别人都说我还年轻，不必给自己太大的负担。其实，自己只是渴望那种能和他人一起前进和奋斗的时刻。我享受自我价值得到实现的那种成就感。也许有人会说我想要的太多，但是只有自己知道自己不是一个“安分”的人。相比于随波逐流，有所追求倒也不是什么坏事。起码它让我加班的时候感到的充实多于埋怨，让我在拥挤的求职人群中不那么胆怯和自卑，让我可以把忙碌之余的闲暇看作一种人生的馈赠而非人生的空虚和无聊。</p>
+<p>知乎有人问“如何走出人生低谷？”有人回答：“多走几步。”</p>
+<p>走在这条没有路灯亮起的夜路上，我其实也感到了一丝的恐惧。所幸的是发现了心里还有一盏灯为自己亮起，它的灯光或许有点微弱，但起码照亮了我现在脚下的路。哪怕现在没有一盏路灯为我亮起，那就凭借这自己心中的这盏灯再多走几步吧。最糟糕的事不过也是走完了一整个黑夜。</p>
+<p>毕竟，黑夜总会过去，黎明总会来临。</p>
 </span>
       
     </div>
@@ -434,7 +341,7 @@ right <span class="keyword">of</span> <span class="keyword">the</span> float, st
       
         <div class="post-tags">
           
-            <a href="/tags/position定位-常规流-浮动-绝对定位/" rel="tag">#position定位 常规流 浮动 绝对定位</a>
+            <a href="/tags/生活随笔/" rel="tag">#生活随笔</a>
           
         </div>
       
@@ -443,13 +350,13 @@ right <span class="keyword">of</span> <span class="keyword">the</span> float, st
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/10/16/走在人生的夜路上/" rel="prev">走在人生的夜路上</a>
+              <a href="/2016/10/30/微信支付踩过的坑/" rel="prev">微信支付踩过的坑</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/21/盒模型&视觉格式化上下文/" rel="next">CSS-盒模型和视觉格式化上下文</a>
+              <a href="/2016/08/28/CSS定位那些事儿/" rel="next">CSS定位那些事儿</a>
             
           </div>
         </div>
@@ -464,10 +371,10 @@ right <span class="keyword">of</span> <span class="keyword">the</span> float, st
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/08/28/CSS定位那些事儿/"
-     data-title="CSS定位那些事儿"
+        <div class="ds-share flat" data-thread-key="2016/10/16/走在人生的夜路上/"
+     data-title="走在人生的夜路上"
      data-content=""
-     data-url="http://blog.yzzhuo.com/2016/08/28/CSS定位那些事儿/">
+     data-url="http://blog.yzzhuo.com/2016/10/16/走在人生的夜路上/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -493,8 +400,8 @@ right <span class="keyword">of</span> <span class="keyword">the</span> float, st
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2016/08/28/CSS定位那些事儿/"
-                   data-title="CSS定位那些事儿" data-url="http://blog.yzzhuo.com/2016/08/28/CSS定位那些事儿/">
+              <div class="ds-thread" data-thread-key="2016/10/16/走在人生的夜路上/"
+                   data-title="走在人生的夜路上" data-url="http://blog.yzzhuo.com/2016/10/16/走在人生的夜路上/">
               </div>
             
           </div>
