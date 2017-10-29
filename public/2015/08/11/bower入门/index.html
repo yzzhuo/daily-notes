@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>
+      
+        bower入门 |
+          
+            I am June
+    </title>
+    <!-- 主css -->
+    <link rel="stylesheet" href="/sass/main.css">
+      <!-- seo -->
+      <meta name="description" content="随着网页功能变得越来越复杂，同一张网页加载多个JavaScript函数库早已是家常便饭。开发者越来越需要一个工具，对浏览器端的各种库进行管理，比如搜索、自动安装\卸载、检查更新、确保依赖关系等等。Bower就是为了解决这个问题而诞生的针对浏览器端的库管理工具。  bower的常用操作 包的安装：$ bower install（包名）  若包安装失败，执行”bower cache clean”，后">
+<meta name="keywords" content="前端工具">
+<meta property="og:type" content="article">
+<meta property="og:title" content="bower入门">
+<meta property="og:url" content="http://blog.yzzhuo.com/2015/08/11/bower入门/index.html">
+<meta property="og:site_name" content="I am June">
+<meta property="og:description" content="随着网页功能变得越来越复杂，同一张网页加载多个JavaScript函数库早已是家常便饭。开发者越来越需要一个工具，对浏览器端的各种库进行管理，比如搜索、自动安装\卸载、检查更新、确保依赖关系等等。Bower就是为了解决这个问题而诞生的针对浏览器端的库管理工具。  bower的常用操作 包的安装：$ bower install（包名）  若包安装失败，执行”bower cache clean”，后">
+<meta property="og:updated_time" content="2017-10-29T15:17:07.254Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="bower入门">
+<meta name="twitter:description" content="随着网页功能变得越来越复杂，同一张网页加载多个JavaScript函数库早已是家常便饭。开发者越来越需要一个工具，对浏览器端的各种库进行管理，比如搜索、自动安装\卸载、检查更新、确保依赖关系等等。Bower就是为了解决这个问题而诞生的针对浏览器端的库管理工具。  bower的常用操作 包的安装：$ bower install（包名）  若包安装失败，执行”bower cache clean”，后">
+        <!-- facicon -->
+        
+          <link rel="icon" href="http://7xp1k3.com1.z0.glb.clouddn.com/octocat-de-los-muertos.jpg">
+          
+            <!-- 统计 -->
+            
+              <script>
+                var _hmt = _hmt || [];
+                (function () {
+                  var hm = document.createElement("script");
+                  hm.src = "//hm.baidu.com/hm.js?c21994907883f37ffd80e13627dd4faa";
+                  var s = document.getElementsByTagName("script")[0];
+                  s.parentNode.insertBefore(hm, s);
+                })();
+              </script>
+              
+                
+                    <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+</head>
+	<body>
+		<div class="main">
+			<div id="mobile-bar">
+    <a class="menu-button"></a>
+    <a class="logo" href="/">Yzz</a>
+</div>
+<header class="nav-header">
+    <a href="/" class="logo-link">Yzz</a>
+    
+            
+    <ul class="nav nav-list">
+        <li class="nav-list-item"><a href="/">Home</a></li>
+        
+            
+        
+            
+        <li class="nav-list-item"><a href="/about">About</a></li>
+            
+        
+            
+        <li class="nav-list-item"><a href="/tags">Tags</a></li>
+            
+        
+            
+        <li class="nav-list-item"><a href="/archives">Archives</a></li>
+            
+        
+    </ul>
+</header>
+<div class="sidebar">
+    
+            
+    <ul class="main-menu">
+        <li class="main-menu-item"><a href="/">Home</a></li>
+        
+            
+        
+            
+        <li class="main-menu-item"><a href="/about">About</a></li>
+            
+        
+            
+        <li class="main-menu-item"><a href="/tags">Tags</a></li>
+            
+        
+            
+        <li class="main-menu-item"><a href="/archives">Archives</a></li>
+            
+        
+    </ul>
+</div>
+
+<h1 class="blog-title">The Yzz Blog</h1>
+
+			
+<article class="article-main" itemscope itemprop="blogPost">
+        <div class="articleCon">
+            <header class="article-header">
+                <h1 itemprop="name">
+                    <a href="/2015/08/11/bower入门/" class="article-title">bower入门</a>
+                </h1>
+            </header>
+            
+<div class="bookmark" id="bookmark">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#bower的常用操作"><span class="toc-text">bower的常用操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bower-json"><span class="toc-text">bower.json</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bowerrc"><span class="toc-text">.bowerrc</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bower与npm"><span class="toc-text">bower与npm</span></a></li></ol>
+</div>
+
+            
+            <div class="article-meta">
+                <div class="article-dateTime">
+    <a href="/2015/08/11/bower入门/" class="article-date">
+        <time datetime="Aug 11th 2015" itemprop="datePublished">
+            Aug 11th 2015
+        </time>
+    </a>
+</div>
+
+            </div>
+            <div class="article-inner">
+                <div class="article-entry" itemprop="articleBody">
+                    <blockquote>
+<p>随着网页功能变得越来越复杂，同一张网页加载多个JavaScript函数库早已是家常便饭。开发者越来越需要一个工具，对浏览器端的各种库进行管理，比如搜索、自动安装\卸载、检查更新、确保依赖关系等等。Bower就是为了解决这个问题而诞生的针对浏览器端的库管理工具。</p>
+</blockquote>
+<h3 id="bower的常用操作"><a href="#bower的常用操作" class="headerlink" title="bower的常用操作"></a>bower的常用操作</h3><ul>
+<li>包的安装：<code>$ bower install（包名）</code></li>
+</ul>
+<p>若包安装失败，执行”bower cache clean”，后重新安装。</p>
+<ul>
+<li><p>包的搜索</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ bower search （包名）</div></pre></td></tr></table></figure>
+</li>
+<li><p>对已安装的包进行查看</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ bower list</div></pre></td></tr></table></figure>
+</li>
+<li><p>查看某个包的信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ bower info （包名）</div></pre></td></tr></table></figure>
+</li>
+<li><p>卸载包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ bower uninstall （包名）</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="bower-json"><a href="#bower-json" class="headerlink" title="bower.json"></a>bower.json</h3><p>这个文件便于在项目中对于包可以进行批量安装</p>
+<ul>
+<li>在项目中创建bower.json<code>$ bower init</code></li>
+</ul>
+<p>bower.json的一般格式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;name&quot;: &quot;blog&quot;,  </div><div class="line">  &quot;version&quot;: &quot;0.0.1&quot;     </div><div class="line">  &quot;authors&quot;: [</div><div class="line">    &quot;sb&quot;</div><div class="line">  ],</div><div class="line">  &quot;license&quot;: &quot;MIT&quot;,</div><div class="line">  &quot;ignore&quot;: [      </div><div class="line">    &quot;**/.*&quot;,    </div><div class="line">    &quot;node_modules&quot;,      </div><div class="line">    &quot;bower_components&quot;,    </div><div class="line">    &quot;test&quot;,</div><div class="line">    &quot;tests&quot;</div><div class="line">  ],</div><div class="line">  &quot;dependencies&quot;: &#123;</div><div class="line">    &quot;jquery&quot;: &quot;~2.0.3&quot;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>其中dependencies就是项目依赖的包列表。</p>
+<ul>
+<li>安装包并更新bower.json<code>$ bower install （某包） --save</code></li>
+</ul>
+<h3 id="bowerrc"><a href="#bowerrc" class="headerlink" title=".bowerrc"></a>.bowerrc</h3><p>若不希望包文件下载到/bower-component中，而下载安装到自己习惯的目录，则在项目目录下新建一个.bowerrc文件，修改里面的directory的路径。<br>一般的.bowerrc文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;directory&quot; : &quot;components&quot;,//存放库文件的目录。</div><div class="line">  &quot;json&quot;      : &quot;bower.json&quot;,//描述各个库的json文件名。</div><div class="line">  &quot;endpoint&quot;  : &quot;https://Bower.herokuapp.com&quot;,//在线索引的网址，用来搜索各种库。</div><div class="line">  &quot;searchpath&quot;  : &quot;&quot;,//一个数组，储存备选的在线索引网址。如果某个库在endpoint中找不到，则继续搜索该属性指定的网址，通常用于放置某些不公开的库。</div><div class="line">  &quot;shorthand_resolver&quot; : &quot;&quot;//定义各个库名称简写形式</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="bower与npm"><a href="#bower与npm" class="headerlink" title="bower与npm"></a>bower与npm</h3><p><strong>npm和bower都是包管理器。npm是node端的包管理工具包，而bower是基于node的，用于管理前端依赖资源的管理工具。</strong><br>通常，在实际项目中，npm和bower都会用到，并且bower的安装和升级依赖于npm。<br>NPM主要运用于Node.js项目的内部依赖包管理，安装的模块位于项目根目录下的node_modules文件夹内。而Bower大部分情况下用于前端开发，对于CSS/JS/模板等内容进行依赖管理，依赖的下载目录结构可以自定义。<br>npm采用嵌套的依赖关系树，而bower采用变片的依赖关系管理方式，而一个普通前端的依赖树非常荣昌，同时和其它安装包不能共享依赖代码，采用npm管理会导致文件非常多，不依赖前端代码部署。<br>实际项目中，后端可以采用npm进行包管理，而前端可以采用bower进行包管理，让各自的工作效率大大提升</p>
+
+                </div>
+                
+<nav id="article-nav">
+  
+    <a href="/2015/08/11/用Yeoman来创建我的web应用/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title">
+        
+          用Yeoman来创建我的web应用 >
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+
+            </div>
+        </div>
+        
+            <div id="disqus_thread"></div>
+<script>
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document,
+            s = d.createElement('script');
+
+        s.src = '//yzzting.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script id="dsq-count-scr" src="//yzzting.disqus.com/count.js" async></script>
+
+        
+        
+</article>
+
+
+
+		</div>
+		<div id="heart"></div>
+
+    <footer class="blog-footer" id="blog-footer">
+        <div id="footer-info" class="inner">
+            Made with ♥ by <a href="https://github.com/yzzting/hexo-theme-MyFairLady" target="_blank">MyFairLady</a>
+        </div>
+    </footer>
+    <script src="/js/sidebar.js"></script>
+    <script src="/js/toTop.js"></script>
+    <script src="/js/bookmark.js"></script>
+	</body>
+	</html>

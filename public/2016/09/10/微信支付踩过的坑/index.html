@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>
+      
+        微信支付踩过的坑 |
+          
+            I am June
+    </title>
+    <!-- 主css -->
+    <link rel="stylesheet" href="/sass/main.css">
+      <!-- seo -->
+      <meta name="description" content="上个星期末，给公司的一个微信公众号接微信支付的接口。本以为不就是一个小小的接口，应该是一会儿的功夫，结果却折腾得快要神经崩溃。所幸的是，在和另外一个负责服务器端的伙伴的研究下，最终成功折腾出来了。在此，为了避免之后再次掉坑，记录一下遇到的坑和解决的方法。 前言在此之前，我先吐槽一下微信公众号（包括微信支付）的开发者文档。第一眼看的时候，流程和步骤讲得很简单，然而到真正开始做的时候，才发现文档的很多">
+<meta name="keywords" content="实战总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信支付踩过的坑">
+<meta property="og:url" content="http://blog.yzzhuo.com/2016/09/10/微信支付踩过的坑/index.html">
+<meta property="og:site_name" content="I am June">
+<meta property="og:description" content="上个星期末，给公司的一个微信公众号接微信支付的接口。本以为不就是一个小小的接口，应该是一会儿的功夫，结果却折腾得快要神经崩溃。所幸的是，在和另外一个负责服务器端的伙伴的研究下，最终成功折腾出来了。在此，为了避免之后再次掉坑，记录一下遇到的坑和解决的方法。 前言在此之前，我先吐槽一下微信公众号（包括微信支付）的开发者文档。第一眼看的时候，流程和步骤讲得很简单，然而到真正开始做的时候，才发现文档的很多">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/63739cabgw1f9a5vanb1rj20ay0e4dhg.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/63739cabgw1f9a6xg11zpj20gg066dh7.jpg">
+<meta property="og:updated_time" content="2017-10-29T15:24:44.208Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="微信支付踩过的坑">
+<meta name="twitter:description" content="上个星期末，给公司的一个微信公众号接微信支付的接口。本以为不就是一个小小的接口，应该是一会儿的功夫，结果却折腾得快要神经崩溃。所幸的是，在和另外一个负责服务器端的伙伴的研究下，最终成功折腾出来了。在此，为了避免之后再次掉坑，记录一下遇到的坑和解决的方法。 前言在此之前，我先吐槽一下微信公众号（包括微信支付）的开发者文档。第一眼看的时候，流程和步骤讲得很简单，然而到真正开始做的时候，才发现文档的很多">
+<meta name="twitter:image" content="http://ww4.sinaimg.cn/large/63739cabgw1f9a5vanb1rj20ay0e4dhg.jpg">
+        <!-- facicon -->
+        
+          <link rel="icon" href="http://7xp1k3.com1.z0.glb.clouddn.com/octocat-de-los-muertos.jpg">
+          
+            <!-- 统计 -->
+            
+              <script>
+                var _hmt = _hmt || [];
+                (function () {
+                  var hm = document.createElement("script");
+                  hm.src = "//hm.baidu.com/hm.js?c21994907883f37ffd80e13627dd4faa";
+                  var s = document.getElementsByTagName("script")[0];
+                  s.parentNode.insertBefore(hm, s);
+                })();
+              </script>
+              
+                
+                    <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+</head>
+	<body>
+		<div class="main">
+			<div id="mobile-bar">
+    <a class="menu-button"></a>
+    <a class="logo" href="/">Yzz</a>
+</div>
+<header class="nav-header">
+    <a href="/" class="logo-link">Yzz</a>
+    
+            
+    <ul class="nav nav-list">
+        <li class="nav-list-item"><a href="/">Home</a></li>
+        
+            
+        
+            
+        <li class="nav-list-item"><a href="/about">About</a></li>
+            
+        
+            
+        <li class="nav-list-item"><a href="/tags">Tags</a></li>
+            
+        
+            
+        <li class="nav-list-item"><a href="/archives">Archives</a></li>
+            
+        
+    </ul>
+</header>
+<div class="sidebar">
+    
+            
+    <ul class="main-menu">
+        <li class="main-menu-item"><a href="/">Home</a></li>
+        
+            
+        
+            
+        <li class="main-menu-item"><a href="/about">About</a></li>
+            
+        
+            
+        <li class="main-menu-item"><a href="/tags">Tags</a></li>
+            
+        
+            
+        <li class="main-menu-item"><a href="/archives">Archives</a></li>
+            
+        
+    </ul>
+</div>
+
+<h1 class="blog-title">The Yzz Blog</h1>
+
+			
+<article class="article-main" itemscope itemprop="blogPost">
+        <div class="articleCon">
+            <header class="article-header">
+                <h1 itemprop="name">
+                    <a href="/2016/09/10/微信支付踩过的坑/" class="article-title">微信支付踩过的坑</a>
+                </h1>
+            </header>
+            
+<div class="bookmark" id="bookmark">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#正文"><span class="toc-text">正文</span></a></li></ol>
+</div>
+
+            
+            <div class="article-meta">
+                <div class="article-dateTime">
+    <a href="/2016/09/10/微信支付踩过的坑/" class="article-date">
+        <time datetime="Sep 10th 2016" itemprop="datePublished">
+            Sep 10th 2016
+        </time>
+    </a>
+</div>
+
+            </div>
+            <div class="article-inner">
+                <div class="article-entry" itemprop="articleBody">
+                    <p>上个星期末，给公司的一个微信公众号接微信支付的接口。本以为不就是一个小小的接口，应该是一会儿的功夫，结果却折腾得快要神经崩溃。所幸的是，在和另外一个负责服务器端的伙伴的研究下，最终成功折腾出来了。在此，为了避免之后再次掉坑，记录一下遇到的坑和解决的方法。</p>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在此之前，我先吐槽一下微信公众号（包括微信支付）的开发者文档。第一眼看的时候，流程和步骤讲得很简单，然而到真正开始做的时候，才发现文档的很多东西真的让人一脸懵逼。其次，微信这一块其实后端的活比前端要多，但是两端都应该理解微信支付的整个流程。这里的总结主要针对是前端的工作。</p>
+<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><ul>
+<li><p>微信支付的大概流程？</p>
+<p>看完微信<a href="https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=7_1" target="_blank" rel="external">公众号支付开发者文档</a>，认真看完，看完两三遍，似乎没什么用，依旧是一脸懵逼.jpg。</p>
+<p>还好，后来找到一篇<a href="http://blog.sina.com.cn/s/blog_48422a050102w364.html" target="_blank" rel="external">微信支付流程精简版的文章</a>，是这篇文章让我对微信支付的整个流程清晰了许多。</p>
+<p>结合了教程，这次接入支付的大概流程就是：</p>
+<blockquote>
+<p>1.前端在要接入微信支付的页面时会进行一次重定向，进入一个后端提供的带验证的入口URI（此过程的目的是为了让后端根据code来获取openId）<br>2.后端调用统一下单的接口来告诉微信交易的一些详情信息。<br>3.前端引入微信的sdk（<a href="https://mp.weixin.qq.com/wiki/7/aaa137b55fb2e0456bf8dd9148dd613f.html" target="_blank" rel="external">详见开发文档</a>），配置wx.config。<br>4.前端配置chooseWXPay<br>5.测试</p>
+</blockquote>
+</li>
+</ul>
+<p>以上几乎每一步基本都有遇到坑，接下来会根据部分步骤遇到坑进行详细的说明。</p>
+<ul>
+<li><p>刚开始调用后台提供的支付接口时，前端出现了跨域问题，打开开发者工具，发现是在调用接口过程中进行了重定向发生的。</p>
+<p>原因和解决方法：原本后端打算在我前端调用它的这个接口来获取到code然后重定向去获取openID,但是因为整个过程是在Ajax里进行的，所以会发生跨域错误。<br>解决方法：前端不直接用ajax去调用后端支付的接口，而是在进入要接入微信支付的页面时，重定向到后端的接口地址去，而后端对该接口做了相应修改，即在前端重定向后去根据code获取openId，并把openID存入cookies中。</p>
+</li>
+<li><p>前端如何调用支付API。</p>
+<p>如果把<a href="https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=7_7&amp;index=6" target="_blank" rel="external">微信支付开发文档</a>的示例代码信以为真，那就呵呵了。反正我当时真的把<code>getBrandWCPayRequest</code>这个东西当真了，直到意识到折腾这个东西是没有未来的。</p>
+<p>在调用微信支付API时，前端要先引入微信JS-SDK，<a href="https://mp.weixin.qq.com/wiki/7/aaa137b55fb2e0456bf8dd9148dd613f.html" target="_blank" rel="external">详见这个开发文档</a>，配置wx.config来注入权限验证配置。之后才可以去发起一个微信支付的请求，发起微信支付的过程具体可以先看<a href="https://mp.weixin.qq.com/wiki/7/aaa137b55fb2e0456bf8dd9148dd613f.html#.E5.8F.91.E8.B5.B7.E4.B8.80.E4.B8.AA.E5.BE.AE.E4.BF.A1.E6.94.AF.E4.BB.98.E8.AF.B7.E6.B1.82" target="_blank" rel="external">文档1</a>再去看<a href="https://pay.weixin.qq.com/wiki/doc/api/index.html" target="_blank" rel="external">文档2</a></p>
+</li>
+<li><p>前端wx.config和wx.chooseWXPay的参数</p>
+<p>一开始我调用后端支付的接口返回的数据是这样的<br><a href="http://ww4.sinaimg.cn/large/63739cabgw1f9a5vanb1rj20ay0e4dhg.jpg" target="_blank" rel="external"><img src="http://ww4.sinaimg.cn/large/63739cabgw1f9a5vanb1rj20ay0e4dhg.jpg" alt="img"></a><br>第一次配置wx.config时便以为signature就是上图接口访问的sign，timestamp是自己生成的等等.（当时前后端都在支付上有些懵懂，后端too simple too native的以为把统一下单传回来的数据直接传给前端就行了，而前端以为调微信支付API时参数哪个像就拿哪个…..）</p>
+</li>
+</ul>
+<p><strong>配置时注意的几个参数有：1.wx.config的signature参数是需要服务端生成的，生产的具体方法见文档的附录12.chooseWXPay的timestamp参数是小写，要和后端生产signature用的timestamp保持一致。3.chooseWXPay的paySign参数也需要服务器端生成传给前端。（paySign生成的具体规则依旧见文档的前面算法生成规则） </strong><br>于是，后端一番整改，返回的参数总算齐了，前端只要把传回的数据填充到对于的参数即可。<br><a href="http://ww2.sinaimg.cn/large/63739cabgw1f9a6xg11zpj20gg066dh7.jpg" target="_blank" rel="external"><img src="http://ww2.sinaimg.cn/large/63739cabgw1f9a6xg11zpj20gg066dh7.jpg" alt="img"></a></p>
+<ul>
+<li><p>前端进行测试的注意点</p>
+<p>1.一开始用微信开发者的web调试工具来进行测试，但是发现调用微信支付时会报<code>不支持该类型的SDK模拟</code>的错误，后来才知道微信支付必须在手机进行测试，还好微信web调试工具有一个移动调试的功能，可以帮助我们在手机测试的时候方便看我们看到调试过程输出的信息。</p>
+<p>2.实践证明最好在IPhone进行测试，因为调用支付失败时，安卓手机只会报（chooseWXPay:fail），而苹果手机则会报更加具体的错误。比如后面折腾了一番，用iphone测试后终于发现原来是<code>授权目录</code>出了差错ORZ。</p>
+</li>
+</ul>
+<p>more：</p>
+<ul>
+<li>因为代码就不便贴出，代码方面有疑问的话可参考<a href="http://www.jb51.net/article/89239.htm" target="_blank" rel="external">脚本网站提供的前端接入微信支付的代码</a></li>
+</ul>
+
+                </div>
+                
+<nav id="article-nav">
+  
+    <a href="/2016/09/11/angularJS初体验/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title">
+        
+          angularJS初体验 >
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/08/24/前端工程化-gulp应用篇2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"> < 前端工程化-gulp应用篇2</div>
+    </a>
+  
+</nav>
+
+
+            </div>
+        </div>
+        
+            <div id="disqus_thread"></div>
+<script>
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document,
+            s = d.createElement('script');
+
+        s.src = '//yzzting.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script id="dsq-count-scr" src="//yzzting.disqus.com/count.js" async></script>
+
+        
+        
+</article>
+
+
+
+		</div>
+		<div id="heart"></div>
+
+    <footer class="blog-footer" id="blog-footer">
+        <div id="footer-info" class="inner">
+            Made with ♥ by <a href="https://github.com/yzzting/hexo-theme-MyFairLady" target="_blank">MyFairLady</a>
+        </div>
+    </footer>
+    <script src="/js/sidebar.js"></script>
+    <script src="/js/toTop.js"></script>
+    <script src="/js/bookmark.js"></script>
+	</body>
+	</html>

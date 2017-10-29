@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>
+      
+        angularJS初体验 |
+          
+            I am June
+    </title>
+    <!-- 主css -->
+    <link rel="stylesheet" href="/sass/main.css">
+      <!-- seo -->
+      <meta name="description" content="实习的一个运营后台开发的项目，也许是实习期间对我而言最有挑战性的一次工作，因为这是初次实践angularJS。在边学边做的过程，收获不小，因此想趁着感受还比较深之时把学习和使用AngularJS进行开发的一些体验记录下来（AngularJS 1.x版本），这里主要总结学习angular的感受。（类似一篇读后感，并非入门教程） 背景 当你决定去改变一些东西的时，你应该知道你为什么要这样做，这很重要。">
+<meta name="keywords" content="前端框架">
+<meta property="og:type" content="article">
+<meta property="og:title" content="angularJS初体验">
+<meta property="og:url" content="http://blog.yzzhuo.com/2016/09/11/angularJS初体验/index.html">
+<meta property="og:site_name" content="I am June">
+<meta property="og:description" content="实习的一个运营后台开发的项目，也许是实习期间对我而言最有挑战性的一次工作，因为这是初次实践angularJS。在边学边做的过程，收获不小，因此想趁着感受还比较深之时把学习和使用AngularJS进行开发的一些体验记录下来（AngularJS 1.x版本），这里主要总结学习angular的感受。（类似一篇读后感，并非入门教程） 背景 当你决定去改变一些东西的时，你应该知道你为什么要这样做，这很重要。">
+<meta property="og:updated_time" content="2017-10-29T15:16:19.722Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="angularJS初体验">
+<meta name="twitter:description" content="实习的一个运营后台开发的项目，也许是实习期间对我而言最有挑战性的一次工作，因为这是初次实践angularJS。在边学边做的过程，收获不小，因此想趁着感受还比较深之时把学习和使用AngularJS进行开发的一些体验记录下来（AngularJS 1.x版本），这里主要总结学习angular的感受。（类似一篇读后感，并非入门教程） 背景 当你决定去改变一些东西的时，你应该知道你为什么要这样做，这很重要。">
+        <!-- facicon -->
+        
+          <link rel="icon" href="http://7xp1k3.com1.z0.glb.clouddn.com/octocat-de-los-muertos.jpg">
+          
+            <!-- 统计 -->
+            
+              <script>
+                var _hmt = _hmt || [];
+                (function () {
+                  var hm = document.createElement("script");
+                  hm.src = "//hm.baidu.com/hm.js?c21994907883f37ffd80e13627dd4faa";
+                  var s = document.getElementsByTagName("script")[0];
+                  s.parentNode.insertBefore(hm, s);
+                })();
+              </script>
+              
+                
+                    <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+</head>
+	<body>
+		<div class="main">
+			<div id="mobile-bar">
+    <a class="menu-button"></a>
+    <a class="logo" href="/">Yzz</a>
+</div>
+<header class="nav-header">
+    <a href="/" class="logo-link">Yzz</a>
+    
+            
+    <ul class="nav nav-list">
+        <li class="nav-list-item"><a href="/">Home</a></li>
+        
+            
+        
+            
+        <li class="nav-list-item"><a href="/about">About</a></li>
+            
+        
+            
+        <li class="nav-list-item"><a href="/tags">Tags</a></li>
+            
+        
+            
+        <li class="nav-list-item"><a href="/archives">Archives</a></li>
+            
+        
+    </ul>
+</header>
+<div class="sidebar">
+    
+            
+    <ul class="main-menu">
+        <li class="main-menu-item"><a href="/">Home</a></li>
+        
+            
+        
+            
+        <li class="main-menu-item"><a href="/about">About</a></li>
+            
+        
+            
+        <li class="main-menu-item"><a href="/tags">Tags</a></li>
+            
+        
+            
+        <li class="main-menu-item"><a href="/archives">Archives</a></li>
+            
+        
+    </ul>
+</div>
+
+<h1 class="blog-title">The Yzz Blog</h1>
+
+			
+<article class="article-main" itemscope itemprop="blogPost">
+        <div class="articleCon">
+            <header class="article-header">
+                <h1 itemprop="name">
+                    <a href="/2016/09/11/angularJS初体验/" class="article-title">angularJS初体验</a>
+                </h1>
+            </header>
+            
+<div class="bookmark" id="bookmark">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#背景"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AngularJS初印象"><span class="toc-text">AngularJS初印象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#视图与指令"><span class="toc-text">视图与指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#作用域"><span class="toc-text">作用域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#模块与依赖注入"><span class="toc-text">模块与依赖注入</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#附：angular的一些学习资源"><span class="toc-text">附：angular的一些学习资源</span></a></li></ol></li></ol></li></ol>
+</div>
+
+            
+            <div class="article-meta">
+                <div class="article-dateTime">
+    <a href="/2016/09/11/angularJS初体验/" class="article-date">
+        <time datetime="Sep 11th 2016" itemprop="datePublished">
+            Sep 11th 2016
+        </time>
+    </a>
+</div>
+
+            </div>
+            <div class="article-inner">
+                <div class="article-entry" itemprop="articleBody">
+                    <p>实习的一个运营后台开发的项目，也许是实习期间对我而言最有挑战性的一次工作，因为这是初次实践angularJS。在边学边做的过程，收获不小，因此想趁着感受还比较深之时把学习和使用AngularJS进行开发的一些体验记录下来（AngularJS 1.x版本），这里主要总结学习angular的感受。（类似一篇读后感，并非入门教程）</p>
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><blockquote>
+<p>当你决定去改变一些东西的时，你应该知道你为什么要这样做，这很重要。</p>
+</blockquote>
+<p>公司要重新开发运营后台的命令一下来，进度瞬间也被排的紧凑。后端人员先走一步，把接口完成得差不多，我看了一下接口文档，背后一阵凉风吹过，光是课程管理模块就有足足两页（十几个接口），大致看了一下需求，多数功能都是建立在CRUD上的。</p>
+<p>即使熟悉使用Jquery来进行web开发的人，尝试用jquery+api来完成这个任务也会大受打击，即便硬着头皮实现了这个系统，后期的维护和修改必定也会是一场灾难。所以，对于这类大型web应用来说，前端开发使用框架时必要的，这不仅提高我们的开发效率，同时支持我们编写更加整洁的代码。</p>
+<p>早有耳闻AngularJS作为一个客户端MVC框架，尤其适合编写有大量CRUD操作的，具体Ajax风格的富客户端应用，咦(<em>@ο@</em>) 这不就是我现在想要的吗？加之学习了解了一段时间之后，心里一阵呐喊“AngularJS，去吧，就决定就是你了”。（盗用下《宠物小精灵》的台词）</p>
+<h3 id="AngularJS初印象"><a href="#AngularJS初印象" class="headerlink" title="AngularJS初印象"></a>AngularJS初印象</h3><p>与react.js不同，AngularJS是一个完整的前端框架，模板、控制器、过滤器、服务等一应俱全，其依赖注入系统更是让测试变得更加简单。以下是学习过程让我比较深刻的几点。</p>
+<h4 id="视图与指令"><a href="#视图与指令" class="headerlink" title="视图与指令"></a>视图与指令</h4><p>angular与HTML和DOM有着密切的联系。AngularJS依靠浏览器去解析模板文本（就像浏览器对HTML文档的解析）。浏览器将html解析成一个DOM tree后，AngularJS就参与进来，开始遍历解析好的DOM结构，遇到指令，就执行相关逻辑，将指令转换成页面的动态部分。</p>
+<blockquote>
+<p>Angular提供了很多遍历的指令，但重要的不是这些指令的语法或者功能，而是隐藏在表象下的关于如何构建UI组件的AngularJS哲学。</p>
+</blockquote>
+<p>刚学习angularJS，都是从一个hello world和即时显示输入框输入内容的demo开始。尤其是输入框的例子让人惊叹不已。因为如果用js或者jq来实现，你必须先获取输入框的内容，再通过dom操作显示出其文本。而用angularJS，你只需引入angular的库，利用ng-app指令来引导（bootstrap）该应用，使用ng-model来进行数据绑定，angular就会自动去理解解释其中的指令帮我们做一些事情，比如在输入框那里例子实现数据的即时刷新。开发过程，我也逐步在发现自己的编程方式发生了改变，但无法用合理的语言来表达，直到我看了《精通AngularJS》里面的一段话。</p>
+<p>AngularJS提倡声明式UI结构，让模板专注于描述所需要的效果，而非实现。举例子，想想在输入框输入内容即时显示其文本的入门demo，以及ng-class来动态添加class，以及ng-click等来绑定点击事件等的编程是不是和我们平日用jquery的编程方式不大一样？（用jq为了实现以上的效果，你不得不按部就班地去操作修改dom来达到目的）。</p>
+<p>传统的开发采用命令式的编程风格，我们用js或者jq控制一切和调整每个细节。但“掌控一切”的代价，就是编写大量底层的，重复的代码。AngularJS采用的声明式编程风格更具表现力，Angular的支持，让开发者从严格的底层实现中解放出来，写出更简洁易读的代码，除了开发者实现自定义指令时会需要有步骤详细的底层DOM操作，开发过程我们很少去操作DOM。</p>
+<blockquote>
+<p>永远不要在AngularJS控制器中去操纵DOM，在控制器中获取对DOM元素的引用，操纵元素的属性，预示着在用命令式编程风格来构建UI—这违背了AngularJS之道。</p>
+</blockquote>
+<p>但想要更有效地使用模板和指令，就必须去了解更多的内部机制。这或许就是深入学习AngularJS的难点吧。毕竟声明式编程风格的一个基础，就是建立一个能够正确解释高级命令的机制。</p>
+<h4 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h4><p>$scope这个东西确实引起了我的注意，虽然听说angular2已经把它废弃了，但我还是想说一下它以及angular里面的作用域。</p>
+<p>通过ng-controller指令来指定使用的控制器，一个作用域实例就会被初始化。作用域控制了该领域模型中的哪些数据和操作在视图上时有效的，而控制器提供了模型的初始值并处理UI相关的行为。</p>
+<p>angularjs的作用域也拥有层级的概念。$rootScope是顶级作用域，每个控制器用拥有自己的$scope。每个作用域拥有自己的整套模型值，不同的作用域定义同名的变量，不会造成命名冲突。并且，与js原型基础的规则类似，angular的作用域也有继承的概念，子scope可以访问父scope的变量和对象。</p>
+<p>但是，作用域层级继承也具备一定的风险。读操作的时候，一切都在自己的预料之中。但写操作的时候，要注意的一点是，子作用域的写操作不会影响父作用域。要经历避免直接绑定变量给作用域属性，而是采用对象属性的双向数据绑定。</p>
+<p><strong>作用域层级和事件系统</strong><br>angular通过传播带有信息的命名事件，允许跨越作用域层级。每个作用域都有$on方法，用于注册作用域的事件处理程序。angular支持通过$emit进行向上分发和$broadcast进行向下分发。</p>
+<h4 id="模块与依赖注入"><a href="#模块与依赖注入" class="headerlink" title="模块与依赖注入"></a>模块与依赖注入</h4><p>AngularJS拥有全套的API来定义模块以及在模块中注册对象。AngularJS为自己定义了全局命名空间angular，它提供了多种功能和函数，比如.module()、.controller（）、.filter（）等。</p>
+<p>模块模式在组织代码方面非常有用，此外，AngularJS也提供了一套依赖注入系统来声明模块和模块注册对象的相互依赖关系。(学习这个的时候让我想起学习javaEE时的依赖注入，印象中在一个对象使用另外一个对象必须用new来实例化，但是通过spring的依赖注入功能可以避免在对象中new一个对象造成的高耦合..)</p>
+<p>angularJS内建的依赖注入引擎，它能理解对象对其协作对象的需求，找到所需的协作对象，连接协作对象已形成完备的应用。</p>
+<blockquote>
+<p>依靠这套依赖管理系统，开发者：“为了正常工作，我需要一个依赖，我不知道它从哪儿来，也不知道它如何创建，我只知道我需要它，所以请为我提供它”。</p>
+</blockquote>
+<p>声明依赖关系的作用，让对象无需担心协作对象的生命周期。你甚至可以随意交换协作对象，通过替换服务来建立不同的应用，而这点也是有效进行单元测试的关键。（如果没有将其真实实现替换为伪造实现的能力，便很难孤立地对一个对象进行测试）。</p>
+<p><strong>AngularJS的注册服务</strong> 接入依赖注入之前，是创建一个对象并将对象注册在模块上。开发者不直接注册对象的实例，而是将对象创建的方案抛给依赖注入系统，然后AngularJS解释这些方案以初始化该对象，并连接它们成为一个可运行的应用。</p>
+<p>AngularJS的$provide服务可以注册不同的对象创建方案，之后$inject服务会解释这些方案，解决所有依赖关系，生产完备而可用的对象实例。总而言之，angularJS模块保存对象实例，而我们控制这些对象的创建，AngularJS提供以下几种创建对象的方式。</p>
+<ul>
+<li>value：可用于注册已初始化好的对象<br>这种注册方法只对非常简单的对象有用，因为通过这种方式注册的对象不能依赖其他对象。</li>
+<li>service：用于注册构造函数，让依赖该对象的模块无需对其依赖对象进行初始化（类似消除new关键字的功能）。</li>
+<li>factory：任何能够创建对象的函数都可以被注册，因此相比service而言，它更加灵活。factory是让对象加入依赖注入最常用的方法，它可以实现复杂的对象创建逻辑。因为可以是普通的函数，利用词法作用域可以来模拟“私有”变量，因此服务的一些实现细节。</li>
+<li>constant：可用于创建不同应用使用的共通服务（如可供服务的客进行定制的配置信息）</li>
+<li>provider:以上的所有注册方法，都是最通用provider的特殊类型。</li>
+</ul>
+<p><strong>模块的生命周期</strong><br>angularJS将模块的生命周期分为两个阶段：</p>
+<ul>
+<li>配置阶段：收集对象的创建方案，并进行配置。</li>
+<li>运行阶段：执行所有初始化后的逻辑。</li>
+</ul>
+<p>在配置阶段，仅运行constant和provider的注入，而在运行阶段，可以注入provider的任意对象。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>世界上没有最完美的框架，只有最合适的框架，了解和认识Angular与众不同的地方，可以让我们判断它到底适不适合用在某一个项目上，angularJS的特点总结如下：</p>
+<ul>
+<li>自动刷新与双向数据绑定，让开发者从显式触发来进行UI重绘的枯燥工作中解放</li>
+<li>以HTML语法为基础的动态DOM充当模板语言，可通过创建指令来扩展现存的html标签库。</li>
+<li>声明式UI编程风格，精炼并附有表达力。</li>
+<li>依赖注入使其具备良好的测试性。</li>
+</ul>
+<p>学习和实践Angular的过程，体验到Angular采用了完全不同的方法来构建UI，由模型的变化来取得模板更新。虽然Jquery功能很强大，但因为是以编写DOM操作为中心的代码，对于成熟和庞大、互动性相对复杂的应用来说，代码就会变得难以管理。</p>
+<p>尽管有人和我说过，现在学习angular(1.x)已经落伍啦，react，vue和angular2才是最火的，但是这次通过学习和使用angular，我得到的回报大于投资。angular1确实还存在一些缺陷可供改善的地方，但不可否认，它的出现在当时肯定给web开发生态带来了一次震荡，也给前端er们催生了许多创意（对浏览器内核以及web前端的开发模式）。</p>
+<h5 id="附：angular的一些学习资源"><a href="#附：angular的一些学习资源" class="headerlink" title="附：angular的一些学习资源"></a>附：angular的一些学习资源</h5><p>网上资源：<br><a href="http://www.angularjs.org/" target="_blank" rel="external">angularJS主页</a><br><a href="http://stackoverflow.com/questions/tagged/angularjs" target="_blank" rel="external">stackoverflow的angular专题</a><br><a href="https://github.com/gianarb/awesome-angularjs" target="_blank" rel="external">awesome-angularjs</a><br><a href="https://github.com/mgechev/angularjs-style-guide/blob/master/README-zh-cn.md" target="_blank" rel="external">angularJS最佳实践</a></p>
+<p>工具：<br><a href="https://chrome.google.com/webstore/detail/angularjs-batarang/ighdmehidhipcmcojjgiloacoafjmpfk" target="_blank" rel="external">AngularJS Batarang-官方提供的chrome插件：可查看作用域和性能</a></p>
+<p>书籍：<br>《angularJS开发秘笈》<br>《angularJS权威指南》<br>《精通angularJS》（墙裂推荐这本！！尤其在带着实践遇到的疑问去看这本书，里面也讲了一些最佳实践，受益匪浅，此次的文章很多东西也是摘取于此书的）</p>
+
+                </div>
+                
+<nav id="article-nav">
+  
+    <a href="/2016/09/30/走在人生的夜路上/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title">
+        
+          走在人生的夜路上 >
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/09/10/微信支付踩过的坑/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"> < 微信支付踩过的坑</div>
+    </a>
+  
+</nav>
+
+
+            </div>
+        </div>
+        
+            <div id="disqus_thread"></div>
+<script>
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document,
+            s = d.createElement('script');
+
+        s.src = '//yzzting.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script id="dsq-count-scr" src="//yzzting.disqus.com/count.js" async></script>
+
+        
+        
+</article>
+
+
+
+		</div>
+		<div id="heart"></div>
+
+    <footer class="blog-footer" id="blog-footer">
+        <div id="footer-info" class="inner">
+            Made with ♥ by <a href="https://github.com/yzzting/hexo-theme-MyFairLady" target="_blank">MyFairLady</a>
+        </div>
+    </footer>
+    <script src="/js/sidebar.js"></script>
+    <script src="/js/toTop.js"></script>
+    <script src="/js/bookmark.js"></script>
+	</body>
+	</html>
