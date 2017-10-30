@@ -20,4 +20,4 @@ node_modules
 dist
 tmp/
 *.log
-!themes/MyFairLady
+!themes
