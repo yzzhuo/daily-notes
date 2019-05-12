@@ -77,7 +77,7 @@ but在IE:计算后的值’float’ 值和 ‘display’ 的特性值未发生�
 浮动元素，绝对定位元，display为inline-block，table-cell或table-captain的元素，以及overflow不为visible的元素，会创建新的格式化上下文。（！注意这些元素创建了块级格式化上下文，但它们本身不是块级格式化上下文）
 
 块级格式化很重要，因为它对宽高的计算，外边距折叠，定位都有影响。
-具体请看[之前的一篇文章CSS的BFC](http://blog.yzzhuo.com/2016/07/20/CSS%E7%9A%84BFC/)
+具体请看[之前的一篇文章CSS的BFC](/2016/07/20/CSS%E7%9A%84BFC/)
 
 ### 行内格式化上下文IFC
 
