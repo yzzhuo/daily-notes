@@ -77,4 +77,5 @@ theme: lady
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  repo: https://gh_token@github.com/yzzhuo/yzzhuo.github.io.git
+  branch: master

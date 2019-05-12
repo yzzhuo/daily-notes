@@ -1,6 +1,10 @@
 language: node_js
 node_js: stable
 
+cache:
+  directories:
+    - node_modules
+ 
 # S: Build Lifecycle
 install:
   - npm install
@@ -13,13 +17,10 @@ script:
   - hexo g
 
 after_script:
-  - cd ./public
-  - git init
   - git config user.name "yzzhuo"
   - git config user.email "yzzhuo2@gmail.com"
-  - git add .
-  - git commit -m "Update docs"
-  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
+  - sed -i "s/gh_token/${GH_TOKEN}/g" ./_config.yml
+  - hexo deploy
 # E: Build LifeCycle
 
 branches:
