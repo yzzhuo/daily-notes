@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
@@ -12,16 +12,17 @@
             I am June
     </title>
     <!-- 主css -->
-    <link rel="stylesheet" href="/sass/main.css">
+    <link rel="stylesheet" href="/hexo-blog/sass/main.css">
       <!-- seo -->
       <meta name="description" content="用单例模式创建一个独一无二的对象，常常用来管理共享的资源，例如数据库链接或者线程池，另外也可以确保某个资源在全局只有一份。简单的单例模式，配上惰性的特性，在开发中具有非一般的实用性。 定义保证一个类仅有一个实例，并提供一个访问它的全局访问点。 实现利用一个变量来标志当前是否已经为某个类创建过对象，并且不直接用new来得到一个实例，而是通过类似getInstance的方法来获取对象实例。 12345">
 <meta name="keywords" content="设计模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javascript设计模式-单例模式">
-<meta property="og:url" content="http://blog.yzzhuo.com/2017/06/23/javascript设计模式-单例模式/index.html">
+<meta property="og:url" content="http://yzzhuo.github.io/hexo-blog/2017/06/23/javascript设计模式-单例模式/index.html">
 <meta property="og:site_name" content="I am June">
 <meta property="og:description" content="用单例模式创建一个独一无二的对象，常常用来管理共享的资源，例如数据库链接或者线程池，另外也可以确保某个资源在全局只有一份。简单的单例模式，配上惰性的特性，在开发中具有非一般的实用性。 定义保证一个类仅有一个实例，并提供一个访问它的全局访问点。 实现利用一个变量来标志当前是否已经为某个类创建过对象，并且不直接用new来得到一个实例，而是通过类似getInstance的方法来获取对象实例。 12345">
-<meta property="og:updated_time" content="2017-10-30T10:53:51.000Z">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-12T08:44:06.095Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript设计模式-单例模式">
 <meta name="twitter:description" content="用单例模式创建一个独一无二的对象，常常用来管理共享的资源，例如数据库链接或者线程池，另外也可以确保某个资源在全局只有一份。简单的单例模式，配上惰性的特性，在开发中具有非一般的实用性。 定义保证一个类仅有一个实例，并提供一个访问它的全局访问点。 实现利用一个变量来标志当前是否已经为某个类创建过对象，并且不直接用new来得到一个实例，而是通过类似getInstance的方法来获取对象实例。 12345">
@@ -43,32 +44,32 @@
               
                 
                     <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
-</head>
+</head></html>
 	<body>
 		<div class="main">
 			<div id="mobile-bar">
     <a class="menu-button"></a>
-    <a class="logo" href="/">Yzz</a>
+    <a class="logo" href="/">Zhuo Yanzhu</a>
 </div>
 <header class="nav-header">
-    <a href="/" class="logo-link">Yzz</a>
+    <a href="/" class="logo-link">Zhuo Yanzhu</a>
     
             
     <ul class="nav nav-list">
-        <li class="nav-list-item"><a href="/">Home</a></li>
+        <li class="nav-list-item"><a href="/hexo-blog/">Home</a></li>
         
             
         
             
-        <li class="nav-list-item"><a href="/about">About</a></li>
+        <li class="nav-list-item"><a href="/hexo-blog/about">About</a></li>
             
         
             
-        <li class="nav-list-item"><a href="/tags">Tags</a></li>
+        <li class="nav-list-item"><a href="/hexo-blog/tags">Tags</a></li>
             
         
             
-        <li class="nav-list-item"><a href="/archives">Archives</a></li>
+        <li class="nav-list-item"><a href="/hexo-blog/archives">Archives</a></li>
             
         
     </ul>
@@ -77,33 +78,33 @@
     
             
     <ul class="main-menu">
-        <li class="main-menu-item"><a href="/">Home</a></li>
+        <li class="main-menu-item"><a href="/hexo-blog/">Home</a></li>
         
             
         
             
-        <li class="main-menu-item"><a href="/about">About</a></li>
+        <li class="main-menu-item"><a href="/hexo-blog/about">About</a></li>
             
         
             
-        <li class="main-menu-item"><a href="/tags">Tags</a></li>
+        <li class="main-menu-item"><a href="/hexo-blog/tags">Tags</a></li>
             
         
             
-        <li class="main-menu-item"><a href="/archives">Archives</a></li>
+        <li class="main-menu-item"><a href="/hexo-blog/archives">Archives</a></li>
             
         
     </ul>
 </div>
 
-<h1 class="blog-title">The Yzz Blog</h1>
+<h1 class="blog-title">The Zhuo Yanzhu Blog</h1>
 
 			
 <article class="article-main" itemscope itemprop="blogPost">
         <div class="articleCon">
             <header class="article-header">
                 <h1 itemprop="name">
-                    <a href="/2017/06/23/javascript设计模式-单例模式/" class="article-title">javascript设计模式-单例模式</a>
+                    <a href="/hexo-blog/2017/06/23/javascript设计模式-单例模式/" class="article-title">javascript设计模式-单例模式</a>
                 </h1>
             </header>
             
@@ -114,7 +115,7 @@
             
             <div class="article-meta">
                 <div class="article-dateTime">
-    <a href="/2017/06/23/javascript设计模式-单例模式/" class="article-date">
+    <a href="/hexo-blog/2017/06/23/javascript设计模式-单例模式/" class="article-date">
         <time datetime="Jun 23rd 2017" itemprop="datePublished">
             Jun 23rd 2017
         </time>
@@ -127,16 +128,16 @@
                     <p>用单例模式创建一个独一无二的对象，常常用来管理共享的资源，例如数据库链接或者线程池，另外也可以确保某个资源在全局只有一份。简单的单例模式，配上惰性的特性，在开发中具有非一般的实用性。</p>
 <h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>保证一个类仅有一个实例，并提供一个访问它的全局访问点。</p>
 <h4 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h4><p>利用一个变量来标志当前是否已经为某个类创建过对象，并且不直接用new来得到一个实例，而是通过类似getInstance的方法来获取对象实例。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Singleton = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.instance = <span class="literal">null</span>;</div><div class="line">&#125;</div><div class="line">Singleton.protype.getInstance = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span>(!<span class="keyword">this</span>.instance) &#123;</div><div class="line">    <span class="keyword">this</span>.instance = <span class="keyword">new</span> Singleton();</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.instance;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> a = Singleton.getInstance();</div><div class="line"><span class="keyword">var</span> b = Singleton.getInstance();</div><div class="line"><span class="built_in">console</span>.log(a===b); <span class="comment">// true</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Singleton = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.instance = <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br><span class="line">Singleton.protype.getInstance = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(!<span class="keyword">this</span>.instance) &#123;</span><br><span class="line">    <span class="keyword">this</span>.instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.instance;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> a = Singleton.getInstance();</span><br><span class="line"><span class="keyword">var</span> b = Singleton.getInstance();</span><br><span class="line"><span class="built_in">console</span>.log(a===b); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 <p>思考：那么如何避免别人来实例化多个呢？上面的代码的确我可以new多个。</p>
 <p>java中的做法是不公开构造函数，即给构造器添加private关键字。javascript则可以用闭包来实现私有的效果。</p>
 <h4 id="针对JavaScrpt的单例模式"><a href="#针对JavaScrpt的单例模式" class="headerlink" title="针对JavaScrpt的单例模式"></a>针对JavaScrpt的单例模式</h4><p>在js中我们可以通过使用全局变量来实现单例模式的效果。我们在全局可以创建一个对象，让代码中的任何为止都可以访问，从而通过判断该对象是否初始化来实现单例模式。但是实际中，全局变量存在很多问题，比如命名空间污染。那如何降低js全局变量带来的命名污染？有以下几个方法：</p>
 <ol>
 <li><p>使用对象字面量</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> namespace = &#123;</div><div class="line">  a: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;...&#125;,</div><div class="line">  b: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;...&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> namespace = &#123;</span><br><span class="line">  a: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;...&#125;,</span><br><span class="line">  b: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;...&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>使用闭包封装私有变量</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> __instance = <span class="keyword">new</span> Singleton();</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    getInstance: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      <span class="keyword">return</span> __instance;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;) ();</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> __instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    getInstance: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="keyword">return</span> __instance;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;) ();</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <h4 id="惰性单例"><a href="#惰性单例" class="headerlink" title="惰性单例"></a>惰性单例</h4><p>然而，实际开发中我们还可以使用单例模式，在只在需要它的时候才去创建实例，这类单例叫做惰性单例。</p>
@@ -148,16 +149,16 @@
                 
 <nav id="article-nav">
   
-    <a href="/2017/06/23/状态模式/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/hexo-blog/2017/07/08/面向对象编程的SOLID原则/" id="article-nav-newer" class="article-nav-link-wrap">
       <div class="article-nav-title">
         
-          javascript设计模式-状态模式 >
+          面向对象编程的SOLID原则 >
         
       </div>
     </a>
   
   
-    <a href="/2017/06/23/javascript设计模式-原型模式/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/hexo-blog/2017/06/23/javascript设计模式-原型模式/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title"> < javascript设计模式-原型模式</div>
     </a>
   
@@ -166,22 +167,6 @@
 
             </div>
         </div>
-        
-            <div id="disqus_thread"></div>
-<script>
-    (function() { // DON'T EDIT BELOW THIS LINE
-        var d = document,
-            s = d.createElement('script');
-
-        s.src = '//yzzting.disqus.com/embed.js';
-
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-<script id="dsq-count-scr" src="//yzzting.disqus.com/count.js" async></script>
-
         
         
 </article>
@@ -196,8 +181,8 @@
             Made with ♥ by <a href="https://github.com/yzzting/hexo-theme-MyFairLady" target="_blank">MyFairLady</a>
         </div>
     </footer>
-    <script src="/js/sidebar.js"></script>
-    <script src="/js/toTop.js"></script>
-    <script src="/js/bookmark.js"></script>
+    <script src="/hexo-blog/js/sidebar.js"></script>
+    <script src="/hexo-blog/js/toTop.js"></script>
+    <script src="/hexo-blog/js/bookmark.js"></script>
 	</body>
 	</html>

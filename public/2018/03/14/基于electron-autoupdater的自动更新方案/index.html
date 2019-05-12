@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>
+      
+        基于electron-autoupdater的自动更新方案 |
+          
+            I am June
+    </title>
+    <!-- 主css -->
+    <link rel="stylesheet" href="/hexo-blog/sass/main.css">
+      <!-- seo -->
+      <meta name="description" content="此教程是基于electron-autoupdater的自动更新方案。研究了一下electron文档原生的autoUpdater模块和elecrtron-builder配套的autoUpdater，最终选择后者是因为实现起来简单太多，而且在macOS和win的实现也是一致的。 目标效果应用打开的时候自动检测当前是否是最新版本，如果不是，提示用户是否更新，用户确认更新后，会自动去下载最新的安装包，下载">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于electron-autoupdater的自动更新方案">
+<meta property="og:url" content="http://yzzhuo.github.io/hexo-blog/2018/03/14/基于electron-autoupdater的自动更新方案/index.html">
+<meta property="og:site_name" content="I am June">
+<meta property="og:description" content="此教程是基于electron-autoupdater的自动更新方案。研究了一下electron文档原生的autoUpdater模块和elecrtron-builder配套的autoUpdater，最终选择后者是因为实现起来简单太多，而且在macOS和win的实现也是一致的。 目标效果应用打开的时候自动检测当前是否是最新版本，如果不是，提示用户是否更新，用户确认更新后，会自动去下载最新的安装包，下载">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-12T08:44:06.096Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="基于electron-autoupdater的自动更新方案">
+<meta name="twitter:description" content="此教程是基于electron-autoupdater的自动更新方案。研究了一下electron文档原生的autoUpdater模块和elecrtron-builder配套的autoUpdater，最终选择后者是因为实现起来简单太多，而且在macOS和win的实现也是一致的。 目标效果应用打开的时候自动检测当前是否是最新版本，如果不是，提示用户是否更新，用户确认更新后，会自动去下载最新的安装包，下载">
+        <!-- facicon -->
+        
+          <link rel="icon" href="http://7xp1k3.com1.z0.glb.clouddn.com/octocat-de-los-muertos.jpg">
+          
+            <!-- 统计 -->
+            
+              <script>
+                var _hmt = _hmt || [];
+                (function () {
+                  var hm = document.createElement("script");
+                  hm.src = "//hm.baidu.com/hm.js?c21994907883f37ffd80e13627dd4faa";
+                  var s = document.getElementsByTagName("script")[0];
+                  s.parentNode.insertBefore(hm, s);
+                })();
+              </script>
+              
+                
+                    <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+</head></html>
+	<body>
+		<div class="main">
+			<div id="mobile-bar">
+    <a class="menu-button"></a>
+    <a class="logo" href="/">Zhuo Yanzhu</a>
+</div>
+<header class="nav-header">
+    <a href="/" class="logo-link">Zhuo Yanzhu</a>
+    
+            
+    <ul class="nav nav-list">
+        <li class="nav-list-item"><a href="/hexo-blog/">Home</a></li>
+        
+            
+        
+            
+        <li class="nav-list-item"><a href="/hexo-blog/about">About</a></li>
+            
+        
+            
+        <li class="nav-list-item"><a href="/hexo-blog/tags">Tags</a></li>
+            
+        
+            
+        <li class="nav-list-item"><a href="/hexo-blog/archives">Archives</a></li>
+            
+        
+    </ul>
+</header>
+<div class="sidebar">
+    
+            
+    <ul class="main-menu">
+        <li class="main-menu-item"><a href="/hexo-blog/">Home</a></li>
+        
+            
+        
+            
+        <li class="main-menu-item"><a href="/hexo-blog/about">About</a></li>
+            
+        
+            
+        <li class="main-menu-item"><a href="/hexo-blog/tags">Tags</a></li>
+            
+        
+            
+        <li class="main-menu-item"><a href="/hexo-blog/archives">Archives</a></li>
+            
+        
+    </ul>
+</div>
+
+<h1 class="blog-title">The Zhuo Yanzhu Blog</h1>
+
+			
+<article class="article-main" itemscope itemprop="blogPost">
+        <div class="articleCon">
+            <header class="article-header">
+                <h1 itemprop="name">
+                    <a href="/hexo-blog/2018/03/14/基于electron-autoupdater的自动更新方案/" class="article-title">基于electron-autoupdater的自动更新方案</a>
+                </h1>
+            </header>
+            
+<div class="bookmark" id="bookmark">
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#目标效果"><span class="toc-text">目标效果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#实现步骤"><span class="toc-text">实现步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#测试步骤"><span class="toc-text">测试步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#其他注意要点"><span class="toc-text">其他注意要点</span></a></li></ol>
+</div>
+
+            
+            <div class="article-meta">
+                <div class="article-dateTime">
+    <a href="/hexo-blog/2018/03/14/基于electron-autoupdater的自动更新方案/" class="article-date">
+        <time datetime="Mar 14th 2018" itemprop="datePublished">
+            Mar 14th 2018
+        </time>
+    </a>
+</div>
+
+            </div>
+            <div class="article-inner">
+                <div class="article-entry" itemprop="articleBody">
+                    <p>此教程是基于electron-autoupdater的自动更新方案。研究了一下electron文档原生的autoUpdater模块和elecrtron-builder配套的autoUpdater，最终选择后者是因为实现起来简单太多，而且在macOS和win的实现也是一致的。</p>
+<h4 id="目标效果"><a href="#目标效果" class="headerlink" title="目标效果"></a>目标效果</h4><p>应用打开的时候自动检测当前是否是最新版本，如果不是，提示用户是否更新，用户确认更新后，会自动去下载最新的安装包，下载完成后提示用户是否重新启动打开最新版本的客户端。</p>
+<h4 id="实现步骤"><a href="#实现步骤" class="headerlink" title="实现步骤"></a>实现步骤</h4><ol>
+<li><p>在项目中安装electron-updater这个依赖。</p>
+</li>
+<li><p>在main.js中引入下面代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123;autoUpdater&#125; = <span class="built_in">require</span>(<span class="string">"electron-updater"</span>);</span><br><span class="line"><span class="keyword">const</span> &#123;app, dialog &#125; = <span class="built_in">require</span>(<span class="string">'electron'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 检测当前是否是最新版本</span></span><br><span class="line">autoUpdater.on(<span class="string">'update-available'</span>, (ev, info) =&gt; &#123;</span><br><span class="line">  dialog.showMessageBox(&#123;</span><br><span class="line">    type: <span class="string">'info'</span>,</span><br><span class="line">    title: <span class="string">'Found Updates'</span>,</span><br><span class="line">    message: <span class="string">'Found updates, do you want update now?'</span>,</span><br><span class="line">    buttons: [<span class="string">'Sure'</span>, <span class="string">'No'</span>]</span><br><span class="line">  &#125;, (buttonIndex) =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> (buttonIndex === <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="comment">// 下载最新的安装包</span></span><br><span class="line">      autoUpdater.downloadUpdate()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 自动更新异常处理</span></span><br><span class="line">autoUpdater.on(<span class="string">'error'</span>, (ev, err) =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Error in auto-updater.'</span>);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//开始下载安装包检测</span></span><br><span class="line">autoUpdater.on(<span class="string">'download-progress'</span>, (ev, progressObj) =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Download progress...'</span>);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 安装完成后</span></span><br><span class="line">autoUpdater.on(<span class="string">'update-downloaded'</span>, (ev, info) =&gt; &#123;</span><br><span class="line">  dialog.showMessageBox(&#123;</span><br><span class="line">    title: <span class="string">'Install Updates'</span>,</span><br><span class="line">    message: <span class="string">'Updates downloaded, application will be quit for update...'</span></span><br><span class="line">  &#125;, () =&gt; &#123;</span><br><span class="line">    setImmediate(<span class="function"><span class="params">()</span> =&gt;</span> autoUpdater.quitAndInstall())</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;);</span><br><span class="line">app.on(<span class="string">'ready'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)  </span>&#123;</span><br><span class="line">  <span class="comment">// ....</span></span><br><span class="line">  <span class="comment">// 启动自动检测版本</span></span><br><span class="line">  autoUpdater.checkForUpdates();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置package.json，在build字段里面增加publish字段，其中的url是安装包和记录了当前最新版本的json/yml文件。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">"build": &#123;</span><br><span class="line">  ...</span><br><span class="line">    "publish": [</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="attr">"provider"</span>: <span class="string">"generic"</span>,</span><br><span class="line">        <span class="attr">"url"</span>: <span class="string">"https://localhost:8080/releases"</span></span><br><span class="line">      &#125;</span><br><span class="line">    ],</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用electron-builder打包出安装包等文件到dist目录，dist目录大致包括下列文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">--dist</span><br><span class="line"> client-1.2.1.dmg</span><br><span class="line"> client-1.2.1-mac.zip</span><br><span class="line"> lastest-mac.json</span><br><span class="line"> lastest-mac.yml</span><br><span class="line"> client-1.2.1.exe</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将上面展示的dist目录下的资源放在在静态服务器上，使得可以通过第三步设置的seedUrl能够访问到dist里面的文件。</p>
+</li>
+</ol>
+<h4 id="测试步骤"><a href="#测试步骤" class="headerlink" title="测试步骤"></a>测试步骤</h4><ol>
+<li>先打包一个安装包</li>
+<li>升级版本号，再打一个安装包</li>
+<li>更新静态资源服务器上的文件，把第二部打包出来的东西上传到服务器上</li>
+<li>安装第一步的安装包，打开显示有版本更新，能够下载最新安装包和安装重启就大功告成了～</li>
+</ol>
+<h4 id="其他注意要点"><a href="#其他注意要点" class="headerlink" title="其他注意要点"></a>其他注意要点</h4><ol>
+<li><p>若是直接用<code>electron</code>命令启动客户端，会报autoupdater根目录缺少dev-app-update.yml的错，需要自己手动在根目录加上：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">version: 1.X.X</span><br><span class="line">provider: generic</span><br><span class="line">url: seedURL</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>直接用electron启动客户端测试更新的话，mac会包codesiging的错误，具体可以看<a href="https://github.com/electron/electron/issues/7476。（因为我懒，没有去弄，直接打包进行测试也是妥妥的）" target="_blank" rel="noopener">https://github.com/electron/electron/issues/7476。（因为我懒，没有去弄，直接打包进行测试也是妥妥的）</a></p>
+</li>
+</ol>
+<p>更多信息请看文档：<a href="https://www.electron.build/auto-update" target="_blank" rel="noopener">https://www.electron.build/auto-update</a></p>
+
+                </div>
+                
+<nav id="article-nav">
+  
+  
+    <a href="/hexo-blog/2017/07/10/策略模式/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"> < javascript设计模式-策略模式</div>
+    </a>
+  
+</nav>
+
+
+            </div>
+        </div>
+        
+        
+</article>
+
+
+
+		</div>
+		<div id="heart"></div>
+
+    <footer class="blog-footer" id="blog-footer">
+        <div id="footer-info" class="inner">
+            Made with ♥ by <a href="https://github.com/yzzting/hexo-theme-MyFairLady" target="_blank">MyFairLady</a>
+        </div>
+    </footer>
+    <script src="/hexo-blog/js/sidebar.js"></script>
+    <script src="/hexo-blog/js/toTop.js"></script>
+    <script src="/hexo-blog/js/bookmark.js"></script>
+	</body>
+	</html>
