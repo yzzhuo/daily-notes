@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
@@ -12,16 +12,15 @@
             I am June
     </title>
     <!-- 主css -->
-    <link rel="stylesheet" href="/hexo-blog/sass/main.css">
+    <link rel="stylesheet" href="/sass/main.css">
       <!-- seo -->
       <meta name="description" content="作为一名前端工程师，我们的日常就是与浏览器打交道。想要对网页进行性能调优，又是建立在对浏览器的工作原理了解的基础上。所以，带着目的（前端优化）以及疑问（从地址栏输入地址到页面完全呈现在我眼中的整个过程发生了什么），初步了解学习了浏览器的渲染原理，在此总结一二。 浏览器渲染的主流程（网页生成的过程）  HTML解析生成DOM tree CSS代码转化成CSSOM DOM和CSSOM生成render">
 <meta name="keywords" content="前端性能">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浏览器渲染过程学习总结">
-<meta property="og:url" content="http://yzzhuo.github.io/hexo-blog/2016/12/01/浏览器渲染过程学习总结/index.html">
+<meta property="og:url" content="http://blog.yzzhuo.com/2016/12/01/浏览器渲染过程学习总结/index.html">
 <meta property="og:site_name" content="I am June">
 <meta property="og:description" content="作为一名前端工程师，我们的日常就是与浏览器打交道。想要对网页进行性能调优，又是建立在对浏览器的工作原理了解的基础上。所以，带着目的（前端优化）以及疑问（从地址栏输入地址到页面完全呈现在我眼中的整个过程发生了什么），初步了解学习了浏览器的渲染原理，在此总结一二。 浏览器渲染的主流程（网页生成的过程）  HTML解析生成DOM tree CSS代码转化成CSSOM DOM和CSSOM生成render">
-<meta property="og:locale" content="default">
 <meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015091502.png">
 <meta property="og:image" content="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/full-process.png">
 <meta property="og:image" content="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/cssom-construction.png">
@@ -32,7 +31,7 @@
 <meta property="og:image" content="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/cssom-construction.png">
 <meta property="og:image" content="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/cssom-tree.png">
 <meta property="og:image" content="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/render-tree-construction.png">
-<meta property="og:updated_time" content="2019-05-12T08:44:06.097Z">
+<meta property="og:updated_time" content="2017-10-30T10:53:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浏览器渲染过程学习总结">
 <meta name="twitter:description" content="作为一名前端工程师，我们的日常就是与浏览器打交道。想要对网页进行性能调优，又是建立在对浏览器的工作原理了解的基础上。所以，带着目的（前端优化）以及疑问（从地址栏输入地址到页面完全呈现在我眼中的整个过程发生了什么），初步了解学习了浏览器的渲染原理，在此总结一二。 浏览器渲染的主流程（网页生成的过程）  HTML解析生成DOM tree CSS代码转化成CSSOM DOM和CSSOM生成render">
@@ -55,32 +54,32 @@
               
                 
                     <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
-</head></html>
+</head>
 	<body>
 		<div class="main">
 			<div id="mobile-bar">
     <a class="menu-button"></a>
-    <a class="logo" href="/">Zhuo Yanzhu</a>
+    <a class="logo" href="/">Yzz</a>
 </div>
 <header class="nav-header">
-    <a href="/" class="logo-link">Zhuo Yanzhu</a>
+    <a href="/" class="logo-link">Yzz</a>
     
             
     <ul class="nav nav-list">
-        <li class="nav-list-item"><a href="/hexo-blog/">Home</a></li>
+        <li class="nav-list-item"><a href="/">Home</a></li>
         
             
         
             
-        <li class="nav-list-item"><a href="/hexo-blog/about">About</a></li>
+        <li class="nav-list-item"><a href="/about">About</a></li>
             
         
             
-        <li class="nav-list-item"><a href="/hexo-blog/tags">Tags</a></li>
+        <li class="nav-list-item"><a href="/tags">Tags</a></li>
             
         
             
-        <li class="nav-list-item"><a href="/hexo-blog/archives">Archives</a></li>
+        <li class="nav-list-item"><a href="/archives">Archives</a></li>
             
         
     </ul>
@@ -89,33 +88,33 @@
     
             
     <ul class="main-menu">
-        <li class="main-menu-item"><a href="/hexo-blog/">Home</a></li>
+        <li class="main-menu-item"><a href="/">Home</a></li>
         
             
         
             
-        <li class="main-menu-item"><a href="/hexo-blog/about">About</a></li>
+        <li class="main-menu-item"><a href="/about">About</a></li>
             
         
             
-        <li class="main-menu-item"><a href="/hexo-blog/tags">Tags</a></li>
+        <li class="main-menu-item"><a href="/tags">Tags</a></li>
             
         
             
-        <li class="main-menu-item"><a href="/hexo-blog/archives">Archives</a></li>
+        <li class="main-menu-item"><a href="/archives">Archives</a></li>
             
         
     </ul>
 </div>
 
-<h1 class="blog-title">The Zhuo Yanzhu Blog</h1>
+<h1 class="blog-title">The Yzz Blog</h1>
 
 			
 <article class="article-main" itemscope itemprop="blogPost">
         <div class="articleCon">
             <header class="article-header">
                 <h1 itemprop="name">
-                    <a href="/hexo-blog/2016/12/01/浏览器渲染过程学习总结/" class="article-title">浏览器渲染过程学习总结</a>
+                    <a href="/2016/12/01/浏览器渲染过程学习总结/" class="article-title">浏览器渲染过程学习总结</a>
                 </h1>
             </header>
             
@@ -126,7 +125,7 @@
             
             <div class="article-meta">
                 <div class="article-dateTime">
-    <a href="/hexo-blog/2016/12/01/浏览器渲染过程学习总结/" class="article-date">
+    <a href="/2016/12/01/浏览器渲染过程学习总结/" class="article-date">
         <time datetime="Dec 1st 2016" itemprop="datePublished">
             Dec 1st 2016
         </time>
@@ -137,7 +136,7 @@
             <div class="article-inner">
                 <div class="article-entry" itemprop="articleBody">
                     <p>作为一名前端工程师，我们的日常就是与浏览器打交道。想要对网页进行性能调优，又是建立在对浏览器的工作原理了解的基础上。所以，带着目的（前端优化）以及疑问（从地址栏输入地址到页面完全呈现在我眼中的整个过程发生了什么），初步了解学习了浏览器的渲染原理，在此总结一二。</p>
-<h3 id="浏览器渲染的主流程（网页生成的过程）"><a href="#浏览器渲染的主流程（网页生成的过程）" class="headerlink" title="浏览器渲染的主流程（网页生成的过程）"></a>浏览器渲染的主流程（网页生成的过程）</h3><p><a href="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015091502.png" target="_blank" rel="noopener"><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015091502.png" alt="img"></a></p>
+<h3 id="浏览器渲染的主流程（网页生成的过程）"><a href="#浏览器渲染的主流程（网页生成的过程）" class="headerlink" title="浏览器渲染的主流程（网页生成的过程）"></a>浏览器渲染的主流程（网页生成的过程）</h3><p><a href="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015091502.png" target="_blank" rel="external"><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015091502.png" alt="img"></a></p>
 <ol>
 <li>HTML解析生成DOM tree</li>
 <li>CSS代码转化成CSSOM</li>
@@ -145,10 +144,10 @@
 <li>浏览器根据render tree进行布局layout</li>
 <li>绘制</li>
 </ol>
-<h3 id="具体流程"><a href="#具体流程" class="headerlink" title="具体流程"></a>具体流程</h3><h4 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h4><p>HTML解析的主要经历了转换，符号化，词法分析，DOM构建，最终的输出就是文档对象模型（DOM）。话不多说，上图<br><a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/full-process.png" target="_blank" rel="noopener"><img src="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/full-process.png" alt="img"></a></p>
+<h3 id="具体流程"><a href="#具体流程" class="headerlink" title="具体流程"></a>具体流程</h3><h4 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h4><p>HTML解析的主要经历了转换，符号化，词法分析，DOM构建，最终的输出就是文档对象模型（DOM）。话不多说，上图<br><a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/full-process.png" target="_blank" rel="external"><img src="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/full-process.png" alt="img"></a></p>
 <p>CSS解析的过程与HTML解析大致相当：</p>
-<p><a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/cssom-construction.png" target="_blank" rel="noopener"><img src="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/cssom-construction.png" alt="img"></a><br>CSS解析的最终产物就是CSSOM，大致长下面这个样子：<br><a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/cssom-tree.png" target="_blank" rel="noopener"><img src="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/cssom-tree.png" alt="img"></a></p>
-<h4 id="生成渲染树"><a href="#生成渲染树" class="headerlink" title="生成渲染树"></a>生成渲染树</h4><p>DOM和CSSOM融合生成渲染树，这个渲染只包括渲染页面需要的节点和这些可见内容的样式信息，构建渲染树的过程浏览器大致经历了从 DOM 树的根节点开始，遍历每个可见的节点，之后给每个可见节点找到相应匹配的 CSSOM 规则，并应用这些规则，最后生成了一颗由可见节点，连带其内容及计算的样式的渲染树。<br><a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/render-tree-construction.png" target="_blank" rel="noopener"><img src="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/render-tree-construction.png" alt="img"></a></p>
+<p><a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/cssom-construction.png" target="_blank" rel="external"><img src="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/cssom-construction.png" alt="img"></a><br>CSS解析的最终产物就是CSSOM，大致长下面这个样子：<br><a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/cssom-tree.png" target="_blank" rel="external"><img src="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/cssom-tree.png" alt="img"></a></p>
+<h4 id="生成渲染树"><a href="#生成渲染树" class="headerlink" title="生成渲染树"></a>生成渲染树</h4><p>DOM和CSSOM融合生成渲染树，这个渲染只包括渲染页面需要的节点和这些可见内容的样式信息，构建渲染树的过程浏览器大致经历了从 DOM 树的根节点开始，遍历每个可见的节点，之后给每个可见节点找到相应匹配的 CSSOM 规则，并应用这些规则，最后生成了一颗由可见节点，连带其内容及计算的样式的渲染树。<br><a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/render-tree-construction.png" target="_blank" rel="external"><img src="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/render-tree-construction.png" alt="img"></a></p>
 <h4 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h4><p>浏览器绘制之前光知道节点的样式是不够的，还要确定他们的位置和尺寸。这一步也叫做重排。<br>布局过程输出一个盒模型。<br>另外，因为页面中元素的布局通常是相对的，一个元素的大小或者位置发生了变化，很有可能会联动其它元素的布局发生变化。</p>
 <h4 id="绘制"><a href="#绘制" class="headerlink" title="绘制"></a>绘制</h4><p>构建完渲染树和布局结束后，浏览器就会开始绘制。<br>一般来说，绘制的过程是在多个层完成的。在每个层绘制玩抽，浏览器会将所有层按照合理的顺序合并成一个图层显示在屏幕上。</p>
 <blockquote>
@@ -174,11 +173,11 @@
 </ol>
 <p>参考文献：</p>
 <ul>
-<li><p><a href="https://www.html5rocks.com/zh/tutorials/internals/howbrowserswork/" target="_blank" rel="noopener">How browser works</a></p>
+<li><p><a href="https://www.html5rocks.com/zh/tutorials/internals/howbrowserswork/" target="_blank" rel="external">How browser works</a></p>
 </li>
-<li><p><a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/" target="_blank" rel="noopener">浏览器-关键呈现路径</a>浏览器渲染过程学习总结</p>
+<li><p><a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/" target="_blank" rel="external">浏览器-关键呈现路径</a>浏览器渲染过程学习总结</p>
 <p>作为一名前端工程师，我们的日常就是与浏览器打交道。想要对网页进行性能调优，又是建立在对浏览器的工作原理了解的基础上。所以，带着目的（前端优化）以及疑问（从地址栏输入地址到页面完全呈现在我眼中的整个过程发生了什么），初步了解学习了浏览器的渲染原理，在此总结一二。</p>
-<h3 id="浏览器渲染的主流程（网页生成的过程）-1"><a href="#浏览器渲染的主流程（网页生成的过程）-1" class="headerlink" title="浏览器渲染的主流程（网页生成的过程）"></a>浏览器渲染的主流程（网页生成的过程）</h3><p><a href="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015091502.png" target="_blank" rel="noopener"><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015091502.png" alt="img"></a></p>
+<h3 id="浏览器渲染的主流程（网页生成的过程）-1"><a href="#浏览器渲染的主流程（网页生成的过程）-1" class="headerlink" title="浏览器渲染的主流程（网页生成的过程）"></a>浏览器渲染的主流程（网页生成的过程）</h3><p><a href="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015091502.png" target="_blank" rel="external"><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015091502.png" alt="img"></a></p>
 <ol>
 <li>HTML解析生成DOM tree</li>
 <li>CSS代码转化成CSSOM</li>
@@ -186,10 +185,10 @@
 <li>浏览器根据render tree进行布局layout</li>
 <li>绘制</li>
 </ol>
-<h3 id="具体流程-1"><a href="#具体流程-1" class="headerlink" title="具体流程"></a>具体流程</h3><h4 id="解析-1"><a href="#解析-1" class="headerlink" title="解析"></a>解析</h4><p>HTML解析的主要经历了转换，符号化，词法分析，DOM构建，最终的输出就是文档对象模型（DOM）。话不多说，上图<br><a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/full-process.png" target="_blank" rel="noopener"><img src="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/full-process.png" alt="img"></a></p>
+<h3 id="具体流程-1"><a href="#具体流程-1" class="headerlink" title="具体流程"></a>具体流程</h3><h4 id="解析-1"><a href="#解析-1" class="headerlink" title="解析"></a>解析</h4><p>HTML解析的主要经历了转换，符号化，词法分析，DOM构建，最终的输出就是文档对象模型（DOM）。话不多说，上图<br><a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/full-process.png" target="_blank" rel="external"><img src="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/full-process.png" alt="img"></a></p>
 <p>CSS解析的过程与HTML解析大致相当：</p>
-<p><a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/cssom-construction.png" target="_blank" rel="noopener"><img src="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/cssom-construction.png" alt="img"></a><br>CSS解析的最终产物就是CSSOM，大致长下面这个样子：<br><a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/cssom-tree.png" target="_blank" rel="noopener"><img src="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/cssom-tree.png" alt="img"></a></p>
-<h4 id="生成渲染树-1"><a href="#生成渲染树-1" class="headerlink" title="生成渲染树"></a>生成渲染树</h4><p>DOM和CSSOM融合生成渲染树，这个渲染只包括渲染页面需要的节点和这些可见内容的样式信息，构建渲染树的过程浏览器大致经历了从 DOM 树的根节点开始，遍历每个可见的节点，之后给每个可见节点找到相应匹配的 CSSOM 规则，并应用这些规则，最后生成了一颗由可见节点，连带其内容及计算的样式的渲染树。<br><a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/render-tree-construction.png" target="_blank" rel="noopener"><img src="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/render-tree-construction.png" alt="img"></a></p>
+<p><a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/cssom-construction.png" target="_blank" rel="external"><img src="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/cssom-construction.png" alt="img"></a><br>CSS解析的最终产物就是CSSOM，大致长下面这个样子：<br><a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/cssom-tree.png" target="_blank" rel="external"><img src="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/cssom-tree.png" alt="img"></a></p>
+<h4 id="生成渲染树-1"><a href="#生成渲染树-1" class="headerlink" title="生成渲染树"></a>生成渲染树</h4><p>DOM和CSSOM融合生成渲染树，这个渲染只包括渲染页面需要的节点和这些可见内容的样式信息，构建渲染树的过程浏览器大致经历了从 DOM 树的根节点开始，遍历每个可见的节点，之后给每个可见节点找到相应匹配的 CSSOM 规则，并应用这些规则，最后生成了一颗由可见节点，连带其内容及计算的样式的渲染树。<br><a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/render-tree-construction.png" target="_blank" rel="external"><img src="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/render-tree-construction.png" alt="img"></a></p>
 <h4 id="布局-1"><a href="#布局-1" class="headerlink" title="布局"></a>布局</h4><p>浏览器绘制之前光知道节点的样式是不够的，还要确定他们的位置和尺寸。这一步也叫做重排。<br>布局过程输出一个盒模型。<br>另外，因为页面中元素的布局通常是相对的，一个元素的大小或者位置发生了变化，很有可能会联动其它元素的布局发生变化。</p>
 <h4 id="绘制-1"><a href="#绘制-1" class="headerlink" title="绘制"></a>绘制</h4><p>构建完渲染树和布局结束后，浏览器就会开始绘制。<br>一般来说，绘制的过程是在多个层完成的。在每个层绘制玩抽，浏览器会将所有层按照合理的顺序合并成一个图层显示在屏幕上。</p>
 <blockquote>
@@ -215,8 +214,8 @@
 </ol>
 <p>参考文献：</p>
 <ul>
-<li><a href="https://www.html5rocks.com/zh/tutorials/internals/howbrowserswork/" target="_blank" rel="noopener">How browser works</a></li>
-<li><a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/" target="_blank" rel="noopener">浏览器-关键呈现路径</a></li>
+<li><a href="https://www.html5rocks.com/zh/tutorials/internals/howbrowserswork/" target="_blank" rel="external">How browser works</a></li>
+<li><a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/" target="_blank" rel="external">浏览器-关键呈现路径</a></li>
 </ul>
 </li>
 </ul>
@@ -225,17 +224,17 @@
                 
 <nav id="article-nav">
   
-    <a href="/hexo-blog/2016/12/01/浏览器渲染性能分析与优化/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/01/02/关于时间管理/" id="article-nav-newer" class="article-nav-link-wrap">
       <div class="article-nav-title">
         
-          浏览器渲染性能分析与优化 >
+          关于时间管理 >
         
       </div>
     </a>
   
   
-    <a href="/hexo-blog/2016/10/01/在创业公司实习的三个月/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"> < 在创业公司实习的三个月</div>
+    <a href="/2016/12/01/浏览器渲染性能分析与优化/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"> < 浏览器渲染性能分析与优化</div>
     </a>
   
 </nav>
@@ -243,6 +242,22 @@
 
             </div>
         </div>
+        
+            <div id="disqus_thread"></div>
+<script>
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document,
+            s = d.createElement('script');
+
+        s.src = '//yzzting.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script id="dsq-count-scr" src="//yzzting.disqus.com/count.js" async></script>
+
         
         
 </article>
@@ -257,8 +272,8 @@
             Made with ♥ by <a href="https://github.com/yzzting/hexo-theme-MyFairLady" target="_blank">MyFairLady</a>
         </div>
     </footer>
-    <script src="/hexo-blog/js/sidebar.js"></script>
-    <script src="/hexo-blog/js/toTop.js"></script>
-    <script src="/hexo-blog/js/bookmark.js"></script>
+    <script src="/js/sidebar.js"></script>
+    <script src="/js/toTop.js"></script>
+    <script src="/js/bookmark.js"></script>
 	</body>
 	</html>

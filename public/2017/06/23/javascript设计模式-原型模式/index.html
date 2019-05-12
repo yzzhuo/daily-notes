@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
@@ -12,18 +12,17 @@
             I am June
     </title>
     <!-- 主css -->
-    <link rel="stylesheet" href="/hexo-blog/sass/main.css">
+    <link rel="stylesheet" href="/sass/main.css">
       <!-- seo -->
       <meta name="description" content="之前对设计模式的学习和实践都是基于Java的。虽说设计模式其实无关语言，仅仅是对某一种问题的特定的一种解决方案和设计思想。但是最近看的曾探写的《Javascript设计模式与开发实践》深有体会。一是，认同作者认为设计模式说白了就是对某一种问题的解决方案和设计思路，只是后来被冠之以名。但学习设计模式是必要的，因为知道了有哪些设计模式，才能更清楚地知道自己的代码写得好不好，以及怎么使用适合的设计模式来">
 <meta name="keywords" content="设计模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javascript设计模式-原型模式">
-<meta property="og:url" content="http://yzzhuo.github.io/hexo-blog/2017/06/23/javascript设计模式-原型模式/index.html">
+<meta property="og:url" content="http://blog.yzzhuo.com/2017/06/23/javascript设计模式-原型模式/index.html">
 <meta property="og:site_name" content="I am June">
 <meta property="og:description" content="之前对设计模式的学习和实践都是基于Java的。虽说设计模式其实无关语言，仅仅是对某一种问题的特定的一种解决方案和设计思想。但是最近看的曾探写的《Javascript设计模式与开发实践》深有体会。一是，认同作者认为设计模式说白了就是对某一种问题的解决方案和设计思路，只是后来被冠之以名。但学习设计模式是必要的，因为知道了有哪些设计模式，才能更清楚地知道自己的代码写得好不好，以及怎么使用适合的设计模式来">
-<meta property="og:locale" content="default">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/63739cabgy1fgpk7qyezxj20ck0ebdgm.jpg">
-<meta property="og:updated_time" content="2019-05-12T08:44:06.095Z">
+<meta property="og:updated_time" content="2017-10-30T10:53:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript设计模式-原型模式">
 <meta name="twitter:description" content="之前对设计模式的学习和实践都是基于Java的。虽说设计模式其实无关语言，仅仅是对某一种问题的特定的一种解决方案和设计思想。但是最近看的曾探写的《Javascript设计模式与开发实践》深有体会。一是，认同作者认为设计模式说白了就是对某一种问题的解决方案和设计思路，只是后来被冠之以名。但学习设计模式是必要的，因为知道了有哪些设计模式，才能更清楚地知道自己的代码写得好不好，以及怎么使用适合的设计模式来">
@@ -46,32 +45,32 @@
               
                 
                     <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
-</head></html>
+</head>
 	<body>
 		<div class="main">
 			<div id="mobile-bar">
     <a class="menu-button"></a>
-    <a class="logo" href="/">Zhuo Yanzhu</a>
+    <a class="logo" href="/">Yzz</a>
 </div>
 <header class="nav-header">
-    <a href="/" class="logo-link">Zhuo Yanzhu</a>
+    <a href="/" class="logo-link">Yzz</a>
     
             
     <ul class="nav nav-list">
-        <li class="nav-list-item"><a href="/hexo-blog/">Home</a></li>
+        <li class="nav-list-item"><a href="/">Home</a></li>
         
             
         
             
-        <li class="nav-list-item"><a href="/hexo-blog/about">About</a></li>
+        <li class="nav-list-item"><a href="/about">About</a></li>
             
         
             
-        <li class="nav-list-item"><a href="/hexo-blog/tags">Tags</a></li>
+        <li class="nav-list-item"><a href="/tags">Tags</a></li>
             
         
             
-        <li class="nav-list-item"><a href="/hexo-blog/archives">Archives</a></li>
+        <li class="nav-list-item"><a href="/archives">Archives</a></li>
             
         
     </ul>
@@ -80,33 +79,33 @@
     
             
     <ul class="main-menu">
-        <li class="main-menu-item"><a href="/hexo-blog/">Home</a></li>
+        <li class="main-menu-item"><a href="/">Home</a></li>
         
             
         
             
-        <li class="main-menu-item"><a href="/hexo-blog/about">About</a></li>
+        <li class="main-menu-item"><a href="/about">About</a></li>
             
         
             
-        <li class="main-menu-item"><a href="/hexo-blog/tags">Tags</a></li>
+        <li class="main-menu-item"><a href="/tags">Tags</a></li>
             
         
             
-        <li class="main-menu-item"><a href="/hexo-blog/archives">Archives</a></li>
+        <li class="main-menu-item"><a href="/archives">Archives</a></li>
             
         
     </ul>
 </div>
 
-<h1 class="blog-title">The Zhuo Yanzhu Blog</h1>
+<h1 class="blog-title">The Yzz Blog</h1>
 
 			
 <article class="article-main" itemscope itemprop="blogPost">
         <div class="articleCon">
             <header class="article-header">
                 <h1 itemprop="name">
-                    <a href="/hexo-blog/2017/06/23/javascript设计模式-原型模式/" class="article-title">javascript设计模式-原型模式</a>
+                    <a href="/2017/06/23/javascript设计模式-原型模式/" class="article-title">javascript设计模式-原型模式</a>
                 </h1>
             </header>
             
@@ -117,7 +116,7 @@
             
             <div class="article-meta">
                 <div class="article-dateTime">
-    <a href="/hexo-blog/2017/06/23/javascript设计模式-原型模式/" class="article-date">
+    <a href="/2017/06/23/javascript设计模式-原型模式/" class="article-date">
         <time datetime="Jun 23rd 2017" itemprop="datePublished">
             Jun 23rd 2017
         </time>
@@ -140,21 +139,21 @@
 </ul>
 <ul>
 <li><p>其实对象会记住它的原型，准确来说不是对象真的有一个原型，而是它的构造器有原型。对象把请求委托给它自己的原型其实更准确地说是对象把请求委托给它的构造器的原型。js给对象提供了一个名为<em>proto</em>的隐藏属性，chrome和firefox可以向外暴露对象的这个属性，这个属性默认会指向它的构造器的原型对象。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> a = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line"><span class="built_in">console</span>.log(a._proto_ === <span class="built_in">Object</span>.prototype); <span class="comment">//输出true</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> a = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line"><span class="built_in">console</span>.log(a._proto_ === <span class="built_in">Object</span>.prototype); <span class="comment">//输出true</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>因为_<em>proto</em>记住了构造器的原型，所以我们说对象记住了它的原型，并通过原型来实现了继承。</p>
 </li>
 <li>虽然js的对象最初都是由Object.proptype对象克隆来的，但对象构造器的原型可以动态地指向其他对象。当我们想创建一个继承B的对象A，只要把对象A的构造器的原型指向对象B，就能实现继承的效果。</li>
 <li>js最常见的继承方式：</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123; <span class="attr">name</span>: <span class="string">'june'</span>&#125;;</span><br><span class="line"><span class="keyword">var</span> A = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;  &#125;</span><br><span class="line">A.proptype = obj;</span><br><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> A();</span><br><span class="line"><span class="built_in">console</span>.log(a.name); <span class="comment">//输出：june</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 一个类继承另外一个类</span></span><br><span class="line"><span class="keyword">var</span> A = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">A.prototype = &#123; <span class="attr">name</span>: <span class="string">'sven'</span>&#125;;</span><br><span class="line"><span class="keyword">var</span> B = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">B.prototype = <span class="keyword">new</span> A();</span><br><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> B();</span><br><span class="line">b.name; <span class="comment">//=&gt; sven</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123; <span class="attr">name</span>: <span class="string">'june'</span>&#125;;</div><div class="line"><span class="keyword">var</span> A = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;  &#125;</div><div class="line">A.proptype = obj;</div><div class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> A();</div><div class="line"><span class="built_in">console</span>.log(a.name); <span class="comment">//输出：june</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 一个类继承另外一个类</span></div><div class="line"><span class="keyword">var</span> A = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line">A.prototype = &#123; <span class="attr">name</span>: <span class="string">'sven'</span>&#125;;</div><div class="line"><span class="keyword">var</span> B = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line">B.prototype = <span class="keyword">new</span> A();</div><div class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> B();</div><div class="line">b.name; <span class="comment">//=&gt; sven</span></div></pre></td></tr></table></figure>
 <ul>
 <li><p>上面两端代码的目的是一样的，本质上也没有差别，区别只是一个将B.proptype直接指向一个字面量对象，一个是指向new A()，后者会比前者形成的原型链多了一层。</p>
 </li>
 <li><p>Object.create方法：我通常用它来创建一个基于某个现有对象的对象，但准确来说它就是通过原型模式来实现了一个次原型继承。</p>
 <p>该方法实际等同于：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">functionO(obj) &#123;</span><br><span class="line">  <span class="keyword">var</span> F = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    F.prototype = obj;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> F();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> a = <span class="built_in">Object</span>.create(&#123;&#125;); <span class="comment">//a.proptype为Object;</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="built_in">Object</span>.create(<span class="literal">null</span>); <span class="comment">//b.proptype为null;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">functionO(obj) &#123;</div><div class="line">  <span class="keyword">var</span> F = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    F.prototype = obj;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> F();</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> a = <span class="built_in">Object</span>.create(&#123;&#125;); <span class="comment">//a.proptype为Object;</span></div><div class="line"><span class="keyword">var</span> b = <span class="built_in">Object</span>.create(<span class="literal">null</span>); <span class="comment">//b.proptype为null;</span></div></pre></td></tr></table></figure>
 <h4 id="思考题"><a href="#思考题" class="headerlink" title="思考题"></a>思考题</h4><ul>
 <li><p>prototype和constructor和<em>proto</em>傻傻分不清楚？</p>
 <ul>
@@ -164,7 +163,7 @@
 </ul>
 <p>实践是唯一的真理：</p>
 <ul>
-<li><p><a href="http://ww1.sinaimg.cn/large/63739cabgy1fgpk7qyezxj20ck0ebdgm.jpg" target="_blank" rel="noopener"><img src="http://ww1.sinaimg.cn/large/63739cabgy1fgpk7qyezxj20ck0ebdgm.jpg" alt="img"></a></p>
+<li><p><a href="http://ww1.sinaimg.cn/large/63739cabgy1fgpk7qyezxj20ck0ebdgm.jpg" target="_blank" rel="external"><img src="http://ww1.sinaimg.cn/large/63739cabgy1fgpk7qyezxj20ck0ebdgm.jpg" alt="img"></a></p>
 <p>​</p>
 </li>
 </ul>
@@ -188,7 +187,7 @@
                 
 <nav id="article-nav">
   
-    <a href="/hexo-blog/2017/06/23/javascript设计模式-单例模式/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/06/23/javascript设计模式-单例模式/" id="article-nav-newer" class="article-nav-link-wrap">
       <div class="article-nav-title">
         
           javascript设计模式-单例模式 >
@@ -197,8 +196,8 @@
     </a>
   
   
-    <a href="/hexo-blog/2017/06/23/状态模式/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"> < javascript设计模式-状态模式</div>
+    <a href="/2017/06/20/React中的样式处理/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"> < React中的样式处理</div>
     </a>
   
 </nav>
@@ -206,6 +205,22 @@
 
             </div>
         </div>
+        
+            <div id="disqus_thread"></div>
+<script>
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document,
+            s = d.createElement('script');
+
+        s.src = '//yzzting.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script id="dsq-count-scr" src="//yzzting.disqus.com/count.js" async></script>
+
         
         
 </article>
@@ -220,8 +235,8 @@
             Made with ♥ by <a href="https://github.com/yzzting/hexo-theme-MyFairLady" target="_blank">MyFairLady</a>
         </div>
     </footer>
-    <script src="/hexo-blog/js/sidebar.js"></script>
-    <script src="/hexo-blog/js/toTop.js"></script>
-    <script src="/hexo-blog/js/bookmark.js"></script>
+    <script src="/js/sidebar.js"></script>
+    <script src="/js/toTop.js"></script>
+    <script src="/js/bookmark.js"></script>
 	</body>
 	</html>
