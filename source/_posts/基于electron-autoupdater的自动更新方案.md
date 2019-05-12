@@ -1,5 +1,5 @@
 ---
-title: 基于electron-autoupdater的自动更新方案
+title: 基于electron-autoupdater的客户端自动更新方案
 date: 2018-03-14 22:45:13
 tags:
 ---
