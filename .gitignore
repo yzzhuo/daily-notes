@@ -21,4 +21,4 @@ dist
 tmp/
 *.log
 !themes/**/*
-build
+public
