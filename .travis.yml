@@ -27,4 +27,4 @@ branches:
     - hexo
 env:
  global:
-   - GH_REF: github.com/yzzhuo/hexo-blog.git
+   - GH_REF: github.com/yzzhuo/yzzhuo.github.io.git
