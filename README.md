@@ -1,1 +1,1 @@
-[![Build Status](https://travis-ci.org/yzzhuo/hexo-blog.svg?branch=hexo)](https://travis-ci.org/yzzhuo/yzzhuo.github.io)
+[![Build Status](https://travis-ci.org/yzzhuo/yzzhuo.github.io.svg?branch=hexo)](https://travis-ci.org/yzzhuo/yzzhuo.github.io)
