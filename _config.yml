@@ -78,5 +78,6 @@ theme_config:
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  repo: https://gh_token@github.com/yzzhuo/yzzhuo.github.io.git
-  branch: master
+  - type: git
+    repo: git@github.com:yzzhuo/yzzhuo.github.io.git
+    branch: master
