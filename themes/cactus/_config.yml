@@ -1,5 +1,5 @@
 ##############################################################################
-# Content
+# Content   
 ##############################################################################
 
 # Link to a page that gives an overview of all your projects.
@@ -15,9 +15,10 @@ direction: ltr
 # languages/*.yml
 nav:
   home: /
-  about: /about/
+  # about: /about/
   articles: /archives/
-  projects: projects_url
+  Daily Learn: /categories/daily/
+  # projects: projects_url
 
 
 # Links to your social media accounts.
