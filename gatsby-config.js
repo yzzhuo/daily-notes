@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: "/daily-notes",
   plugins: [
     {
       resolve: `gatsby-theme-blog`,
