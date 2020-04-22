@@ -5,11 +5,13 @@
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop",
-    "build": "gatsby build"
+    "build": "gatsby build",
+    "deploy": "gatsby build && gh-pages -d public -b master"
   },
   "dependencies": {
     "gatsby": "^2.15.21",
     "gatsby-theme-blog": "^1.0.2",
+    "gh-pages": "^2.2.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
   }
